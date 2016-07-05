@@ -3,12 +3,15 @@ HOST: http://itas.apiary.io/
 VERSION: 2.5
 
 # ITAS API 2.5
-<strong>Release notes</strong> (xx June 2016)
+<strong>Release notes</strong> (18 July 2016)
 
 <div>~ New endpoints added in this release :</div>
 <div>
-See client Specific APIARY for more details.
+<ul>
+<li>See client Specific APIARY for more details.</li>
+</ul>
 </div>
+-----------------------------
 
 <div>~ Updated endpoints changed in this release:</div>
 <div>
@@ -752,7 +755,7 @@ Codes used to describe terms of payment applied to physical contracts through to
 |DocumentText|cmy15_text|`string`|8000|||
 |EDICode|cmy15_altcode|`string`|20|||
 |Status|cmy15_inactive|`string`|1|||
-|NumberOfDaysCredit |cmy15_creditdays|`number`||||
+|NumberOfDaysCredit |cmy15_creditdays|`number`||`new`||
 
 
 + Request
@@ -1588,8 +1591,8 @@ List of Logistics information for Physical Contracts.
 |VesselReference|phys01_vessel|`string`|30|||
 |BillOfLadingDate|phys01_bldate|`datetime`||||
 |BillOfLadingReference|phys01_blref|`string`|255|||
-|DocumentsAcknowledged|phys01_docsrec|`boolean`||||
-|DocumentsAcknowledgedDate |phys01_docrecdate|`datetime`||||
+|DocumentsAcknowledged|phys01_docsrec|`boolean`||`new`||
+|DocumentsAcknowledgedDate |phys01_docrecdate|`datetime`||`new`||
 
 
 + Request
