@@ -745,6 +745,8 @@ Codes used to describe the units of packing applied in physical contracts.
     + Attributes (404 Response)
 
 ## PaymentTerm List [/ReferenceData/{TradingEntityId}/Physicals/PaymentTerm/{Property}/{PropertyValue}]
+`Updated` in release
+
 Codes used to describe terms of payment applied to physical contracts through to accounting
 ### List PaymentTerms [GET]
 |property|description|type|max length|notes|constraint|
@@ -976,7 +978,7 @@ WIP Ledger related reference data.
 ## Charter [/ReferenceData/{TradingEntityId}/WIPLedger/Charter/{CharterId}]
 Charter profile – restricted by WIPAccountType of `C`.
 ### Read Charter [GET]
-`New` in release 2.4
+
 
 
 |property|description|type|max length|notes|constraint|
@@ -1015,7 +1017,7 @@ Charter profile – restricted by WIPAccountType of `C`.
 ## Charter List [/ReferenceData/{TradingEntityId}/WipLedger/Charter/{Property}/{PropertyValue}]
 List of charter profiles – restricted by WIPAccountType of `C`.
 ### List Charter [GET]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1147,7 +1149,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 ## WIP Account [/ReferenceData/{TradingEntityId}/WipLedger/WipAccount/{WipAccountId}]
 Charter profile
 ### Read WIP Account [GET]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1183,7 +1185,7 @@ Charter profile
 ## WIP Account List [/ReferenceData/{TradingEntityId}/WipLedger/WIPAccount/{Property}/{PropertyValue}]
 List of charter profiles.
 ### List WIP Accounts [GET]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1582,7 +1584,7 @@ List of Broker commissions held against Physical Contracts.
 ## Physical Trade Shipments List [/Contract/{TradingEntityId}/Physical/PhysicalTradeShipment/{Property}/{PropertyValue}]
 List of Logistics information for Physical Contracts.
 ### List Physical Trade Shipment [GET]
-
+`Updated` in release 2.5
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1623,7 +1625,7 @@ Data Objects and endpoints providing access to cash create, match and authorisat
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
 Authorise an entity to be added to the Posting process.
 ### AuthoriseForPosting [PUT]
-`New` in release 2.4
+
 
 <strong>URI Parameters</strong>
 
@@ -1668,7 +1670,7 @@ None.
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
 Allows generic cash payments to be created between multiple accounts  
 ### Create PayableManual [POST]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1699,7 +1701,7 @@ Allows generic cash payments to be created between multiple accounts
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
 Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
 ### Create PayableOnAccount [POST]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1734,7 +1736,7 @@ Allows cash payments to be created on account of existing (posted) accounting do
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
 Allows generic cash receipts to be created between multiple accounts  
 ### Create ReceivableManual [POST]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1766,7 +1768,7 @@ Allows generic cash receipts to be created between multiple accounts
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
 Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
 ### Create ReceivableOnAccount [POST]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2089,7 +2091,7 @@ Production Order processing services.
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
 Trigger call to complete an order (e.g. create stock journals etc)
 ### Update MarkOrderAsProcessed [PUT]
-`New` in release 2.4
+
 
 <strong>URI Parameters</strong>
 
@@ -2338,7 +2340,7 @@ The account header object is derived from multiple locations of the database dep
 ## AccountPostingDetails [/AccountPostingDetails]
 
 ### AccountPostingDetails[GET]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2388,7 +2390,7 @@ A multipurpose object used by several endpoints.
 ## DocumentDetails [/DocumentDetails]
 
 ### DocumentDetails[GET]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2406,7 +2408,7 @@ A multipurpose object used by several endpoints.
 ## OnAccountDetails [/OnAccountDetails]
 
 ### OnAccountDetails[GET]
-`New` in release 2.4
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
