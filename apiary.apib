@@ -7,17 +7,14 @@ VERSION: 2.5
 
 <div>~ New endpoints added in this release :</div>
 <div>
-<ul>
-<li>blah. <a href="http://docs.itasapiv2r4.apiary.io/#reference/wip-reference-data/charter">link</a></li>
-/li>
-<li>Cash <strong>blah 2 </strong>: blah. <a href="http://docs.itasapiv2r4.apiary.io/#reference/finance/cash/receivableonaccount">link</a></li>
-</ul>
+See client Specific APIARY for more details.
 </div>
 
 <div>~ Updated endpoints changed in this release:</div>
 <div>
 <ul>
-<li>blah 4 <strong>StockUnit</strong>: blah 5.</li>
+<li>Physical Reference Data <strong>Payment Term List</strong>: New property added <a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms">more details</a></li>
+<li>Contract / Physical <strong>Payment Trade Shipment List</strong>: Two new properties added <a href="/#reference/contract/physical/physical-trade-shipments-list/list-physical-trade-shipment">more details</a></li>
 </ul>
 </div> 
 ------------
@@ -755,6 +752,8 @@ Codes used to describe terms of payment applied to physical contracts through to
 |DocumentText|cmy15_text|`string`|8000|||
 |EDICode|cmy15_altcode|`string`|20|||
 |Status|cmy15_inactive|`string`|1|||
+|NumberOfDaysCredit |cmy15_creditdays|`number`||||
+
 
 + Request
     [AccessToken][]
@@ -1589,6 +1588,8 @@ List of Logistics information for Physical Contracts.
 |VesselReference|phys01_vessel|`string`|30|||
 |BillOfLadingDate|phys01_bldate|`datetime`||||
 |BillOfLadingReference|phys01_blref|`string`|255|||
+|DocumentsAcknowledged|phys01_docsrec|`boolean`||||
+|DocumentsAcknowledgedDate |phys01_docrecdate|`datetime`||||
 
 
 + Request
@@ -2846,6 +2847,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentText: Text to be used in the sameple document.  (string)
 + EDICode: abc123 (string)
 + Status: F (string)
++ NumberOfDaysCredit : 30 (number)
 
 ## PhysicalTrade (object)
 + ContractId: P00004.000 (string)
@@ -2892,6 +2894,9 @@ The Transaction key is a five part key made up of the following values seperate 
 + UniqueId: 1 (number)
 + AgentAccount  (AccountHeader)
 + AgentReference: AGFARM01.P (string)
++ DocumentsAcknowledged: true (string)
++ DocumentsAcknowledgedDate: 20161010 (string)
+
 
 ## PhysicalTradeCommission List (object)
 + ContractId: P00004.000 (string)
