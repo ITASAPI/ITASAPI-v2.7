@@ -1442,6 +1442,38 @@ Document summary information including properties specific to integration requir
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+### Delta Update Transaction Header [PATCH]
+
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentReference|xtx01_docref|`string`|9||required|
+|EDICode|xtx01_axdocref|`string`|25|||
+|InterfaceStatus|xtx01_senttocashman|`string`|1|||
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (TransactionHeaderDelta)
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) 
+    + DocumentReference (required, string, `CN1600001`)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes 
+        + Data
+            + DocumentReference: CN1600001 (string)
+        + Response (201 UpdateResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
 ## Transaction Header List [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{Property}/{PropertyValue}]
 Document summary information including properties specific to integration requirements.
 ### List Transaction Headers [GET]
@@ -3185,6 +3217,11 @@ The Transaction key is a five part key made up of the following values seperate 
 + countryCode: BRA (string)
 
 ## TransactionHeader (object)
++ DocumentReference: CN1600001 (required, string)
++ EDICode: 123abc (string)
++ InterfaceStatus: y (string)
+
+## TransactionHeaderDelta (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: y (string)
