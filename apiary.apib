@@ -210,7 +210,8 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-
+### Update ClientAccount [PATCH]
+The field `ClientAccountId` is the only mandatory field, it cannot be changed but is used to cross reference the Id in the URI
 
 ## ClientType List [/ReferenceData/{TradingEntityId}/ClientLedger/ClientType/{Property}/{PropertyValue}]
 User-defined list of codes used for classification purposes on Client Account profile.
