@@ -210,10 +210,53 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-### Update ClientAccount [PATCH]
-The field `ClientAccountId` is the only mandatory field, it cannot be changed but is used to cross reference the Id in the URI
+### Delta Update ClientAccount [PATCH]
+Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only mandatory field, it cannot be changed but is used to cross reference the Id in the URI
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+|ClientAccountId|chr20_acc|`string`|10||required|
+|Title|chr20_title|`string`|200|||
+|ClientTypeCode|chr20_type|`string`|1|||
+|Status|chr20_status|`string`|1|||
+|PrivilegeLevel|chr20_priv|`number`|1|||
+|CanBeBuyer|chr20_canbeabuyer|`boolean`|0|||
+|CanBeSeller|chr20_canbeaseller|`boolean`|0|||
+|CanBeAgent|chr20_canbeaagent|`boolean`|0|||
+|CanBeShipper|chr20_canbeashipper|`boolean`|0|||
+|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`|0|||
+|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`|0|||
+|GlobalTraderProgramMember|chr20_gtp|`boolean`|1|||
+|GroupAccountMember|chr20_group|`boolean`|1|||
+|HeadOfFamilyAccountCode|chr20_headcl|`string`|10|||
+|EDICode|chr20_ediaddr|`string`|50|||
+|<strong>Contact Details</strong>|
+|AddressLine1|chr20_addr1|`string`|60|||
+|AddressLine2|chr20_addr2|`string`|60|||
+|AddressLine3|chr20_addr3|`string`|60|||
+|AddressLine4|chr20_addr4|`string`|60|||
+|ZipCode|chr20_zipcode|`string`|40|||
+|CountryCode|chr20_geogcd|`string`|3|||
+|EmailAddress|chr20_emailaddr|`string`|100|||
+|PhoneNumber|chr20_phoneno|`string`|40|||
+|FaxNumber|chr20_faxno|`string`|40|||
+|<strong>Client Limits</strong>|
+|ClientDateLimitsApproved|chr20_limit_date|`datetime`|0|||
+|ClientLimitsCurrencyCode|chr20_clccy|`string`|3|||
+|ClientPaymentLimit|chr20_paylimit|`number`|18,8|||
+|ClientMarketDefaultRiskLimit|chr20_mktdefrisklimit|`number`|18,8|||
+|ClientCommitmentLimit|chr20_fwdlimit|`number`|18,8|||
+|<strong>Family Limits</strong>|
+|FamilyDateLimitsApproved|chr31_limit_date|`datetime`|0|||
+|FamilyLimitsCurrencyCode|chr31_clccy|`string`|3|||
+|FamilyPaymentLimit|chr31_paylimit|`number`|0|||
+|FamilyMarketDefaultRiskLimit|chr31_mktdefrisklimit|`number`|0|||
+|FamilyCommitmentLimit|chr31_fwdlimit|`number`|0|||
 
 + Request (application/json)
+    + Header
+
+            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
     + Attributes (ClientAccount Update)
 
