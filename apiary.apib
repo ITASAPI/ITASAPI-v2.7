@@ -258,7 +258,7 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 
 + Parameters
     + TradingEntityId (required, string) - identify specific trading entity
-    + ClientAccountId (required, string) - code for client account to create
+    + ClientAccountId (required, string) - code for client account to update
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
@@ -424,13 +424,13 @@ Codes used to segregate business sectors within a trading company, and can be ap
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... identify specific trading entity
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + DepartmentId
             + Status
             + EDICode
-    + PropertyValue (optional, string, `O`) ... required if property specified
+    + PropertyValue (optional, string, `F`) ... Required if property specified.
 
 
 + Response 200 (application/json; charset=utf-8)
