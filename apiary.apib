@@ -53,7 +53,7 @@ Client Ledger Account profile.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) 
        + Members
             + Status
@@ -64,7 +64,7 @@ Client Ledger Account profile.
             + CanBeDerivativeClient 
             + CanBeDerivativeBroker 
             + EDICode
-    + PropertyValue (optional, string, `O`) 
+    + PropertyValue (optional, string, `O`) ... Required if property specified. 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes (object)
@@ -120,8 +120,8 @@ Client Ledger Account profile.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + ClientAccountId (required, string, `ABCDEF.P`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ClientAccountId (required, string, `ABCDEF.P`) ... Code of client account to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -185,8 +185,8 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
     + Attributes (ClientAccount CreateUpdate)
 
 + Parameters
-    + TradingEntityId (required, string) - identify specific trading entity
-    + ClientAccountId (required, string) - code for client account to create
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
+    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create or update
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -257,8 +257,8 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
     + Attributes (ClientAccount Update)
 
 + Parameters
-    + TradingEntityId (required, string) - identify specific trading entity
-    + ClientAccountId (required, string) - code for client account to update
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
+    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to update.
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
