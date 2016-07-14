@@ -1710,12 +1710,12 @@ List of Broker commissions held against Physical Contracts.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string])  
        + Members
             + ContractId (optional, string) 
             + AgentAccountCode (optional, string)
-    + PropertyValue (optional, string, `abc`)
+    + PropertyValue (optional, string, `P00004.000`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1748,12 +1748,12 @@ List of Logistics information for Physical Contracts.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string])  
        + Members
             + ContractId (optional, string) 
             + VesselReference (optional, string)
-    + PropertyValue (optional, string, `abc`)
+    + PropertyValue (optional, string, `P00004.000`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -3102,7 +3102,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + AgentReference: AGFARM01.P (string)
 
 ## PhysicalTradeShipment List (object)
-+ ContractId: IP0001.000 (string)
++ ContractId: P00004.000 (string)
 + VesselReference: abc123 (string)
 + BillOfLadingDate: 20161010 (string)
 + BillOfLadingReference: 72952N (string)
