@@ -1481,7 +1481,7 @@ Document summary information including properties specific to integration requir
     
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
-    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
+    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
@@ -1512,8 +1512,8 @@ Document summary information including properties specific to integration requir
     + Attributes (TransactionHeaderDelta)
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + DocumentReference (required, string, `CN1600001`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
