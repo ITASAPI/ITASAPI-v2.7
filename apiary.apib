@@ -745,9 +745,10 @@ Commodity/Product codes, used to identify goods
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
+            + Status (optional, string)
             + CommodityCodePart1 (optional, string) 
             + CommodityCodePart2 (optional, string)
             + CommodityCodePart3 (optional, string)
@@ -755,8 +756,7 @@ Commodity/Product codes, used to identify goods
             + CommodityCodePart5 (optional, string)
             + CommodityGroup (optional, string)
             + EDICode (optional, string)
-            + Status (optional, string)
-    + PropertyValue (optional, string, `O`) ... required if property specified.
+    + PropertyValue (optional, string, `F`) ... required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -781,19 +781,19 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
 |ContractTermDescription|cmy14_descr|`string`|50|||
 |DocumentText|cmy14_text|`string`|4000|||
 |EDICode|master_edicode|`string`|50|||
-|Status|cmy14_inactive|`string`|1|||
+|Status|cmy14_inactive|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string)
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string])
        + Members
+            + Status (optional, string)
             + ContractTermId (optional, string) 
             + EDICode (optional, string)
-            + Status (optional, string)
-    + PropertyValue (optional, string, `O`)
+    + PropertyValue (optional, string, `F`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes
@@ -822,13 +822,13 @@ Codes used to describe the units of packing applied in physical contracts.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
+            + Status (optional, string)
             + PackingTypeId (optional, string) 
             + EDICode (optional, string)
-            + Status (optional, string)
-    + PropertyValue (optional, string, `O`) ... required if property specified.
+    + PropertyValue (optional, string, `F`) ... Required if property specified..
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -853,7 +853,7 @@ Codes used to describe terms of payment applied to physical contracts through to
 |PaymentTermDescription|cmy15_descr|`string`|99|||
 |DocumentText|cmy15_text|`string`|8000|||
 |EDICode|cmy15_altcode|`string`|20|||
-|Status|cmy15_inactive|`string`|1|||
+|Status|cmy15_inactive|`string`|1||`O` or `F`|
 |NumberOfDaysCredit |cmy15_creditdays|`number`||`new`||
 
 
@@ -861,13 +861,13 @@ Codes used to describe terms of payment applied to physical contracts through to
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
+            + Status (optional, string)
             + PaymentTermsId (optional, string) 
             + EDICode (optional, string)
-            + Status (optional, string)
-    + PropertyValue (optional, string, `O`) ... required if property specified.
+    + PropertyValue (optional, string, `F`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -891,10 +891,19 @@ Codes used to identify physical port locations.
 |DocumentText|cmy16_text|`string`|4000|||
 |CountryCode|cmy16_ctry|`string`|3|||
 |EDICode|cmy16_localcode|`string`|10|||
-|Status|cmy16_inactive|`string`|1|||
+|Status|cmy16_inactive|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
+
++ Parameters
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + Status (optional, string)
+            + PortId (optional, string) 
+            + CountryCode (optional, string)
+    + PropertyValue (optional, string, `F`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -924,11 +933,11 @@ Codes used to identify specific product qualities.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + SampleId (optional, string,) 
-    + PropertyValue (optional, string, `abc123`) ... required if property specified.
+    + PropertyValue (optional, string, `abc123`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -955,11 +964,11 @@ Codes used to classify the status in terms of movement, useful for reporting pur
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + ShippingStatusId (optional, string,) 
-    + PropertyValue (optional, string, `OR`) ... required if property specified.
+    + PropertyValue (optional, string, `OR`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -988,11 +997,11 @@ Codes used to identify specific terminal location, useful for reporting purposes
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + TerminalId (optional, string) 
-    + PropertyValue (optional, string, `O`) ... required if property specified.
+    + PropertyValue (optional, string, `ADEL`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1014,10 +1023,19 @@ List of Vessel names that can be applied as part of any physical logistics strat
 |VesselId|ves01_vessel|`string`|30|||
 |VesselDescription|ves01_descr|`string`|50|||
 |CountryCode|ves01_flag|`string`|3|||
-|Status|ves01_inactive|`string`|1|||
+|Status|ves01_inactive|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
+
++ Parameters
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + Status (optional, string)
+            + VesselId (optional, string)
+    + PropertyValue (optional, string, `F`) ... Required if property specified.
+
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1049,13 +1067,13 @@ Codes used to describe the units of measurement applied in physical contracts.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + WeightId (optional, string) 
             + EDICode (optional, string)
             + Status (optional, string)
-    + PropertyValue (optional, string, `abc123`) ... required if property specified.
+    + PropertyValue (optional, string, `GA`) ... Required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -3141,7 +3159,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + PreMatchDocumentReference: CP1503236 (string)
 
 ## Sample (object)
-+ SampleId: 123abc (string)
++ SampleId: abc123 (string)
 + SampleDescription: Description of sample. (string)
 + DocumentText: Text to be used in the sameple document. (string)
 + NoOfCopiesRequired: 4 (number)
