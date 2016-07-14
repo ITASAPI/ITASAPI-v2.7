@@ -1115,8 +1115,8 @@ Charter profile – restricted by WIPAccountType of `C`.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + CharterId (required, string, `CHART01.000`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + CharterId (required, string, `1111.MEP`) ... Code for charter to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1154,14 +1154,14 @@ List of charter profiles – restricted by WIPAccountType of `C`.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + CharterId (optional, string) 
-            + ShippingStatusCode (optional, string)
+            + ShipmentStatusCode (optional, string)
             + EdiCode (optional, string)
             + Status (optional, string)
-    + PropertyValue (optional, string, `abc`) ... required if property specified.
+    + PropertyValue (optional, string, `1111.MEP`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes (object)
@@ -1201,8 +1201,8 @@ Stock Account profile - restricted by WIPAccountType of `S`.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + StockUnitId (required, string, `5100.MEP`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + StockUnitId (required, string, `1111.MEP`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1239,14 +1239,14 @@ Stock Account profile – restricted by WIPAccountType of `S`.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + StockunitId (optional, string) 
             + TerminalCode (optional, string)
             + EdiCode (optional, string)
             + Status (optional, string)
-    + PropertyValue (optional, string, `abc`) ... required if property specified.
+    + PropertyValue (optional, string, `1111.MEP`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes
@@ -1283,8 +1283,8 @@ Charter profile
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + WipAccountId (required, string, `5100.MEP`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + WipAccountId (required, string, `1111.MEP`) ... Code for WIP account to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1320,14 +1320,14 @@ List of charter profiles.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + WIPAccountId (optional, string) 
             + WIPAccountType (optional, string)
             + EdiCode (optional, string)
             + Status (optional, string)
-    + PropertyValue (optional, string, `abc`) ... required if property specified.
+    + PropertyValue (optional, string, `1111.MEP`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -2678,7 +2678,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + CashDocRef: abc123456 (string)
 
 ## Charter (object)
-+ CharterId: CHART01.000 (required, string)
++ CharterId: 1111.MEP (required, string)
 + CharterDescription: `NILEDUTCH SHANGHAI  V096W`(string)
 + Department (Department)
 + Commodity (Commodity)
@@ -3246,7 +3246,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + SourceStockUnitDetails  (array[StockLoading])
 
 ## StockUnit (object)
-+ StockUnitId: 5100.MEP (string)
++ StockUnitId: 1111.MEP (string)
 + StockUnitDescription: `MEPACCRUE - East Africa Dept` (string)
 + Terminal (Terminal)
 + Department (Department)
@@ -3260,7 +3260,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + Status: O (string)
 
 ## StockUnitList (object)
-+ StockUnitId: 5100.MEP (string)
++ StockUnitId: 1111.MEP (string)
 + StockUnitDescription: `MEPACCRUE - East Africa Dept` (string)
 + TerminalCode: ADEL (string)
 + DepartmentCode: 5100 (string)
@@ -3345,7 +3345,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + Status: F (string)
 
 ## WIPAccount (object)
-+ WIPAccountId: 5100.MEP (required, string)
++ WIPAccountId: 1111.MEP (required, string)
 + WIPAccountDescription: `MEPACCRUE - East Africa Dept` (required, string)
 + WIPAccountType: M (string)
 + Department (Department)
@@ -3356,7 +3356,7 @@ The Transaction key is a five part key made up of the following values seperate 
 
 
 ## WIPAccount List (object)
-+ WIPAccountId: 5100.MEP (string)
++ WIPAccountId: 1111.MEP (string)
 + WIPAccountDescription: `MEPACCRUE - East Africa Dept` (string)
 + WIPAccountType: M (string)
 + DepartmentCode: 5100 (string)
