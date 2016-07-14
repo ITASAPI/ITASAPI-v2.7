@@ -10,7 +10,7 @@ VERSION: 2.6
 <ul>
 <li>Client Reference Data <strong>Delta Update ClientAccount</strong>: Update ClientAccount data with only ClientAccountId mandatory. <a href="/#reference/client-reference-data/clientaccount/delta-update-clientaccount"> Link</a></li>
 <li>Nominal Reference Data <strong>Delta Update NominalAccount</strong>: Update NominalAccount data with only NominalAccountId mandatory. <a href="/#reference/nominal-reference-data/nominalaccount/delta-update-nominalaccount"> Link</a></li>
-<li>Accounting <strong>Delta Update Transaction Header</strong>: Update Transaction Header. <a href="/#reference/accounting/transactions/transaction-header/delta-update-transaction-header"> Link</a></li>
+<li>Accounting <strong>Delta Update Transaction Header</strong>: Update Transaction Header. <a href="/#reference/accounting>transactions/transaction-header/delta-update-transaction-header"> Link</a></li>
 </ul>
 </div>
 <br />
@@ -1550,7 +1550,7 @@ Document summary information including properties specific to integration requir
     + Attributes (404 Response)
 
 
-# Group Contract/Physical
+# Group Contract>Physical
 
 ## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
 Principle Physical Contract (agreement) details
@@ -1753,7 +1753,7 @@ List of Logistics information for Physical Contracts.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-# Group Finance/Cash
+# Group Finance>Cash
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
@@ -1935,7 +1935,7 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 
 
 
-# Group Inventory/Physicals/Order Scheduling
+# Group Inventory>Physicals>Order Scheduling
 Production Order scheduling services.
 
 ## DeliveryInOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/DeliveryInOrder/{ReleaseId}]
@@ -2150,7 +2150,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 
 
 
-# Group Inventory/Physicals/Stock Management
+# Group Inventory>Physicals>Stock Management
 Management activities of Stock Units (where represented by WIP Accounts).
 
 ## StockBatch [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{StockBatchId}]
@@ -2219,7 +2219,7 @@ Batch record information by Stock Unit.
     + Attributes (404 Response)
 
 
-# Group Inventory/Physicals/Stock Processing
+# Group Inventory>Physicals>Stock Processing
 Production Order processing services.
 
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
