@@ -1388,8 +1388,8 @@ Provides access to full accounting ledger by Document Reference.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + DocumentReference (required, string, `PI1500000`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + DocumentReference (required, string, `PI1500000`) ... Code for posted transaction to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1442,8 +1442,8 @@ Provides access to financial transaction details yet to be posted to the ledgers
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + DocumentReference (required, string, `CN1600001`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
+    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1480,8 +1480,8 @@ Document summary information including properties specific to integration requir
     + Attributes (TransactionHeader)
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + DocumentReference (required, string, `CN1600001`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
+    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
@@ -1544,12 +1544,12 @@ Document summary information including properties specific to integration requir
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: AB (required, string) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string])  
        + Members
             + DocumentReference (optional, string) 
             + EDICode (optional, string)
-    + PropertyValue (optional, string, `abc`)
+    + PropertyValue (optional, string, `CN1600001`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -3127,7 +3127,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + Status: F (string)
 
 ## PostedTransaction (object)
-+ DocumentReference: 3DIECHES.P (string)
++ DocumentReference: PI1500000 (string)
 + AccountLedgerType: C (string)
 + TransactionKey: `00040444.P||GBP||20150832||20151003||14576460` (string)
 + AccountCode (AccountHeader)
