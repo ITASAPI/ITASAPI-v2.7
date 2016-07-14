@@ -693,7 +693,7 @@ Codes and rates applied as part of any VAT/GST accounting practise.
 |VatRateId|cmy100_vatcode|`string`|2|||
 |VatRateDescription|cmy100_descr|`string`|40|||
 |VatRate|cmy100_vatrate|`float`|8|||
-|Status|cmy100_inactive|`string`|1|||
+|Status|cmy100_inactive|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -705,7 +705,7 @@ Codes and rates applied as part of any VAT/GST accounting practise.
             + VATRateId
             + VATRate
             + Status
-    + PropertyValue (optional, string, `AF`) 
+    + PropertyValue (optional, string, `GS`) 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
