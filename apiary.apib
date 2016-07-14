@@ -64,7 +64,7 @@ Client Ledger Account profile.
             + CanBeDerivativeClient 
             + CanBeDerivativeBroker 
             + EDICode
-    + PropertyValue (optional, string, `O`) ... Required if property specified. 
+    + PropertyValue (optional, string, `O`) 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes (object)
@@ -186,7 +186,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
-    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create or update
+    + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create or update.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -289,7 +289,7 @@ User-defined list of codes used for classification purposes on Client Account pr
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + ClientTypeId
-    + PropertyValue (optional, string, `H`) ... Required if property specified. 
+    + PropertyValue (optional, string, `H`) 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -430,7 +430,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
             + Status
             + DepartmentId
             + EDICode
-    + PropertyValue (optional, string, `F`) ... Required if property specified.
+    + PropertyValue (optional, string, `F`)
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -493,7 +493,7 @@ Codes that are primarily used for accounting transaction analysis purposes.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string])  
        + Members
             + Status
@@ -538,7 +538,7 @@ Nominal (General) Ledger Account profile.
             + BankAccount
             + EDICode
             + Status 
-    + PropertyValue (optional, string, `1234.5678`) ... Required if property specified.
+    + PropertyValue (optional, string, `1234.5678`)
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -568,8 +568,8 @@ Nominal (General) Ledger Account profile.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + NominalAccountId (required, string, `1234.5678`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
+    + NominalAccountId (required, string, `1234.5678`) ... Code for nominal account to read. 
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -600,8 +600,8 @@ Nominal (General) Ledger Account profile.
     + Attributes (NominalAccount)
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + NominalAccountId (required, string, `1234.5678`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + NominalAccountId (required, string, `1234.5678`) ... Code for nominal account to update. 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -634,8 +634,8 @@ Nominal (General) Ledger Account profile.
     + Attributes (NominalAccountDelta)
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + NominalAccountId (required, string, `1234.5678`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + NominalAccountId (required, string, `1234.5678`) ... Code for nominal account to update. 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -668,7 +668,7 @@ User-defined categorisation codes that can be applied to departments and bank ac
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + NominalCategoryId
-    + PropertyValue (optional, string, `AF`) ... Required if property specified.
+    + PropertyValue (optional, string, `AF`)
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -699,7 +699,7 @@ Codes and rates applied as part of any VAT/GST accounting practise.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string]) 
        + Members
             + VATRateId
@@ -756,7 +756,7 @@ Commodity/Product codes, used to identify goods
             + CommodityCodePart5 (optional, string)
             + CommodityGroup (optional, string)
             + EDICode (optional, string)
-    + PropertyValue (optional, string, `F`) ... Required if property specified.
+    + PropertyValue (optional, string, `F`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -787,13 +787,13 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string])
        + Members
             + Status (optional, string)
             + ContractTermId (optional, string) 
             + EDICode (optional, string)
-    + PropertyValue (optional, string, `F`) ... Required if property specified.
+    + PropertyValue (optional, string, `F`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes
@@ -822,13 +822,13 @@ Codes used to describe the units of packing applied in physical contracts.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + Status (optional, string)
             + PackingTypeId (optional, string) 
             + EDICode (optional, string)
-    + PropertyValue (optional, string, `F`) ... Required if property specified..
+    + PropertyValue (optional, string, `F`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -861,13 +861,13 @@ Codes used to describe terms of payment applied to physical contracts through to
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + Status (optional, string)
             + PaymentTermsId (optional, string) 
             + EDICode (optional, string)
-    + PropertyValue (optional, string, `F`) ... Required if property specified.
+    + PropertyValue (optional, string, `F`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -897,13 +897,13 @@ Codes used to identify physical port locations.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + Status (optional, string)
             + PortId (optional, string) 
             + CountryCode (optional, string)
-    + PropertyValue (optional, string, `F`) ... Required if property specified.
+    + PropertyValue (optional, string, `F`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -933,11 +933,11 @@ Codes used to identify specific product qualities.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + SampleId (optional, string,) 
-    + PropertyValue (optional, string, `abc123`) ... Required if property specified.
+    + PropertyValue (optional, string, `abc123`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -964,11 +964,11 @@ Codes used to classify the status in terms of movement, useful for reporting pur
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + ShippingStatusId (optional, string,) 
-    + PropertyValue (optional, string, `OR`) ... Required if property specified.
+    + PropertyValue (optional, string, `OR`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -997,11 +997,11 @@ Codes used to identify specific terminal location, useful for reporting purposes
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + TerminalId (optional, string) 
-    + PropertyValue (optional, string, `ADEL`) ... Required if property specified.
+    + PropertyValue (optional, string, `ADEL`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1029,12 +1029,12 @@ List of Vessel names that can be applied as part of any physical logistics strat
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + Status (optional, string)
             + VesselId (optional, string)
-    + PropertyValue (optional, string, `F`) ... Required if property specified.
+    + PropertyValue (optional, string, `F`)
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -1067,13 +1067,13 @@ Codes used to describe the units of measurement applied in physical contracts.
     [AccessToken][]
 
 + Parameters
-    + TradingEntityId: JT (required, string) ... Identify specific trading entity.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + WeightId (optional, string) 
             + EDICode (optional, string)
             + Status (optional, string)
-    + PropertyValue (optional, string, `GA`) ... Required if property specified.
+    + PropertyValue (optional, string, `GA`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
