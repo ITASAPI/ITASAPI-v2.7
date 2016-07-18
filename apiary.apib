@@ -1787,8 +1787,8 @@ Authorise an entity to be added to the Posting process.
 None.
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + DocumentReference (required, string, `abc123`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + DocumentReference (required, string, `CP1515151`)
 
 + Request (application/json)
     + Header
@@ -1806,7 +1806,7 @@ None.
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + DocumentReference: abc123 (string)
+            + DocumentReference: CP1515151 (string)
         + Response (200 AuthoriseResponse)
 
 + Response 400 (application/json; charset=utf-8)
@@ -1826,7 +1826,7 @@ Allows generic cash payments to be created between multiple accounts
 |AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
 
 + Request (application/json)
     + Header
@@ -1860,7 +1860,7 @@ Allows cash payments to be created on account of existing (posted) accounting do
 
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
 
 + Request (application/json)
     + Header
@@ -1892,7 +1892,7 @@ Allows generic cash receipts to be created between multiple accounts
 |AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
 
 + Request (application/json)
     + Header
@@ -1927,7 +1927,7 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
 
 + Request (application/json)
     + Header
