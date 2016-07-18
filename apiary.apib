@@ -2183,7 +2183,7 @@ Batch record information by Stock Unit.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + StockBatchId (required, string, `abc123`)
 
 + Response 200 (application/json; charset=utf-8)
@@ -2213,7 +2213,7 @@ Batch record information by Stock Unit.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + StockBatchId 
@@ -3175,8 +3175,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + BatchText: abc (string)
 
 ## StockBatch List (object)
-+ StockBatchId: 123 (number)
-+ StockUnitCode: xyz (string)
++ StockBatchId: abc123 (number)
++ StockUnitCode: W123.XYZ (string)
 + BatchCreateDate: 20160505 (number)
 + BatchText: abc (string)
 
