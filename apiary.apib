@@ -1969,8 +1969,8 @@ Orders (CallOffs) specifically representing incoming goods.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + ReleaseId (required, number, `123`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ReleaseId (required, number, `12345`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -1999,8 +1999,8 @@ Orders (CallOffs) specifically representing outgoing goods.
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + ReleaseId (required, number, `123`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ReleaseId (required, number, `12345`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -2053,8 +2053,8 @@ Orders (CallOffs) generated through EXPED
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + ReleaseId (required, string, `abc123`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ReleaseId (required, string, `123`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -2104,7 +2104,7 @@ Orders (CallOffs) generated through EXPED
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
             + ReleaseId 
@@ -2112,7 +2112,7 @@ Orders (CallOffs) generated through EXPED
             + CounterpartyId
             + ContractReference
             + TerminaId
-    + PropertyValue (optional, string, `abc123`) ... required if property specified.
+    + PropertyValue (optional, string, `12345`) ... required if property specified.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -2142,8 +2142,8 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 
 
 + Parameters
-    + TradingEntityId (required, string, `JT`) 
-    + ReleaseId (required, number, `123`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ReleaseId (required, number, `12345`)
 
 + Request (application/json)
     + Header
