@@ -1467,6 +1467,8 @@ Document summary information including properties specific to integration requir
 |DocumentReference|xtx01_docref|`string`|9||required|
 |EDICode|xtx01_axdocref|`string`|25|||
 |InterfaceStatus|xtx01_senttocashman|`string`|1|||
+|DocumentReversed|xtx01_reverseddocref|`string`|9|||
+|AssociateDocument|xtx01_associatedocref|`string`|9|||
 
 + Request (application/json)
     + Header
@@ -1499,6 +1501,8 @@ Document summary information including properties specific to integration requir
 |DocumentReference|xtx01_docref|`string`|9||required|
 |EDICode|xtx01_axdocref|`string`|25|||
 |InterfaceStatus|xtx01_senttocashman|`string`|1|||
+|DocumentReversed|xtx01_reverseddocref|`string`|9|||
+|AssociateDocument|xtx01_associatedocref|`string`|9|||
 
 + Request (application/json)
     + Header
@@ -1535,6 +1539,8 @@ Document summary information including properties specific to integration requir
 |InterfaceStatus|xtx01_senttocashman|`string`|1|||
 |PostedDate|xtx01_postdatetime|`datetime`||||
 |DocumentDate|xtx01_txxddate|`datetime`||||
+|DocumentReversed|xtx01_reverseddocref|`string`|9|||
+|AssociateDocument|xtx01_associatedocref|`string`|9|||
 
 + Request
     [AccessToken][]
@@ -3283,11 +3289,15 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: y (string)
++ DocumentReversed: PI1600011 (string)
++ AssociateDocument: PI1600012 (string)
 
 ## TransactionHeaderDelta (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: y (string)
++ DocumentReversed: PI1600011 (string)
++ AssociateDocument: PI1600012 (string)
 
 ## TransactionHeader List (object)
 + DocumentReference: CN1600001 (required, string)
@@ -3295,6 +3305,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + InterfaceStatus: y (string)
 + PostedDate: 20160101 (number)
 + DocumentDate: 20160101 (number)
++ DocumentReversed: PI1600011 (string)
++ AssociateDocument: PI1600012 (string)
 
 
 ## UnPostedTransaction (object)
