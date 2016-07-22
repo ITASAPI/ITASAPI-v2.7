@@ -1353,13 +1353,13 @@ Provides access to full accounting ledger by Document Reference.
 |AccountLedgerType|txx_acctype|`string`|1|`C`, `N` or `K`||
 |TransactionKey|txx_account, txx_ccy, txx_period, txx_postdate, txx_posttime|`string`|50|filter|`Composite Key` delimited by double pipe "&#124;&#124;"|
 |Account||`object`||see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|DocumentCurrency||`object`||see <a href="/#reference/nominal-reference-data/nominalaccount">Currency</a> endpoint||
+|DocumentCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |AccountingPeriod|txx_period|`number`||||
 |PostingDate|txx_postdate|`number`||||
 |PostingTime|txx_posttime|`number`||||
 |DocumentDate|txx_ddate|`datetime`||||
 |ValueDate|txx_vdate|`datetime`||||
-|FunctionalCurrency||`object`||see <a href="/#reference/nominal-reference-data/nominalaccount">Currency</a> endpoint||
+|FunctionalCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |AmountInDocumentCurrency|txx_amt|`number`||||
 |AmountInFunctionalCurrency|txx_namt|`number`||||
 |AmountInLocalCurrency|txx_namt2|`number`||||
@@ -1367,7 +1367,7 @@ Provides access to full accounting ledger by Document Reference.
 |RateOfExchangeType|txx_roetype|`string`|1|||
 |WeightInQtyCode|txx_units|`number`||||
 |ContractReference|txx_contractno|`string`|10|||
-|Expense||`object`||see <a href="/#reference/global-reference-data/currency-list">Currency</a> endpoint||
+|Expense||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |Department||`object`||see <a href="/#reference/nominal-reference-data/department">Department</a> endpoint||
 |PaymentTerm||`object`||see <a href="/#reference/physicals-reference-data/paymentterm-list">PaymentTerm</a> endpoint||
 |VatRate||`object`||see <a href="/#reference/nominal-reference-data/vat-rate-list">VATRate</a> endpoint||
@@ -1414,16 +1414,16 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |DocumentDate|dhl21_ddate|`datetime`||||
 |ValueDate|dhl21_vdate|`datetime`||||
 |Account||`object`||see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|DocumentCurrency||`object`||see <a href="/#reference/nominal-reference-data/nominalaccount">Currency</a> endpoint||
+|DocumentCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |AmountInDocumentCurrency|dhlxx_amount|`number`||||
-|FunctionalCurrency||`object`||see <a href="/#reference/nominal-reference-data/nominalaccount">Currency</a> endpoint||
+|FunctionalCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |AmountInFunctionalCurrency|dhlxx_namt|`number`||||
 |AmountInLocalCurrency|dhlxx_namt2|`number`||||
 |RateOfExchangeApplied|dhl21_roe|`number`|18,8|||
 |RateOfExchangeType|dhl21_roetype|`string`|1||‘M’, ‘D’|
 |WeightInQtyCode|dhlxx_qty|`number`||||
 |ContractReference|dhlxx_contractno|`string`|10|||
-|Expense||`object`||see <a href="/#reference/global-reference-data/currency-list">Currency</a> endpoint||
+|Expense||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |Department||`object`||see <a href="/#reference/nominal-reference-data/department">Department</a> endpoint||
 |PaymentTerm||`object`||see <a href="/#reference/physicals-reference-data/paymentterm-list">PaymentTerm</a> endpoint||
 |VatRate||`object`||see <a href="/#reference/nominal-reference-data/vat-rate-list">VATRate</a> endpoint||
