@@ -1339,7 +1339,7 @@ List of charter profiles.
     + Attributes (404 Response)
 
 
-# Group Accounting>Transactions
+# Group Accounting~Transactions
 Data Objects and endpoints providing access to accounting transactions generated through ITAS processes.
 
 ## Posted Transaction [/Accounting/{TradingEntityId}/Transaction/PostedTransaction/{DocumentReference}]
@@ -1566,7 +1566,7 @@ Document summary information including properties specific to integration requir
     + Attributes (404 Response)
 
 
-# Group Contract>Physical
+# Group Contract~Physical
 
 ## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
 Principle Physical Contract (agreement) details
@@ -1769,7 +1769,7 @@ List of Logistics information for Physical Contracts.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-# Group Finance>Cash
+# Group Finance~Cash
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
@@ -2166,7 +2166,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 
 
 
-# Group Inventory>Physicals>Stock Management
+# Group Inventory~Physicals~Stock Management
 Management activities of Stock Units (where represented by WIP Accounts).
 
 ## StockBatch [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{StockBatchId}]
@@ -2235,7 +2235,7 @@ Batch record information by Stock Unit.
     + Attributes (404 Response)
 
 
-# Group Inventory>Physicals>Stock Processing
+# Group Inventory~Physicals~Stock Processing
 Production Order processing services.
 
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
