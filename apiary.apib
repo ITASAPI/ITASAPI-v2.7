@@ -1339,7 +1339,7 @@ List of charter profiles.
     + Attributes (404 Response)
 
 
-# Group Accounting~Transactions
+# Group Accounting-Transactions
 Data Objects and endpoints providing access to accounting transactions generated through ITAS processes.
 
 ## Posted Transaction [/Accounting/{TradingEntityId}/Transaction/PostedTransaction/{DocumentReference}]
@@ -1566,7 +1566,7 @@ Document summary information including properties specific to integration requir
     + Attributes (404 Response)
 
 
-# Group Contract~Physical
+# Group Contract-Physical
 
 ## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
 Principle Physical Contract (agreement) details
@@ -1769,7 +1769,7 @@ List of Logistics information for Physical Contracts.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-# Group Finance~Cash
+# Group Finance-Cash
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
@@ -1951,7 +1951,7 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 
 
 
-# Group Inventory~Physicals~Order Scheduling
+# Group Inventory-Physicals-Order Scheduling
 Production Order scheduling services.
 
 ## DeliveryInOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/DeliveryInOrder/{ReleaseId}]
@@ -1961,7 +1961,7 @@ Orders (CallOffs) specifically representing incoming goods.
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|phys09_releasenr|`number`|0|||
-|ExpedOrderDetails||`object`||see <a href="/#reference/inventory~physicals~order-scheduling/expedcalloff">ExpedCallOff</a> endpoint||
+|ExpedOrderDetails||`object`||see <a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a> endpoint||
 |PumpingMemo|phys09_pumpmemo|`string`|250|||
 |ProcessComplete|phys09_processed|`boolean`|1|||
 |TargetStockUnitCode||`object`||see <a href="/#reference/wip-reference-data/stockunit">StockUnit</a> endpoint||
@@ -1992,10 +1992,10 @@ Orders (CallOffs) specifically representing outgoing goods.
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|phys09_releasenr|`number`|0|||
-|ExpedOrderDetails||`object`||see <a href="/#reference/inventory~physicals~order-scheduling/expedcalloff">ExpedCallOff</a> endpoint||
+|ExpedOrderDetails||`object`||see <a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a> endpoint||
 |PumpingMemo|phys09_pumpmemo|`string`|250|||
 |ProcessComplete|phys09_processed|`boolean`|1|||
-|SourceStockUnitCode||`[object]`|array of StockLoading objects|see <a href="/#reference/inventory~physicals~stock-processing/stockloading">StockLoading</a> endpoint||
+|SourceStockUnitCode||`[object]`|array of StockLoading objects|see <a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a> endpoint||
 
 + Request
     [AccessToken][]
@@ -2140,7 +2140,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 |TargetDate|phys09_targetdate|`string`||||
 |PumpingMemo|phys09_pumpmemo|`string`|250|||
 |ProcessComplete|phys09_processed|`boolean`|1|||
-|SourceStockUnitCode||`[object]`|array of StockLoading objects|see <a href="/#reference/inventory~physicals~stock-processing/stockloading">StockLoading</a> endpoint||
+|SourceStockUnitCode||`[object]`|array of StockLoading objects|see <a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a> endpoint||
 
 
 + Parameters
@@ -2166,7 +2166,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 
 
 
-# Group Inventory~Physicals~Stock Management
+# Group Inventory-Physicals-Stock Management
 Management activities of Stock Units (where represented by WIP Accounts).
 
 ## StockBatch [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{StockBatchId}]
