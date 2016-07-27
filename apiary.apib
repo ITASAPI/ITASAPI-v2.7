@@ -411,14 +411,14 @@ Codes relating to Nominal Ledger and related endpoints.
 Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
 ### List Departments [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DepartmentId|cmy102_dept|`string`|4||Unique Key|
-|DepartmentDescription|cmy102_descr|`string`|30|||
-|NominalCategoryCode|cmy102_category|`string`|2||must exist in xx_cmy50|
-|CountryCode|cmy102_ctry|`string`|3||must exist in gf_boec|
-|EDICode|cmy102_altcode|`string`|15|||
-|Status|cmy102_inactive|`string`|1||`O` or `F`|
+|DepartmentId|Department Code|`string`|4||Unique Key|
+|DepartmentDescription|Department Code Description|`string`|30|||
+|NominalCategoryId|Nominal Category Code|`string`|2|||
+|CountryCode|Department Country Code|`string`|3|||
+|EDICode|Department EDI Code|`string`|15|||
+|Status|Department Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -448,14 +448,14 @@ Codes used to segregate business sectors within a trading company, and can be ap
 ## Department [/ReferenceData/{TradingEntityId}/NominalLedger/Department/{DepartmentId}]
 Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
 ### Read Department [GET]
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DepartmentId|cmy102_dept|`string`|4||Unique Key|
-|DepartmentDescription|cmy102_descr|`string`|30|||
-|NominalCategory||`object`||see <a href="/#reference/nominal-reference-data/nominalcategory-list/list-nominalcategories">Nominal Category List</a> endpoint||
-|Country||`object`||see <a href="/#reference/global-reference-data/country-list/list-countries">Countries List</a> endpoint||
-|EDICode|cmy102_altcode|`string`|15|||
-|Status|cmy102_inactive|`string`|1||`O` or `F`|
+|DepartmentId|Department Code|`string`|4||Unique Key|
+|DepartmentDescription|Department Description|`string`|30|||
+|NominalCategory|Nominal Category Code, Description and Nominal Group|`object`||see <b><a href="/#reference/nominal-reference-data/nominalcategory-list/list-nominalcategories">Nominal Category List</a></b> endpoint||
+|Country|Country Code & Description|`object`||see <b><a href="/#reference/global-reference-data/country-list/list-countries">Countries List</a></b> endpoint||
+|EDICode|Department EDI Code|`string`|15|||
+|Status|Department Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
