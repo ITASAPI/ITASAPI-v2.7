@@ -88,7 +88,7 @@ Client Ledger Account profile.
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10||Required|
 |Title|Client Title|`string`|200||Required|
-|ClientType|Client Account Type & Description|`object`||see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint||
+|ClientType|Client Account Type Code & Description|`object`||see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilage Level|`number`|1|||
 |CanBeBuyer|Is Client a Buyer|`boolean`||||
@@ -275,10 +275,10 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 ## ClientType List [/ReferenceData/{TradingEntityId}/ClientLedger/ClientType/{Property}/{PropertyValue}]
 User-defined list of codes used for classification purposes on Client Account profile.
 ### List ClientTypes [GET]
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientTypeId|cmy107_code|`string`|1|||
-|ClientTypeDescription|cmy107_descr|`string`|50|||
+|ClientTypeId|Client Account Type Code|`string`|1|||
+|ClientTypeDescription|Client Account Type Description|`string`|50|||
 
 
 + Request
