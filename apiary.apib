@@ -724,19 +724,19 @@ Codes relating to Physicals Trading and related endpoints.
 Commodity/Product codes, used to identify goods
 ### List Commodities [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CommodityCodePart1|cmy03_commod|`string`|3|||
-|CommodityCodePart2|cmy03_origin|`string`|6|||
-|CommodityCodePart3|cmy03_grade|`string`|6|||
-|CommodityCodePart4|cmy03_code4|`string`|6|||
-|CommodityCodePart5|cmy03_code5|`string`|6|||
-|CommodityDescription|cmy03_descr|`string`|250|||
-|DocumentText|cmy03_text|`string`|4000|||
-|CommodityGroup|cmy03_groupcd|`string`|3|||
-|CountryCode|cmy03_ctry|`string`|3|||
-|EDICode|cmy03_cmynum|`string`|15|||
-|Status|cmy03_inactive|`string`|1||`O` or `F`|
+|CommodityCodePart1|Commodity Code|`string`|3|||
+|CommodityCodePart2|Commodity Origin|`string`|6|||
+|CommodityCodePart3|Commodity Grade|`string`|6|||
+|CommodityCodePart4|Commodity Code Section 4|`string`|6|||
+|CommodityCodePart5|Commodity Code Section 5|`string`|6|||
+|CommodityDescription|Commodity Description|`string`|250|||
+|DocumentText|Document Text|`string`|4000|||
+|CommodityGroup|Commodity Group Code|`string`|3|||
+|CountryCode|Commodity Country|`string`|3|||
+|EDICode|Commodity EDI Code|`string`|15|||
+|Status|Commodity Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -772,13 +772,13 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
 ### List ContractTerms [GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractTermId|cmy14_cterms|`string`|8|||
-|ContractTermDescription|cmy14_descr|`string`|50|||
-|DocumentText|cmy14_text|`string`|4000|||
-|EDICode|master_edicode|`string`|50|||
-|Status|cmy14_inactive|`string`|1||`O` or `F`|
+|ContractTermId|Contract Term Code|`string`|8|||
+|ContractTermDescription|Contract Term Code Description|`string`|50|||
+|DocumentText|Contract Document Text|`string`|4000|||
+|EDICode|Contract EDI Code|`string`|50|||
+|Status|Contract Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -808,12 +808,12 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
 Codes used to describe the units of packing applied in physical contracts.
 ### List PackingTypes [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PackingTypeId|cmy23_packcode|`string`|4||Unique Key |
-|PackingTypeDescription|cmy23_descr|`string`|70|||
-|EDICode|master_edicode|`string`|50|||
-|Status|cmy23_inactive|`string`|1||`O` or `F`|
+|PackingTypeId|Packing Type Code|`string`|4||Unique Key |
+|PackingTypeDescription|Packing Type Code Description|`string`|70|||
+|EDICode|Packing Type EDI Code|`string`|50|||
+|Status|Packing Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -844,14 +844,14 @@ Codes used to describe the units of packing applied in physical contracts.
 
 Codes used to describe terms of payment applied to physical contracts through to accounting
 ### List PaymentTerms [GET]
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PaymentTermId|cmy15_pterms|`string`|8|||
-|PaymentTermDescription|cmy15_descr|`string`|99|||
-|DocumentText|cmy15_text|`string`|8000|||
-|EDICode|cmy15_altcode|`string`|20|||
-|Status|cmy15_inactive|`string`|1||`O` or `F`|
-|NumberOfDaysCredit |cmy15_creditdays|`number`||`new`||
+|PaymentTermId|Payment Term Code|`string`|8|||
+|PaymentTermDescription|Payment Term Code Description|`string`|99|||
+|DocumentText|Payment Term Document Text|`string`|8000|||
+|EDICode|Payment Term EDI Code|`string`|20|||
+|Status|Payment Term Status|`string`|1||`O` or `F`|
+|NumberOfDaysCredit |Number of Days Credit|`number`||`new`||
 
 
 + Request
