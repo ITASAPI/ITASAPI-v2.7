@@ -40,12 +40,12 @@ Client Ledger Account profile.
 |ClientTypeCode|chr20_type|`string`|1|||
 |Status|chr20_status|`string`|1|||
 |PrivilegeLevel|chr20_priv|`number`|1|||
-|CanBeBuyer|chr20_canbeabuyer|`boolean`|0|||
-|CanBeSeller|chr20_canbeaseller|`boolean`|0|||
-|CanBeAgent|chr20_canbeaagent|`boolean`|0|||
-|CanBeShipper|chr20_canbeashipper|`boolean`|0|||
-|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`|0|||
-|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`|0|||
+|CanBeBuyer|chr20_canbeabuyer|`boolean`||||
+|CanBeSeller|chr20_canbeaseller|`boolean`||||
+|CanBeAgent|chr20_canbeaagent|`boolean`||||
+|CanBeShipper|chr20_canbeashipper|`boolean`||||
+|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`||||
+|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`||||
 |EDICode|chr20_ediaddr|`string`|50|||
 
 
@@ -86,34 +86,34 @@ Client Ledger Account profile.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|chr20_acc|`string`|10||required|
-|Title|chr20_title|`string`|200||required|
+|ClientAccountId|chr20_acc|`string`|10||Required|
+|Title|chr20_title|`string`|200||Required|
 |ClientType||`object`||see <a href="/#reference/client-reference-data/clienttype-list">Client Type List</a> endpoint||
 |Status|chr20_status|`string`|1|||
 |PrivilegeLevel|chr20_priv|`number`|1|||
-|CanBeBuyer|chr20_canbeabuyer|`boolean`|0|||
-|CanBeSeller|chr20_canbeaseller|`boolean`|0|||
-|CanBeAgent|chr20_canbeaagent|`boolean`|0|||
-|CanBeShipper|chr20_canbeashipper|`boolean`|0|||
-|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`|0|||
-|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`|0|||
-|GlobalTraderProgramMember|chr20_gtp|`boolean`|1|||
-|GroupAccountMember|chr20_group|`boolean`|1|||
+|CanBeBuyer|chr20_canbeabuyer|`boolean`||||
+|CanBeSeller|chr20_canbeaseller|`boolean`||||
+|CanBeAgent|chr20_canbeaagent|`boolean`||||
+|CanBeShipper|chr20_canbeashipper|`boolean`||||
+|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`||||
+|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`||||
+|GlobalTraderProgramMember|chr20_gtp|`boolean`||||
+|GroupAccountMember|chr20_group|`boolean`||||
 |HeadOfFamilyAccountCode|chr20_headcl|`string`|10|||
 |EDICode|chr20_ediaddr|`string`|50|||
-|Address|`object'|||see <a href="/#reference/data-object-definitions/address">Address</a> object||
+|Address||`object`||see <a href="/#reference/data-object-definitions/address">Address</a> object||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|chr20_limit_date|`datetime`|0|||
+|ClientDateLimitsApproved|chr20_limit_date|`datetime`||||
 |ClientLimitsCurrencyCode|chr20_clccy|`string`|3|||
 |ClientPaymentLimit|chr20_paylimit|`number`|18,8|||
 |ClientMarketDefaultRiskLimit|chr20_mktdefrisklimit|`number`|18,8|||
 |ClientCommitmentLimit|chr20_fwdlimit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|chr31_limit_date|`datetime`|0|||
+|FamilyDateLimitsApproved|chr31_limit_date|`datetime`||||
 |FamilyLimitsCurrencyCode|chr31_clccy|`string`|3|||
-|FamilyPaymentLimit|chr31_paylimit|`number`|0|||
-|FamilyMarketDefaultRiskLimit|chr31_mktdefrisklimit|`number`|0|||
-|FamilyCommitmentLimit|chr31_fwdlimit|`number`|0|||
+|FamilyPaymentLimit|chr31_paylimit|`number`||||
+|FamilyMarketDefaultRiskLimit|chr31_mktdefrisklimit|`number`||||
+|FamilyCommitmentLimit|chr31_fwdlimit|`number`||||
 
 
 + Request
@@ -2713,25 +2713,25 @@ The Transaction key is a five part key made up of the following values seperate 
 + ClientType (ClientType)
 + Status: O (string)
 + PrivilegeLevel: 9 (number) 
-+ CanBeBuyer: true (boolean) 
-+ CanBeSeller: true (boolean) 
-+ CanBeAgent: false (boolean) 
-+ CanBeShipper: false (boolean) 
-+ CanBeDerivativeClient: false (boolean) 
-+ CanBeDerivativeBroker: false (boolean) 
-+ GlobalTraderProgramMember: true (boolean)
-+ GroupAccountMember: false (boolean)
++ CanBeBuyer: 1 (boolean) 
++ CanBeSeller: 1 (boolean) 
++ CanBeAgent: 0 (boolean) 
++ CanBeShipper: 0 (boolean) 
++ CanBeDerivativeClient: 0 (boolean) 
++ CanBeDerivativeBroker: 0 (boolean) 
++ GlobalTraderProgramMember: 1 (boolean)
++ GroupAccountMember: 1 (boolean)
 + HeadOfFamilyAccountCode: HEAD.P (string)
 + EDICode: extABCDEF (string) 
 + ContactDetails (ContactDetails)
 + ClientLimits - Client limits section
-    + ClientDateLimitsApproved: `2015-12-01T00:00:00` (string)
+    + ClientDateLimitsApproved: `20151201` (string)
     + ClientLimitsCurrency (Currency)
     + ClientPaymentLimit: 0 (number)
     + ClientMarketDefaultRiskLimit: 250000 (number)
     + ClientCommitmentLimit: 175000 (number)
 + FamilyLimits - Family limits section
-    + FamilyDateLimitsApproved: `2016-02-20T00:00:00` (string)
+    + FamilyDateLimitsApproved: `20160220` (string)
     + FamilyLimitsCurrency (Currency)
     + FamilyPaymentLimit: 2000000 (number)
     + FamilyMarketDefaultRiskLimit: 3000000 (number)
@@ -2779,12 +2779,12 @@ The Transaction key is a five part key made up of the following values seperate 
 + ClientTypeCode: H (string)
 + Status: O (string)
 + PrivilegeLevel: 9 (number) 
-+ CanBeBuyer: true (boolean) 
-+ CanBeSeller: true (boolean) 
-+ CanBeAgent: true (boolean) 
-+ CanBeShipper: true (boolean) 
-+ CanBeDerivativeClient: false (boolean) 
-+ CanBeDerivativeBroker: false (boolean) 
++ CanBeBuyer: 1 (boolean) 
++ CanBeSeller: 1 (boolean) 
++ CanBeAgent: 1 (boolean) 
++ CanBeShipper: 1 (boolean) 
++ CanBeDerivativeClient: 0 (boolean) 
++ CanBeDerivativeBroker: 0 (boolean) 
 + EDICode: extABCDEF (string)
 
 ## ClientAccount Update (object)
