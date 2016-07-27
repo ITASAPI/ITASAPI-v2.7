@@ -98,7 +98,7 @@ Client Ledger Account profile.
 |CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
 |CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
 |GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
-|GroupAccountMember|Is Client a Group Account Memeber|`boolean`||||
+|GroupAccountMember|Is Client a Group Account Member|`boolean`||||
 |HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
 |EDICode|Account EDI Code|`string`|50|||
 |Address|Full Address,Email, Phone and Fax Number|`object`||see <b><a href="/#reference/data-object-definitions/address">Address</a></b> object||
@@ -136,45 +136,45 @@ Client Ledger Account profile.
 ### Create Update ClientAccount [PUT]
 For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|chr20_acc|`string`|10||required|
-|Title|chr20_title|`string`|200||required|
-|ClientTypeCode|chr20_type|`string`|1||required|
-|Status|chr20_status|`string`|1|||
-|PrivilegeLevel|chr20_priv|`number`|1|||
-|CanBeBuyer|chr20_canbeabuyer|`boolean`|0|||
-|CanBeSeller|chr20_canbeaseller|`boolean`|0|||
-|CanBeAgent|chr20_canbeaagent|`boolean`|0|||
-|CanBeShipper|chr20_canbeashipper|`boolean`|0|||
-|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`|0|||
-|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`|0|||
-|GlobalTraderProgramMember|chr20_gtp|`boolean`|1|||
-|GroupAccountMember|chr20_group|`boolean`|1|||
-|HeadOfFamilyAccountCode|chr20_headcl|`string`|10|||
-|EDICode|chr20_ediaddr|`string`|50|||
+|ClientAccountId|Client Account Code|`string`|10||Required|
+|Title|Client Title|`string`|200||Required|
+|ClientTypeCode|Client Account Type Code|`string`|1||Required|
+|Status|Account Status|`string`|1|||
+|PrivilegeLevel|Account Privilage Level|`number`|1|||
+|CanBeBuyer|Is Client a Buyer|`boolean`||||
+|CanBeSeller|Is Client a Seller|`boolean`||||
+|CanBeAgent|Is Client an Agent|`boolean`||||
+|CanBeShipper|Is Client a Shipper|`boolean`||||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
+|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
+|GroupAccountMember|Is Client a Group Account Memeber|`boolean`||||
+|HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
+|EDICode|Account EDI Code|`string`|50|||
 |<strong>Contact Details</strong>|
-|AddressLine1|chr20_addr1|`string`|60|||
-|AddressLine2|chr20_addr2|`string`|60|||
-|AddressLine3|chr20_addr3|`string`|60|||
-|AddressLine4|chr20_addr4|`string`|60|||
-|ZipCode|chr20_zipcode|`string`|40|||
-|CountryCode|chr20_geogcd|`string`|3||required|
-|EmailAddress|chr20_emailaddr|`string`|100|||
-|PhoneNumber|chr20_phoneno|`string`|40|||
-|FaxNumber|chr20_faxno|`string`|40|||
+|AddressLine1|Address Line 1|`string`|60|||
+|AddressLine2|Address Line 2|`string`|60|||
+|AddressLine3|Address Line 3|`string`|60|||
+|AddressLine4|Address Line 4|`string`|60|||
+|ZipCode|Zip Code|`string`|40|||
+|CountryCode|Country Code|`string`|3||Required|
+|EmailAddress|Email Address|`string`|100|||
+|PhoneNumber|Phone Number|`string`|40|||
+|FaxNumber|Fax Number|`string`|40|||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|chr20_limit_date|`datetime`|0|||
-|ClientLimitsCurrencyCode|chr20_clccy|`string`|3|||
-|ClientPaymentLimit|chr20_paylimit|`number`|18,8|||
-|ClientMarketDefaultRiskLimit|chr20_mktdefrisklimit|`number`|18,8|||
-|ClientCommitmentLimit|chr20_fwdlimit|`number`|18,8|||
+|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
+|ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
+|ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
+|ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|chr31_limit_date|`datetime`|0|||
-|FamilyLimitsCurrencyCode|chr31_clccy|`string`|3|||
-|FamilyPaymentLimit|chr31_paylimit|`number`|0|||
-|FamilyMarketDefaultRiskLimit|chr31_mktdefrisklimit|`number`|0|||
-|FamilyCommitmentLimit|chr31_fwdlimit|`number`|0|||
+|FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`||||
+|FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
+|FamilyPaymentLimit|Family Payment Limit|`number`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
 
 
 + Request (application/json)
@@ -209,45 +209,45 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 ### Delta Update ClientAccount [PATCH]
 Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only mandatory field, it cannot be changed but is used to cross reference the Id in the URI
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|chr20_acc|`string`|10||required|
-|Title|chr20_title|`string`|200|||
-|ClientTypeCode|chr20_type|`string`|1|||
-|Status|chr20_status|`string`|1|||
-|PrivilegeLevel|chr20_priv|`number`|1|||
-|CanBeBuyer|chr20_canbeabuyer|`boolean`|0|||
-|CanBeSeller|chr20_canbeaseller|`boolean`|0|||
-|CanBeAgent|chr20_canbeaagent|`boolean`|0|||
-|CanBeShipper|chr20_canbeashipper|`boolean`|0|||
-|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`|0|||
-|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`|0|||
-|GlobalTraderProgramMember|chr20_gtp|`boolean`|1|||
-|GroupAccountMember|chr20_group|`boolean`|1|||
-|HeadOfFamilyAccountCode|chr20_headcl|`string`|10|||
-|EDICode|chr20_ediaddr|`string`|50|||
+|ClientAccountId|Client Account Code|`string`|10||Required|
+|Title|Client Title|`string`|200|||
+|ClientTypeCode|Client Account Type Code|`string`|1|||
+|Status|Account Status|`string`|1|||
+|PrivilegeLevel|Account Privilage Level|`number`|1|||
+|CanBeBuyer|Is Client a Buyer|`boolean`||||
+|CanBeSeller|Is Client a Seller|`boolean`||||
+|CanBeAgent|Is Client an Agent|`boolean`||||
+|CanBeShipper|Is Client a Shipper|`boolean`||||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
+|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
+|GroupAccountMember|Is Client a Group Account Memeber|`boolean`||||
+|HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
+|EDICode|Account EDI Code|`string`|50|||
 |<strong>Contact Details</strong>|
-|AddressLine1|chr20_addr1|`string`|60|||
-|AddressLine2|chr20_addr2|`string`|60|||
-|AddressLine3|chr20_addr3|`string`|60|||
-|AddressLine4|chr20_addr4|`string`|60|||
-|ZipCode|chr20_zipcode|`string`|40|||
-|CountryCode|chr20_geogcd|`string`|3|||
-|EmailAddress|chr20_emailaddr|`string`|100|||
-|PhoneNumber|chr20_phoneno|`string`|40|||
-|FaxNumber|chr20_faxno|`string`|40|||
+|AddressLine1|Address Line 1|`string`|60|||
+|AddressLine2|Address Line 2|`string`|60|||
+|AddressLine3|Address Line 3|`string`|60|||
+|AddressLine4|Address Line 4|`string`|60|||
+|ZipCode|Zip Code|`string`|40|||
+|CountryCode|Country Code|`string`|3|||
+|EmailAddress|Email Address|`string`|100|||
+|PhoneNumber|Phone Number|`string`|40|||
+|FaxNumber|Fax Number|`string`|40|||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|chr20_limit_date|`datetime`|0|||
-|ClientLimitsCurrencyCode|chr20_clccy|`string`|3|||
-|ClientPaymentLimit|chr20_paylimit|`number`|18,8|||
-|ClientMarketDefaultRiskLimit|chr20_mktdefrisklimit|`number`|18,8|||
-|ClientCommitmentLimit|chr20_fwdlimit|`number`|18,8|||
+|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
+|ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
+|ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
+|ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|chr31_limit_date|`datetime`|0|||
-|FamilyLimitsCurrencyCode|chr31_clccy|`string`|3|||
-|FamilyPaymentLimit|chr31_paylimit|`number`|0|||
-|FamilyMarketDefaultRiskLimit|chr31_mktdefrisklimit|`number`|0|||
-|FamilyCommitmentLimit|chr31_fwdlimit|`number`|0|||
+|FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`||||
+|FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
+|FamilyPaymentLimit|Family Payment Limit|`number`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
 
 + Request (application/json)
     + Header
