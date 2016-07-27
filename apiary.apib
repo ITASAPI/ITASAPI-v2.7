@@ -33,7 +33,7 @@ Codes relating to the Client Ledger and related endpoints.
 Client Ledger Account profile.
 ### List ClientAccounts [GET]
 
-|Property|Description|Data Type|Maximum Length|Notes|Constraint|
+|Property|Description|Data Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10|||
 |Title|Client Title|`string`|200|||
@@ -84,36 +84,36 @@ Client Ledger Account profile.
 Client Ledger Account profile.
 ### Read ClientAccount [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|chr20_acc|`string`|10||Required|
-|Title|chr20_title|`string`|200||Required|
-|ClientType||`object`||see <a href="/#reference/client-reference-data/clienttype-list">Client Type List</a> endpoint||
-|Status|chr20_status|`string`|1|||
-|PrivilegeLevel|chr20_priv|`number`|1|||
-|CanBeBuyer|chr20_canbeabuyer|`boolean`||||
-|CanBeSeller|chr20_canbeaseller|`boolean`||||
-|CanBeAgent|chr20_canbeaagent|`boolean`||||
-|CanBeShipper|chr20_canbeashipper|`boolean`||||
-|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`||||
-|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`||||
-|GlobalTraderProgramMember|chr20_gtp|`boolean`||||
-|GroupAccountMember|chr20_group|`boolean`||||
-|HeadOfFamilyAccountCode|chr20_headcl|`string`|10|||
-|EDICode|chr20_ediaddr|`string`|50|||
-|Address||`object`||see <a href="/#reference/data-object-definitions/address">Address</a> object||
+|ClientAccountId|Client Account Code|`string`|10||Required|
+|Title|Client Title|`string`|200||Required|
+|ClientType|Client Account Type & Description|`object`||see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint||
+|Status|Account Status|`string`|1|||
+|PrivilegeLevel|Account Privilage Level|`number`|1|||
+|CanBeBuyer|Is Client a Buyer|`boolean`||||
+|CanBeSeller|Is Client a Seller|`boolean`||||
+|CanBeAgent|Is Client an Agent|`boolean`||||
+|CanBeShipper|Is Client a Shipper|`boolean`||||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
+|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
+|GroupAccountMember|Is Client a Group Account Memeber|`boolean`||||
+|HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
+|EDICode|Account EDI Code|`string`|50|||
+|Address||`object`|Full Address, Email, Phone and Fax Number |see <a href="/#reference/data-object-definitions/address">Address</a> object||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|chr20_limit_date|`datetime`||||
-|ClientLimitsCurrencyCode|chr20_clccy|`string`|3|||
-|ClientPaymentLimit|chr20_paylimit|`number`|18,8|||
-|ClientMarketDefaultRiskLimit|chr20_mktdefrisklimit|`number`|18,8|||
-|ClientCommitmentLimit|chr20_fwdlimit|`number`|18,8|||
+|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
+|ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
+|ClientPaymentLimit|Client Payment Limit|`number`|18,8|||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
+|ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|chr31_limit_date|`datetime`||||
-|FamilyLimitsCurrencyCode|chr31_clccy|`string`|3|||
-|FamilyPaymentLimit|chr31_paylimit|`number`||||
-|FamilyMarketDefaultRiskLimit|chr31_mktdefrisklimit|`number`||||
-|FamilyCommitmentLimit|chr31_fwdlimit|`number`||||
+|FamilyDateLimitsApproved|Date Family Limit Approved|`datetime`||||
+|FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
+|FamilyPaymentLimit|Family Payment Limit|`number`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
 
 
 + Request
