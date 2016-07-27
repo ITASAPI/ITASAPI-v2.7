@@ -35,18 +35,18 @@ Client Ledger Account profile.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|chr20_acc|`string`|10|||
-|Title|chr20_title|`string`|200|||
-|ClientTypeCode|chr20_type|`string`|1|||
-|Status|chr20_status|`string`|1|||
-|PrivilegeLevel|chr20_priv|`number`|1|||
-|CanBeBuyer|chr20_canbeabuyer|`boolean`||||
-|CanBeSeller|chr20_canbeaseller|`boolean`||||
-|CanBeAgent|chr20_canbeaagent|`boolean`||||
-|CanBeShipper|chr20_canbeashipper|`boolean`||||
-|CanBeDerivativeClient|chr20_canbeatermclient|`boolean`||||
-|CanBeDerivativeBroker|chr20_canbeatermbroker|`boolean`||||
-|EDICode|chr20_ediaddr|`string`|50|||
+|ClientAccountId|Client Account Code|`string`|10|||
+|Title|Client Title|`string`|200|||
+|ClientTypeCode|Client Account Type Code|`string`|1|||
+|Status|Account Status|`string`|1||`O` or `F`|
+|PrivilegeLevel|Account Privilage Level|`number`|1|||
+|CanBeBuyer|Is Client a Buyer|`boolean`||||
+|CanBeSeller|Is Client a Seller|`boolean`||||
+|CanBeAgent|Is Client an Agent|`boolean`||||
+|CanBeShipper|Is Client a Shipper|`boolean`||||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
+|EDICode|Account EDI Code|`string`|50|||
 
 
 + Request
