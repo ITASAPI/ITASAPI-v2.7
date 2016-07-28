@@ -33,7 +33,7 @@ Codes relating to the Client Ledger and related endpoints.
 Client Ledger Account profile.
 ### List ClientAccounts [GET]
 
-|Property|Description|Data Type|Max Length|Notes|Constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10|||
 |Title|Client Title|`string`|200|||
@@ -101,7 +101,7 @@ Client Ledger Account profile.
 |GroupAccountMember|Is Client a Group Account Member|`boolean`||||
 |HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
 |EDICode|Account EDI Code|`string`|50|||
-|Contact Details|see <b><a href="/#reference/data-object-definitions/address">Address</a></b> object|`object`||||
+|ContactDetails|see <b><a href="/#reference/data-object-definitions/address">Address</a></b> object|`object`||||
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
@@ -165,13 +165,13 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |FaxNumber|Fax Number|`string`|40|||
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
-|ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
+|ClientLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
 |ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
 |ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
 |ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`||||
-|FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
+|FamilyLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
 |FamilyPaymentLimit|Family Payment Limit|`number`||||
 |FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
 |FamilyCommitmentLimit|Family Commitment Limit|`number`||||
@@ -2747,8 +2747,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + CanBeSeller: true (boolean) 
 + CanBeAgent: true (boolean) 
 + CanBeShipper: true (boolean) 
-+ CanBeDerivativeClient: true (boolean) 
-+ CanBeDerivativeBroker: true (boolean) 
++ CanBeDerivativeClient: false (boolean) 
++ CanBeDerivativeBroker: false (boolean) 
 + GlobalTraderProgramMember: true (boolean)
 + GroupAccountMember: true (boolean)
 + HeadOfFamilyAccountCode: HEAD.P (string)
@@ -2797,8 +2797,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + CanBeSeller: true (boolean) 
 + CanBeAgent: true (boolean) 
 + CanBeShipper: true (boolean) 
-+ CanBeDerivativeClient: true (boolean) 
-+ CanBeDerivativeBroker: true (boolean) 
++ CanBeDerivativeClient: false (boolean) 
++ CanBeDerivativeBroker: false (boolean) 
 + GlobalTraderProgramMember: true (boolean)
 + GroupAccountMember: true (boolean)
 + HeadOfFamilyAccountCode: HEAD.P (string)
