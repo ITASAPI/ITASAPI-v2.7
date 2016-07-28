@@ -188,17 +188,17 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to create or update.
 
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + ClientAccountID: ABCDEF.P (string)
-        + Response (200 CreateResponse)
-
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data
             + ClientAccountID: ABCDEF.P (string)
-        + Response (201 UpdateResponse)
+        + Response (201 CreateResponse)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data
+            + ClientAccountID: ABCDEF.P (string)
+        + Response (200 UpdateResponse)
     
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -260,11 +260,11 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + ClientAccountId (required, string, `ABCDEF.P`) ... Code for client account to update.
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
             + ClientAccountID: ABCDEF.P (string)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
     
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -606,7 +606,7 @@ Nominal (General) Ledger Account profile.
     + Attributes 
         + Data
             + NominalAccountId: 1234.5678 (string)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -638,7 +638,7 @@ Nominal (General) Ledger Account profile.
     + Attributes 
         + Data
             + NominalAccountId: 1234.5678 (string)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1481,11 +1481,11 @@ Document summary information including properties specific to integration requir
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
     + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
             + DocumentReference: CN1600001 (string)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1515,11 +1515,11 @@ Document summary information including properties specific to integration requir
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
             + DocumentReference: CN1600001 (string)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1837,10 +1837,10 @@ Allows generic cash payments to be created between multiple accounts
 
     + Attributes (PayableReceivableManual)
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data (CashDocRefResponse)
-        + Response (200 CreateResponse)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1871,10 +1871,10 @@ Allows cash payments to be created on account of existing (posted) accounting do
 
     + Attributes (PayableReceivableOnAccount)
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data (CashDocRefResponse)
-        + Response (200 CreateResponse)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1903,10 +1903,10 @@ Allows generic cash receipts to be created between multiple accounts
 
     + Attributes (PayableReceivableManual)
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data (CashDocRefResponse)
-        + Response (200 CreateResponse)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1938,10 +1938,10 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 
     + Attributes (PayableReceivableOnAccount)
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Data (CashDocRefResponse)
-        + Response (200 CreateResponse)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -2268,11 +2268,11 @@ None.
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
     + ReleaseId (required, number, `123`)
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
             + ReleaseId: 123 (number)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -2329,12 +2329,12 @@ Remove current suggestions for Tanks and Create Stock Loadings
 
     + Attributes (array [StockLoadingFlat])
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
         + Attributes 
         + Data
             + ReleaseId: 123 (number)
-        + Response (200 CreateResponse)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -2429,11 +2429,11 @@ Information relating to the processing of the Order.
 
    + Attributes (StockMovement Flat)
 
-+ Response 201 (application/json; charset=utf-8)
++ Response 200 (application/json; charset=utf-8)
     + Attributes  
         + Data 
             + ReleaseId: 123 (number)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -2591,14 +2591,14 @@ The Transaction key is a five part key made up of the following values seperate 
 ## 200 SuccessResponse (object)
 + Value: Success (string)
 
-## 200 CreateResponse (object)
-+ Value: Created (string)
+## 200 UpdateResponse (object)
++ Value: Updated (string)
 
 ## 200 AuthoriseResponse (object)
 + Value: Authorised (string)
 
-## 201 UpdateResponse (object)
-+ Value: Updated (string)
+## 201 CreateResponse (object)
++ Value: Created (string)
 
 
 ## 400 Response (object)
