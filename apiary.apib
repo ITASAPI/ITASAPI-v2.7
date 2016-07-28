@@ -88,9 +88,9 @@ Client Ledger Account profile.
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10||Required|
 |Title|Client Title|`string`|200||Required|
-|ClientType|Client Account Type Code & Description|`object`||see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint||
+|ClientType|see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint|`object`||||
 |Status|Account Status|`string`|1||`O` or `F`|
-|PrivilegeLevel|Account Privilege Level|`number`|1|||
+|PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
 |CanBeBuyer|Is Client a Buyer|`boolean`||||
 |CanBeSeller|Is Client a Seller|`boolean`||||
 |CanBeAgent|Is Client an Agent|`boolean`||||
@@ -101,7 +101,7 @@ Client Ledger Account profile.
 |GroupAccountMember|Is Client a Group Account Member|`boolean`||||
 |HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
 |EDICode|Account EDI Code|`string`|50|||
-|Address|Full Address,Email, Phone and Fax Number|`object`||see <b><a href="/#reference/data-object-definitions/address">Address</a></b> object||
+|Contact Details|see <b><a href="/#reference/data-object-definitions/address">Address</a></b> object|`object`||||
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
@@ -2516,7 +2516,7 @@ A multipurpose object used by several endpoints.
 |AddressLine3|chr20_addr3|`string`|60|||
 |AddressLine4|chr20_addr4|`string`|60|||
 |ZipCode|chr20_zipcode|`string`|40|||
-|CountryCode|`object`|||see <a href="/#reference/data-object-definitions/addresscountry">AddressCountry</a> object||
+|CountryCode|see <a href="/#reference/data-object-definitions/addresscountry">AddressCountry</a> object|`object`||||
 |EmailAddress|chr20_emailaddr|`string`|100|||
 |PhoneNumber|chr20_phoneno|`string`|40|||
 |FaxNumber|chr20_faxno|`string`|40|||
@@ -2725,13 +2725,13 @@ The Transaction key is a five part key made up of the following values seperate 
 + EDICode: extABCDEF (string) 
 + ContactDetails (ContactDetails)
 + ClientLimits - Client limits section
-    + ClientDateLimitsApproved: `20151201` (string)
+    + ClientDateLimitsApproved: `2015-12-01T00:00:00` (string)
     + ClientLimitsCurrency (Currency)
     + ClientPaymentLimit: 0 (number)
     + ClientMarketDefaultRiskLimit: 250000 (number)
     + ClientCommitmentLimit: 175000 (number)
 + FamilyLimits - Family limits section
-    + FamilyDateLimitsApproved: `20160220` (string)
+    + FamilyDateLimitsApproved: `2015-12-01T00:00:00` (string)
     + FamilyLimitsCurrency (Currency)
     + FamilyPaymentLimit: 2000000 (number)
     + FamilyMarketDefaultRiskLimit: 3000000 (number)
