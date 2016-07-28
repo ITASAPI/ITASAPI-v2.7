@@ -734,7 +734,7 @@ Commodity/Product codes, used to identify goods
 |CommodityDescription|Commodity Description|`string`|250|||
 |DocumentText|Document Text|`string`|4000|||
 |CommodityGroup|Commodity Group Code|`string`|3|||
-|CountryCode|Commodity Country|`string`|3|||
+|CountryCode|Commodity Country Code|`string`|3|||
 |EDICode|Commodity EDI Code|`string`|15|||
 |Status|Commodity Status|`string`|1||`O` or `F`|
 
@@ -881,14 +881,14 @@ Codes used to describe terms of payment applied to physical contracts through to
 ## Port List [/ReferenceData/{TradingEntityId}/Physicals/Port/{Property}/{PropertyValue}]
 Codes used to identify physical port locations.
 ### List Ports [GET]
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PortId|cmy16_port|`string`|8|||
-|PortDescription|cmy16_descr|`string`|60|||
-|DocumentText|cmy16_text|`string`|4000|||
-|CountryCode|cmy16_ctry|`string`|3|||
-|EDICode|cmy16_localcode|`string`|10|||
-|Status|cmy16_inactive|`string`|1||`O` or `F`|
+|PortId|Port Code|`string`|8|||
+|PortDescription|Port Code Description|`string`|60|||
+|DocumentText|Port Document Text|`string`|4000|||
+|CountryCode|Port Country Code|`string`|3|||
+|EDICode|Port EDI Code|`string`|10|||
+|Status|Port Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -918,12 +918,12 @@ Codes used to identify physical port locations.
 Codes used to identify specific product qualities.
 ### List Samples [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|SampleId|cmy36_sample|`string`|4||Unique Key |
-|SampleDescription|cmy36_descr|`string`|50|||
-|DocumentText|cmy36_text|`string`|4000|||
-|NoOfCopiesRequired|cmy36_copies|`number`||||
+|SampleId|Sample Code|`string`|4||Unique Key |
+|SampleDescription|Sample Code Description|`string`|50|||
+|DocumentText|Sample Document Text|`string`|4000|||
+|NoOfCopiesRequired|Number of Copies Required|`number`||||
 
 
 + Request
@@ -952,10 +952,10 @@ Codes used to identify specific product qualities.
 Codes used to classify the status in terms of movement, useful for reporting purposes.
 ### List ShippingStatuses [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ShippingStatusId|cmy28_afi|`string`|2||Unique Key |
-|ShippingStatusDescription|cmy28_descr|`string`|50|||
+|ShippingStatusId|Shipping Status Code|`string`|2||Unique Key |
+|ShippingStatusDescription|Shipping Status Code Description|`string`|50|||
 
 + Request
     [AccessToken][]
@@ -983,11 +983,11 @@ Codes used to classify the status in terms of movement, useful for reporting pur
 Codes used to identify specific terminal location, useful for reporting purposes.
 ### List Terminals [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TerminalId|cmy21_terminal|`string`|4|||
-|TerminalDescription|cmy21_descr|`string`|50|||
-|CountryCode|cmy21_ctry|`string`|3||must exist in gf_boec|
+|TerminalId|Terminal Code|`string`|4|||
+|TerminalDescription|Terminal Code Description|`string`|50|||
+|CountryCode|Terminal Country Code|`string`|3|||
 
 
 + Request
@@ -1015,12 +1015,12 @@ Codes used to identify specific terminal location, useful for reporting purposes
 ## Vessel List [/ReferenceData/{TradingEntityId}/Physicals/Vessel/{Property}/{PropertyValue}]
 List of Vessel names that can be applied as part of any physical logistics strategy
 ### List Vessels [GET]
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|VesselId|ves01_vessel|`string`|30|||
-|VesselDescription|ves01_descr|`string`|50|||
-|CountryCode|ves01_flag|`string`|3|||
-|Status|ves01_inactive|`string`|1||`O` or `F`|
+|VesselId|Vessel Name|`string`|30|||
+|VesselDescription|Vessel Description|`string`|50|||
+|CountryCode|Vessel Country Code|`string`|3|||
+|Status|Vessel Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1050,15 +1050,15 @@ List of Vessel names that can be applied as part of any physical logistics strat
 Codes used to describe the units of measurement applied in physical contracts.
 ### List Weights [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|WeightId|cmy11_wtcode|`string`|4||Unique Key |
-|WeightDescription|cmy11_descr|`string`|50|||
-|DocumentText|cmy11_text|`string`|4000|||
-|DecimalPlacesPresentation|cmy11_plc|`number`||||
-|ConversionFactorToKilos|cmy11_conversion|`number`|24,17|||
-|EDICode|cmy11_altcode|`string`|50|||
-|Status|cmy11_inactive|`string`|1||`O` or `F`|
+|WeightId|Weight Code|`string`|4||Unique Key |
+|WeightDescription|Weight Code Description|`string`|50|||
+|DocumentText|Weight Document Text|`string`|4000|||
+|DecimalPlacesPresentation|Number of Decimal Places|`number`||||
+|ConversionFactorToKilos|Conversion Factor into Kilos|`number`|24,17|||
+|EDICode|Weight EDI Code|`string`|50|||
+|Status|Weight Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1094,7 +1094,7 @@ Charter profile – restricted by WIPAccountType of `C`.
 
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |CharterId|cna50_acc|`string`|11||required|
 |CharterDescription|cna50_descr|`string`|60||required|
