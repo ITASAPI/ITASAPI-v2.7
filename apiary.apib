@@ -840,7 +840,7 @@ Codes used to describe the units of packing applied in physical contracts.
     + Attributes (404 Response)
 
 ## PaymentTerm List [/ReferenceData/{TradingEntityId}/Physicals/PaymentTerm/{Property}/{PropertyValue}]
-`Updated` in release
+
 
 Codes used to describe terms of payment applied to physical contracts through to accounting
 ### List PaymentTerms [GET]
@@ -851,7 +851,7 @@ Codes used to describe terms of payment applied to physical contracts through to
 |DocumentText|Payment Term Document Text|`string`|8000|||
 |EDICode|Payment Term EDI Code|`string`|20|||
 |Status|Payment Term Status|`string`|1||`O` or `F`|
-|NumberOfDaysCredit |Number of Days Credit|`number`||`new`||
+|NumberOfDaysCredit |Number of Days Credit|`number`||||
 
 
 + Request
@@ -920,7 +920,7 @@ Codes used to identify specific product qualities.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|SampleId|Sample Code|`string`|4||Unique Key |
+|SampleId|Sample Code|`string`|4|||
 |SampleDescription|Sample Code Description|`string`|50|||
 |DocumentText|Sample Document Text|`string`|4000|||
 |NoOfCopiesRequired|Number of Copies Required|`number`||||
