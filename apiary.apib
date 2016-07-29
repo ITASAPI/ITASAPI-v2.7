@@ -165,8 +165,8 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |FaxNumber|Fax Number|`string`|40|||
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
-|ClientLimitsCurrency|Client Limits Currency Code|`string`|3|||
-|ClientPaymentLimitCode|Client Payment Limits|`number`|18,8|||
+|ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
+|ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
 |ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
 |ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
@@ -416,7 +416,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
 |DepartmentId|Department Code|`string`|4||Unique Key|
 |DepartmentDescription|Department Code Description|`string`|30|||
 |NominalCategoryId|Nominal Category Code|`string`|2|||
-|CountryCode|Department Country Code|`string`|3|||
+|CountryId|Department Country Code|`string`|3|||
 |EDICode|Department EDI Code|`string`|15|||
 |Status|Department Status|`string`|1||`O` or `F`|
 
@@ -452,8 +452,8 @@ Codes used to segregate business sectors within a trading company, and can be ap
 |--------|-----------|----|----------|-----|----------|
 |DepartmentId|Department Code|`string`|4||Unique Key|
 |DepartmentDescription|Department Description|`string`|30|||
-|NominalCategory|Nominal Category Code & Description and Nominal Group|`object`||see <b><a href="/#reference/nominal-reference-data/nominalcategory-list/list-nominalcategories">Nominal Category List</a></b> endpoint||
-|Country|Country Code & Description|`object`||see <b><a href="/#reference/global-reference-data/country-list/list-countries">Countries List</a></b> endpoint||
+|NominalCategory|see <b><a href="/#reference/nominal-reference-data/nominalcategory-list/list-nominalcategories">Nominal Category List</a></b> endpoint|`object`||||
+|Country|see <b><a href="/#reference/global-reference-data/country-list/list-countries">Countries List</a></b> endpoint|`object`||||
 |EDICode|Department EDI Code|`string`|15|||
 |Status|Department Status|`string`|1||`O` or `F`|
 
