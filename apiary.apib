@@ -954,7 +954,7 @@ Codes used to classify the status in terms of movement, useful for reporting pur
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ShippingStatusId|Shipping Status Code|`string`|2||Unique Key |
+|ShippingStatusId|Shipping Status Code|`string`|2|||
 |ShippingStatusDescription|Shipping Status Code Description|`string`|50|||
 
 + Request
@@ -987,7 +987,7 @@ Codes used to identify specific terminal location, useful for reporting purposes
 |--------|-----------|----|----------|-----|----------|
 |TerminalId|Terminal Code|`string`|4|||
 |TerminalDescription|Terminal Code Description|`string`|50|||
-|CountryCode|Terminal Country Code|`string`|3|||
+|CountryId|Terminal Country Code|`string`|3|||
 
 
 + Request
@@ -1052,7 +1052,7 @@ Codes used to describe the units of measurement applied in physical contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|WeightId|Weight Code|`string`|4||Unique Key |
+|WeightId|Weight Code|`string`|4|||
 |WeightDescription|Weight Code Description|`string`|50|||
 |DocumentText|Weight Document Text|`string`|4000|||
 |DecimalPlacesPresentation|Number of Decimal Places|`number`||||
@@ -3283,7 +3283,7 @@ The Transaction key is a five part key made up of the following values seperate 
 ## Terminal (object)
 + TerminalId: ADEL (string)
 + TerminalDescription: `Santos-Santa Adelia` (string)
-+ countryCode: BRA (string)
++ CountryId: BRA (string)
 
 ## TransactionHeader (object)
 + DocumentReference: CN1600001 (required, string)
