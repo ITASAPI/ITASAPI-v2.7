@@ -1104,7 +1104,7 @@ Charter profile – restricted by WIPAccountType of `C`.
 |ShipmentStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">ShippingStatus</a></b> endpoint|`object`||||
 |VesselReference|Vessel Reference|`string`|30|||
 |ShippingLine|Shipping Line delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|PrivilegeLevel|cna50_priv|`number`|||0-9|
+|PrivilegeLevel|cna50_priv|`number`|1||`0` to `9`|
 |EDICode|cna50_c2cacc|`string`|9|||
 |Status|cna50_status|`string`|1||`O` or `F`|
 
@@ -1134,17 +1134,17 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|CharterId|cna50_acc|`string`|11|filter||
-|CharterDescription|cna50_descr|`string`|60|||
-|DepartmentCode|cna50_dept|`string`|4|||
-|CommodityCode|phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
-|NominalAccountCode|cna50_liqplacc|`string`|9|||
-|ShipmentStatusCode|cna50_afi|`string`|2|filter||
-|VesselReference|cna50_vessel|`string`|30|||
-|ShippingLineCode|cna50_shippingline|`string`|10|||
-|PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|filter||
-|Status|cna50_status|`string`|1|filter|`O` or `F`|
+|CharterId|Charter Account Code|`string`|11|||
+|CharterDescription|Charter Description|`string`|60|||
+|DepartmentCode|Department Code|`string`|4|||
+|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|NominalAccountCode|Nominal Account Code|`string`|9|||
+|ShipmentStatusCode|Shipment Status Code|`string`|2|||
+|VesselReference|Vessel Reference|`string`|30|||
+|ShippingLineCode|Shipping Line Code|`string`|10|||
+|PrivilegeLevel|Charter Privilage Level|`number`|1||`0` to `9`|
+|EDICode|Charter EDI Code|`string`|9|||
+|Status|Charter Status|`string`|1||`O` or `F`|
 
 
 + Request
@@ -1156,7 +1156,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
        + Members
             + CharterId (optional, string) 
             + ShipmentStatusCode (optional, string)
-            + EdiCode (optional, string)
+            + EDICode (optional, string)
             + Status (optional, string)
     + PropertyValue (optional, string, `CHART01.000`)
 
