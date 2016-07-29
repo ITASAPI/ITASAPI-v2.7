@@ -138,7 +138,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account Code|`string`|10||Required, Unique Key|
+|ClientAccountId|Client Account Code|`string`|10||Required. Unique Key|
 |Title|Client Title|`string`|200||Required|
 |ClientTypeCode|Client Account Type Code|`string`|1||Required|
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -652,7 +652,7 @@ User-defined categorisation codes that can be applied to departments and bank ac
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalCategoryId|Nominal Category Code|`string`|2||Unique Key |
+|NominalCategoryId|Nominal Category Code|`string`|2|||
 |NominalCategoryDescription|Nominal Category Code Description|`string`|50|||
 |NominalGroup|Nominal Group|`string`|15|||
 
@@ -777,8 +777,8 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
 |ContractTermId|Contract Term Code|`string`|8|||
 |ContractTermDescription|Contract Term Code Description|`string`|50|||
 |DocumentText|Contract Document Text|`string`|4000|||
-|EDICode|Contract EDI Code|`string`|50|||
 |Status|Contract Status|`string`|1||`O` or `F`|
+|EDICode|Contract EDI Code|`string`|50|||
 
 + Request
     [AccessToken][]
@@ -810,7 +810,7 @@ Codes used to describe the units of packing applied in physical contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PackingTypeId|Packing Type Code|`string`|4||Unique Key |
+|PackingTypeId|Packing Type Code|`string`|4|||
 |PackingTypeDescription|Packing Type Code Description|`string`|70|||
 |EDICode|Packing Type EDI Code|`string`|50|||
 |Status|Packing Status|`string`|1||`O` or `F`|
@@ -2869,8 +2869,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + ContractTermId: COL (required, string)
 + ContractTermDescription: Colletion (required, string)
 + DocumentText: Document text example (string)
-+ EDICode: abc123 (string)
 + Status: F (string)
++ EDICode: abc123 (string)
 
 ## Country (object)
 + CountryId: GB (string)
@@ -3025,8 +3025,8 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## PackingType (object)
 + PackingTypeId: 1050 (string)
-+ PacingTypeDescription: In bags of 1050 kgs net (string)
-+ EDICode: ext12345678 (string) 
++ PackingTypeDescription: In bags of 1050 kgs net (string)
++ EdiCode: ext12345678 (string) 
 + Status: F (string)
 
 ## Pagination (object)
