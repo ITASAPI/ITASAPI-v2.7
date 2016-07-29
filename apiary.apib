@@ -39,7 +39,7 @@ Client Ledger Account profile.
 |Title|Client Title|`string`|200|||
 |ClientTypeCode|Client Account Type Code|`string`|1|||
 |Status|Account Status|`string`|1||`O` or `F`|
-|PrivilegeLevel|Account Privilege Level|`number`|1|||
+|PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
 |CanBeBuyer|Is Client a Buyer|`boolean`||||
 |CanBeSeller|Is Client a Seller|`boolean`||||
 |CanBeAgent|Is Client an Agent|`boolean`||||
@@ -141,8 +141,8 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |ClientAccountId|Client Account Code|`string`|10||Required|
 |Title|Client Title|`string`|200||Required|
 |ClientTypeCode|Client Account Type Code|`string`|1||Required|
-|Status|Account Status|`string`|1|||
-|PrivilegeLevel|Account Privilege Level|`number`|1|||
+|Status|Account Status|`string`|1||`O` or `F`|
+|PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
 |CanBeBuyer|Is Client a Buyer|`boolean`||||
 |CanBeSeller|Is Client a Seller|`boolean`||||
 |CanBeAgent|Is Client an Agent|`boolean`||||
@@ -214,8 +214,8 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 |ClientAccountId|Client Account Code|`string`|10||Required|
 |Title|Client Title|`string`|200|||
 |ClientTypeCode|Client Account Type Code|`string`|1|||
-|Status|Account Status|`string`|1|||
-|PrivilegeLevel|Account Privilege Level|`number`|1|||
+|Status|Account Status|`string`|1||`O` or `F`|
+|PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
 |CanBeBuyer|Is Client a Buyer|`boolean`||||
 |CanBeSeller|Is Client a Seller|`boolean`||||
 |CanBeAgent|Is Client an Agent|`boolean`||||
@@ -557,11 +557,11 @@ Nominal (General) Ledger Account profile.
 ### Read NominalAccount [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalAccountId|Nominal Account Code|`string`|9|||
+|NominalAccountId|Nominal Account Code|`string`|9||Unique Key|
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
 |BankAccount|Is a Bank Account|`boolean`||||
-|PrivilegeLevel|Nominal Account Privilege Level|`number`|1|||
+|PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
 
