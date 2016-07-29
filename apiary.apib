@@ -87,7 +87,7 @@ Client Ledger Account profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10||Required|
-|Title|Client Title|`string`|200||Required|
+|Title|Client Title|`string`|200|||
 |ClientType|see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint|`object`||||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
@@ -138,7 +138,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account Code|`string`|10||Required|
+|ClientAccountId|Client Account Code|`string`|10||Required, Unique Key|
 |Title|Client Title|`string`|200||Required|
 |ClientTypeCode|Client Account Type Code|`string`|1||Required|
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -207,7 +207,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
     + Attributes (404 Response)
 
 ### Delta Update ClientAccount [PATCH]
-Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only mandatory field, it cannot be changed but is used to cross reference the Id in the URI
+Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -413,7 +413,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DepartmentId|Department Code|`string`|4||Unique Key|
+|DepartmentId|Department Code|`string`|4|||
 |DepartmentDescription|Department Code Description|`string`|30|||
 |NominalCategoryId|Nominal Category Code|`string`|2|||
 |CountryId|Department Country Code|`string`|3|||
@@ -450,7 +450,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
 ### Read Department [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DepartmentId|Department Code|`string`|4||Unique Key|
+|DepartmentId|Department Code|`string`|4||Required|
 |DepartmentDescription|Department Description|`string`|30|||
 |NominalCategory|see <b><a href="/#reference/nominal-reference-data/nominalcategory-list/list-nominalcategories">Nominal Category List</a></b> endpoint|`object`||||
 |Country|see <b><a href="/#reference/global-reference-data/country-list/list-countries">Countries List</a></b> endpoint|`object`||||
@@ -522,7 +522,7 @@ Nominal (General) Ledger Account profile.
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
 |BankAccount|Is a Bank Account|`boolean`||||
-|PrivilegeLevel|Nominal Account Privilege Level|`number`|1|||
+|PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
 
@@ -557,7 +557,7 @@ Nominal (General) Ledger Account profile.
 ### Read NominalAccount [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalAccountId|Nominal Account Code|`string`|9||Unique Key|
+|NominalAccountId|Nominal Account Code|`string`|9||Required|
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
 |BankAccount|Is a Bank Account|`boolean`||||
@@ -587,7 +587,7 @@ Nominal (General) Ledger Account profile.
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account Code|`string`|9||Required|
 |BankAccount|Is a Bank Account|`boolean`||||
-|PrivilegeLevel|Nominal Account Privilege Level|`number`|1|||
+|PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
 
@@ -619,7 +619,7 @@ Nominal (General) Ledger Account profile.
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account Code|`string`|9||Required|
 |BankAccount|Is a Bank Account|`boolean`||||
-|PrivilegeLevel|Nominal Account Privilege Level|`number`|1|||
+|PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
 
