@@ -1104,9 +1104,9 @@ Charter profile – restricted by WIPAccountType of `C`.
 |ShipmentStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">ShippingStatus</a></b> endpoint|`object`||||
 |VesselReference|Vessel Reference|`string`|30|||
 |ShippingLine|Shipping Line delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|PrivilegeLevel|cna50_priv|`number`|1||`0` to `9`|
-|EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1||`O` or `F`|
+|PrivilegeLevel|Charter Acccount Privilege Level|`number`|1||`0` to `9`|
+|EDICode|Charter Account EDI Code|`string`|9|||
+|Status|Charter Account Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1142,9 +1142,9 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 |ShipmentStatusCode|Shipment Status Code|`string`|2|||
 |VesselReference|Vessel Reference|`string`|30|||
 |ShippingLineCode|Shipping Line Code|`string`|10|||
-|PrivilegeLevel|Charter Privilege Level|`number`|1||`0` to `9`|
-|EDICode|Charter EDI Code|`string`|9|||
-|Status|Charter Status|`string`|1||`O` or `F`|
+|PrivilegeLevel|Charter Account Privilege Level|`number`|1||`0` to `9`|
+|EDICode|Charter Account EDI Code|`string`|9|||
+|Status|Charter Account Status|`string`|1||`O` or `F`|
 
 
 + Request
@@ -1182,7 +1182,7 @@ Stock Account profile - restricted by WIPAccountType of `S`.
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |StockUnitId|Stock Unit Account Code|`string`|11||Required|
-|StockUnitDescription|Stock Unit Description|`string`|60|||
+|StockUnitDescription|Stock Unit Account Description|`string`|60|||
 |Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list/list-terminals">Terminals List</a></b> endpoint|`object`||||
 |Department|see <b><a href="/#reference/nominal-reference-data/department/department-list">Department</a></b> endpoint|`object`||||
 |Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
@@ -1190,9 +1190,9 @@ Stock Account profile - restricted by WIPAccountType of `S`.
 |StockOwner|Stock Owner delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |ReleaseState|Release State|`number`||||
 |CurrentStatus|Stock Unit Current Status|`number`||||
-|PrivilegeLevel|Stock Unit Privilege Level|`number`|1||`0` to `9`|
-|EDICode|Stock Unit EDI Code|`string`|9|||
-|Status|Stock Unit Status|`string`|1||`O` or `F`|
+|PrivilegeLevel|Stock Unit Account Privilege Level|`number`|1||`0` to `9`|
+|EDICode|Stock Unit Account EDI Code|`string`|9|||
+|Status|Stock Unit Account Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1219,18 +1219,18 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|cna50_acc|`string`|11|filter||
-|StockUnitDescription|cna50_descr|`string`|60|||
-|TerminalCode|cna50_terminal|`string`|4||must exist in xx_cmy21|
-|DepartmentCode|cna50_dept|`string`|4||must exist in xx_cmy102|
-|CommodityCode|phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
-|NominalAccountCode|cna50_liqplacc|`string`|9||must exist in xx_nhr20|
-|StockOwnerCode|cna50_vendor|`string`|50||must exist in xx_chr20|
-|ReleaseState|cna50_siemenrel|`number`||||
-|CurrentStatus|cna50_siemenstatus|`number`||||
-|PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|filter||
-|Status|cna50_status|`string`|1|filter|`O` or `F`|
+|StockUnitId|Stock Unit Account Code|`string`|11|||
+|StockUnitDescription|Stock Unit Account Description|`string`|60|||
+|TerminalCode|Terminal Code|`string`|4|||
+|DepartmentCode|Department Code|`string`|4|||
+|NominalAccountCode|Nominal Account Code|`string`|9|||
+|CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|StockOwnerCode|Stock Owner Account Code|`string`|50|||
+|ReleaseState|Release State|`number`||||
+|CurrentStatus|Stock Unit Current Status|`number`||||
+|PrivilegeLevel|Stock Unit Account Privilege Level|`number`|||`0` to `9`|
+|EDICode|Stock Unit Account EDI Code|`string`|9|||
+|Status|Stock Unit Account Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1239,9 +1239,9 @@ Stock Account profile – restricted by WIPAccountType of `S`.
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
     + Property (optional, enum[string]) ... identify property name to filter by 
        + Members
-            + StockunitId (optional, string) 
+            + StockUnitId (optional, string) 
             + TerminalCode (optional, string)
-            + EdiCode (optional, string)
+            + EDICode (optional, string)
             + Status (optional, string)
     + PropertyValue (optional, string, `1111.MEP`)
 
@@ -3271,8 +3271,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + StockUnitDescription: `MEPACCRUE - East Africa Dept` (string)
 + TerminalCode: ADEL (string)
 + DepartmentCode: 5100 (string)
++ NominalAccountCode: 0510.1000 (string)
 + CommodityCode: `ORG||S1-45||FAIRT||QWE||RTY` (string)
-+ NominalAccountCode: 00040444.P (string)
 + StockOwnerCode: ABCDEF.S (string)
 + ReleaseState: 3 (number)
 + CurrentStatus: 1 (number)
