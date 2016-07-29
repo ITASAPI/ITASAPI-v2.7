@@ -1228,7 +1228,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 |StockOwnerCode|Stock Owner Account Code|`string`|50|||
 |ReleaseState|Release State|`number`||||
 |CurrentStatus|Stock Unit Current Status|`number`||||
-|PrivilegeLevel|Stock Unit Account Privilege Level|`number`|||`0` to `9`|
+|PrivilegeLevel|Stock Unit Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Stock Unit Account EDI Code|`string`|9|||
 |Status|Stock Unit Account Status|`string`|1||`O` or `F`|
 
@@ -1266,14 +1266,14 @@ Charter profile
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|cna50_acc|`string`|11||required|
-|WIPAccountDescription|cna50_descr|`string`|60||required|
-|WIPAccountType|cna50_acctype|`string`|1|||
-|Department||`object`|4|see <a href="/#reference/nominal-reference-data/department/read-department">Department</a> object||
-|NominalAccount||`object`|9|see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1||`O` or `F`|
+|WIPAccountId|WIP Account Code|`string`|11||Required|
+|WIPAccountDescription|WIP Account Description|`string`|60|||
+|WIPAccountType|WIP Account Type|`string`|1|||
+|Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> object|`object`||||
+|NominalAccount|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|PrivilegeLevel|WIP Account Privilege Level|`number`|1||`0`to `9`|
+|EDICode|WIP Account EDI Code|`string`|9|||
+|Status|WIP Account Status|`string`|1||`O` or `F`|
 
 
 + Request
@@ -1302,14 +1302,14 @@ List of charter profiles.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|cna50_acc|`string`|11|filter|required|
-|WIPAccountDescription|cna50_descr|`string`|60||required|
-|WIPAccountType|cna50_acctype|`string`|1|filter||
-|DepartmentCode|cna50_dept|`string`|4|||
-|NominalAccountCode|cna50_liqplacc|`string`|9|||
-|PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|filter||
-|Status|cna50_status|`string`|1|filter|`O` or `F`|
+|WIPAccountId|WIP Account Code|`string`|11|||
+|WIPAccountDescription|WIP Account Description|`string`|60|||
+|WIPAccountType|WIP Account Type|`string`|1|||
+|DepartmentCode|Department Code|`string`|4|||
+|NominalAccountCode|Nominal Account Code|`string`|9|||
+|PrivilegeLevel|WIP Account Privilege Level|`number`|1||`0` to `9`|
+|EDICode|WIP Account EDI Code|`string`|9|||
+|Status|WIP Account Status|`string`|1||`O` or `F`|
 
 
 
@@ -1322,7 +1322,7 @@ List of charter profiles.
        + Members
             + WIPAccountId (optional, string) 
             + WIPAccountType (optional, string)
-            + EdiCode (optional, string)
+            + EDICode (optional, string)
             + Status (optional, string)
     + PropertyValue (optional, string, `1111.MEP`)
 
