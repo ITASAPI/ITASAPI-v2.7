@@ -1675,7 +1675,7 @@ Broker commissions held against Physical Contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|Contract Code|`string`|10|||
+|ContractId|Contract Code|`string`|10||Required|
 |UniqueId|Unique ID Number|`number`||||
 |AgentAccount|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
 |AgentReference|Agent Reference|`string`|40|||
@@ -1736,16 +1736,15 @@ List of Broker commissions held against Physical Contracts.
 ## Physical Trade Shipments List [/Contract/{TradingEntityId}/Physical/PhysicalTradeShipment/{Property}/{PropertyValue}]
 List of Logistics information for Physical Contracts.
 ### List Physical Trade Shipment [GET]
-`Updated` in release 2.5
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|phys01_contract|`string`|10|||
-|VesselReference|phys01_vessel|`string`|30|||
-|BillOfLadingDate|phys01_bldate|`datetime`||||
-|BillOfLadingReference|phys01_blref|`string`|255|||
-|DocumentsAcknowledged|phys01_docsrec|`boolean`||`new`||
-|DocumentsAcknowledgedDate |phys01_docsrecdate|`datetime`||`new`||
+|ContractId|Contract Code|`string`|10|||
+|VesselReference|Vessel Reference|`string`|30|||
+|BillOfLadingDate|Bill of Lading Date|`datetime`||||
+|BillOfLadingReference|Bill of Lading Reference|`string`|255|||
+|DocumentsAcknowledged|Are Documents Aknowledged|`boolean`||||
+|DocumentsAcknowledgedDate|Date Documents Aknowledged|`datetime`||||
 
 
 + Request
@@ -3112,10 +3111,10 @@ The Transaction key is a five part key made up of the following values seperate 
 ## PhysicalTradeShipment List (object)
 + ContractId: P00004.000 (string)
 + VesselReference: abc123 (string)
-+ BillOfLadingDate: 20161010 (string)
++ BillOfLadingDate: `2015-07-01T00:00:00` (string)
 + BillOfLadingReference: 72952N (string)
 + DocumentsAcknowledged: true (boolean)
-+ DocumentsAcknowledgedDate : 20160707 (string)
++ DocumentsAcknowledgedDate : `2015-07-01T00:00:00` (string)
 
 
 ## Port (object)
