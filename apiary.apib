@@ -1467,8 +1467,8 @@ Document summary information including properties specific to integration requir
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
-|DocumentReversed|xtx01_reverseddocref|`string`|9|||
-|AssociateDocument|xtx01_associatedocref|`string`|9|||
+|DocumentReversed|Document Reversed Reference|`string`|9|||
+|AssociateDocument|Associate Document Reference|`string`|9|||
 
 + Request (application/json)
     + Header
@@ -1496,13 +1496,13 @@ Document summary information including properties specific to integration requir
 ### Delta Update Transaction Header [PATCH]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|xtx01_docref|`string`|9||required|
-|EDICode|xtx01_axdocref|`string`|25|||
-|InterfaceStatus|xtx01_senttocashman|`string`|1|||
-|DocumentReversed|xtx01_reverseddocref|`string`|9|||
-|AssociateDocument|xtx01_associatedocref|`string`|9|||
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+|EDICode|Transaction EDI Code|`string`|25|||
+|InterfaceStatus|Transaction Interface Status|`string`|1|||
+|DocumentReversed|Document Reversed Reference|`string`|9|||
+|AssociateDocument|Associate Document Reference|`string`|9|||
 
 + Request (application/json)
     + Header
@@ -1532,15 +1532,15 @@ Document summary information including properties specific to integration requir
 ### List Transaction Headers [GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|xtx01_docref|`string`|9||required|
-|EDICode|xtx01_axdocref|`string`|25|||
-|InterfaceStatus|xtx01_senttocashman|`string`|1|||
-|PostedDate|xtx01_postdatetime|`datetime`||||
-|DocumentDate|xtx01_txxddate|`datetime`||||
-|DocumentReversed|xtx01_reverseddocref|`string`|9|||
-|AssociateDocument|xtx01_associatedocref|`string`|9|||
+|PostedDate|Transaction Posted Date|`datetime`||||
+|DocumentDate|Transaction Docuement Date|`datetime`||||
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+|EDICode|Document EDI Code|`string`|25|||
+|InterfaceStatus|Transaction Interface Status|`string`|1|||
+|DocumentReversed|Document Reversed Reference|`string`|9|||
+|AssociateDocument|Associate Document Reference|`string`|9|||
 
 + Request
     [AccessToken][]
@@ -3288,23 +3288,23 @@ The Transaction key is a five part key made up of the following values seperate 
 ## TransactionHeader (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
-+ InterfaceStatus: y (string)
++ InterfaceStatus: Y (string)
 + DocumentReversed: PI1600011 (string)
 + AssociateDocument: PI1600012 (string)
 
 ## TransactionHeaderDelta (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
-+ InterfaceStatus: y (string)
++ InterfaceStatus: Y (string)
 + DocumentReversed: PI1600011 (string)
 + AssociateDocument: PI1600012 (string)
 
 ## TransactionHeader List (object)
++ PostedDate: `2015-07-01T00:00:00` (string)
++ DocumentDate: `2015-07-01T00:00:00` (string)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
-+ InterfaceStatus: y (string)
-+ PostedDate: 20160101 (number)
-+ DocumentDate: 20160101 (number)
++ InterfaceStatus: Y (string)
 + DocumentReversed: PI1600011 (string)
 + AssociateDocument: PI1600012 (string)
 
