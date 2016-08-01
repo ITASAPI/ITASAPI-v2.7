@@ -1637,7 +1637,7 @@ List of Principle Physical Contracts (agreements)
 |OriginalContractQuantity|Original Contract Quantity|`number`||||
 |CurrentContractQuantity|Current Contract Quantity|`number`||||
 |ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Is Contract Approved|`boolean`|1|||
+|ContractApproved|Is Contract Approved|`boolean`||||
 
 
 
@@ -1673,11 +1673,12 @@ Broker commissions held against Physical Contracts.
 ### Read Physical Trade Commission [GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|phys02_contract|`string`|10|||
-|AgentAccount|phys02_agent|`object`|10|||
-|AgentReference|phys02_agref|`string`|40|||
+|ContractId|Contract Code|`string`|10|||
+|UniqueId|Unique ID Number|`number`||||
+|AgentAccount|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|AgentReference|Agent Reference|`string`|40|||
 
 + Request
     [AccessToken][]
@@ -1702,11 +1703,12 @@ List of Broker commissions held against Physical Contracts.
 ### List Physical Trade Commissions [GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|phys02_contract|`string`|10|||
-|AgentAccountCode|phys02_agent|`string`|10|||
-|AgentReference|phys02_agref|`string`|40|||
+|ContractId|Contract Code|`string`|10|||
+|UniqueId|Unique ID Number|`number`||||
+|AgentAccountCode|Agent Account Code|`string`|10|||
+|AgentReference|Agent Reference|`string`|40|||
 
 + Request
     [AccessToken][]
@@ -3098,16 +3100,14 @@ The Transaction key is a five part key made up of the following values seperate 
 + ContractId: P00004.000 (string)
 + UniqueId: 1 (number)
 + AgentAccount  (AccountHeader)
-+ AgentReference: AGFARM01.P (string)
-+ DocumentsAcknowledged: true (string)
-+ DocumentsAcknowledgedDate: 20161010 (string)
++ AgentReference: abcdefg (string)
 
 
 ## PhysicalTradeCommission List (object)
 + ContractId: P00004.000 (string)
 + UniqueId: 1 (number)
-+ AgentAccountCode: abc123 (string)
-+ AgentReference: AGFARM01.P (string)
++ AgentAccountCode: AGFARM01.P (string)
++ AgentReference: abcdefg (string)
 
 ## PhysicalTradeShipment List (object)
 + ContractId: P00004.000 (string)
