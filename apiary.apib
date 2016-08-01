@@ -1781,9 +1781,9 @@ Authorise an entity to be added to the Posting process.
 <strong>URI Parameters</strong>
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|dhl21_docref|`string`|9|`required'||
+|DocumentReference|Document Reference|`string`|9||`Required`|
 
 <strong>Body Parameters</strong>
 <br />
@@ -1823,10 +1823,10 @@ Allows generic cash payments to be created between multiple accounts
 ### Create PayableManual [POST]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
-|AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
+|DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
+|AccountDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`|||Required|
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
@@ -1854,12 +1854,12 @@ Allows cash payments to be created on account of existing (posted) accounting do
 ### Create PayableOnAccount [POST]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
-|BankDetails||`object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
-|TransactionsToMatch||[array] of `object`||see <a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a> object|`required`|
-|OtherCosts||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object||
+|DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
+|BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+|TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
+|OtherCosts|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`||||
 
 
 + Parameters
@@ -1889,10 +1889,10 @@ Allows generic cash receipts to be created between multiple accounts
 ### Create ReceivableManual [POST]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
-|AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
+|DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
+|AccountDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`|||Required|
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
@@ -1921,12 +1921,12 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 ### Create ReceivableOnAccount [POST]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
-|BankDetails||`object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
-|TransactionsToMatch||[array] of `object`||see <a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a> object|`required`|
-|OtherCosts||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object||
+|DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
+|BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+|TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
+|OtherCosts|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`||||
 
 
 + Parameters
