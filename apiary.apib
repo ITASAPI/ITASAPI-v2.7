@@ -1375,7 +1375,7 @@ Provides access to full accounting ledger by Document Reference.
 |Narrative|Narrative|`string`|30|||
 |MarketReference|Market Reference|`string`|8|||
 |PromptMonth|Transaction Prompt Month|`number`||||
-|OptionType|Transaction Option Type Code|`string`|1||`C`, `P` or ``|
+|OptionType|Transaction Option Type Code|`string`|1||`C`, `P` or ` `|
 |CommodityReference|Transaction Commodity Reference|`string`|15|||
 |TransactionIsMatched|Is Transaction Matched|`boolean`||||
 |PreMatchDocumentReference|Pre Matched Document Reference Code|`string`|9|||
@@ -1416,23 +1416,23 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
-|FunctionalCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
-|AmountInFunctionalCurrency|dhlxx_namt|`number`||||
-|AmountInLocalCurrency|dhlxx_namt2|`number`||||
-|RateOfExchangeApplied|dhl21_roe|`number`|18,8|||
-|RateOfExchangeType|dhl21_roetype|`string`|1||‘M’, ‘D’|
-|WeightInQtyCode|dhlxx_qty|`number`||||
-|ContractReference|dhlxx_contractno|`string`|10|||
-|Expense||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
-|Department||`object`||see <a href="/#reference/nominal-reference-data/department">Department</a> endpoint||
-|PaymentTerm||`object`||see <a href="/#reference/physicals-reference-data/paymentterm-list">PaymentTerm</a> endpoint||
-|VatRate||`object`||see <a href="/#reference/nominal-reference-data/vat-rate-list">VATRate</a> endpoint||
-|ClientReference|dhlxx_cliref|`string`|25|||
-|Narrative|dhlxx_narr|`string`|30|||
-|MarketReference|dhl21_comod|`string`|8|||
-|PromptMonth|dhl21_prompt|`number`||||
-|OptionType|dhl21_extype|`string`|1||‘C’, ‘P’, ‘ ‘|
-|CommodityReference|dhlxx_component|`string`|15|||
+|FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
+|AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
+|AmountInLocalCurrency|Transaction Account in Local Currency|`number`||||
+|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`|18,8|||
+|RateOfExchangeType|Transaction Rate of Exchange Type Code|`string`|1||`M` or `D`|
+|WeightInQtyCode|Weight in Quantity Code|`number`||||
+|ContractReference|Contract Reference Code|`string`|10|||
+|Expense|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
+|Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
+|PaymentTerm|see <b><a href="/#reference/physicals-reference-data/paymentterm-list">PaymentTerm</a></b> endpoint|`object`||||
+|VatRate|see <b><a href="/#reference/nominal-reference-data/vat-rate-list">VATRate</a></b> endpoint|`object`||||
+|ClientReference|Client Reference|`string`|25|||
+|Narrative|Narrative|`string`|30|||
+|MarketReference|Market Referece|`string`|8|||
+|PromptMonth|Transaction Prompt Month|`number`||||
+|OptionType|Transaction Option Type|`string`|1||`C`, `P` or ` `|
+|CommodityReference|Transaction Commodity Reference|`string`|15|||
 
 
 + Request
