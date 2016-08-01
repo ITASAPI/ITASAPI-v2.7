@@ -1783,7 +1783,7 @@ Authorise an entity to be added to the Posting process.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|Document Reference|`string`|9||`Required`|
+|DocumentReference|Document Reference|`string`|9||Required|
 
 <strong>Body Parameters</strong>
 <br />
@@ -1959,13 +1959,13 @@ Production Order scheduling services.
 Orders (CallOffs) specifically representing incoming goods.
 ### Read DeliveryInOrder [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys09_releasenr|`number`|0|||
-|ExpedOrderDetails||`object`||see <a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a> endpoint||
-|PumpingMemo|phys09_pumpmemo|`string`|250|||
-|ProcessComplete|phys09_processed|`boolean`|1|||
-|TargetStockUnitCode||`object`||see <a href="/#reference/wip-reference-data/stockunit">StockUnit</a> endpoint||
+|ReleaseId|Release Code|`number`|||Required|
+|ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
+|PumpingMemo|Pumping Memo|`string`|250|||
+|ProcessComplete|Is Process Complete|`boolean`||||
+|TargetStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 
 
 + Request
