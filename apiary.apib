@@ -1536,7 +1536,7 @@ Document summary information including properties specific to integration requir
 |--------|-----------|----|----------|-----|----------|
 |PostedDate|Transaction Posted Date|`datetime`||||
 |DocumentDate|Transaction Docuement Date|`datetime`||||
-|DocumentReference|Transaction Document Reference|`string`|9||Required|
+|DocumentReference|Transaction Document Reference|`string`|9|||
 |EDICode|Document EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
 |DocumentReversed|Document Reversed Reference|`string`|9|||
@@ -1620,24 +1620,24 @@ List of Principle Physical Contracts (agreements)
 
 |property|description|type|max length|notes|constraint|
 |-------|-----------|----|----------|-----|----------|
-|ContractId|phys01_contract|`string`|10|filter|`KEY`|
-|ContractType|phys01_contype|`string`|1||‘P’, ‘S’|
-|ContractDate|phys01_condate|`datetime`||||
-|DepartmentCode|phys01_dept|`string`|4|filter||
-|TraderCode|phys01_trader|`string`|3|filter||
-|ClientReference|phys01_clref|`string`|40|||
-|BuyerAccountCode|phys01_buyer|`string`|10|||
-|SellerAccountCode|phys01_seller|`string`|10|||
-|CounterpartyCode|phys01_counterparty|`string`|10|filter||
-|CommodityCode| phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
-|PaymentTermCode|phys01_payterms|`string`|8|||
-|ContractTermCode|phys01_conterms|`string`|8|||
-|ContractTermPortCode|phys01_contermsport|`string`|8|||
-|UnitOfMeasurementCode|phys01_wtcode|`string`|4|||
-|OriginalContractQuantity|phys01_origquan|`number`||||
-|CurrentContractQuantity|phys01_conquan|`number`||||
-|ContractStatus|phys01_status|`string`|1|filter|‘O’, ‘C’, ‘Q’|
-|ContractApproved|phys01_approved|`boolean`|1|filter||
+|ContractId|Contract Code|`string`|10|filter||
+|ContractType|Contract Type Code|`string`|1||`P` or `S`|
+|ContractDate|Contract Date|`datetime`||||
+|DepartmentCode|Department Code|`string`|4|||
+|TraderCode|Trader Code|`string`|3|||
+|ClientReference|Client Reference|`string`|40|||
+|BuyerAccountCode|Buyer Account Code|`string`|10|||
+|SellerAccountCode|Seller Account Code|`string`|10|||
+|CounterpartyCode|Counterparty Code|`string`|10|filter||
+|CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|PaymentTermCode|Payment Term Code|`string`|8|||
+|ContractTermCode|Contract Term Code|`string`|8|||
+|ContractTermPortCode|Contract Term Port Code|`string`|8|||
+|UnitOfMeasurementCode|Unit of Measurement Code|`string`|4|||
+|OriginalContractQuantity|Original Contract Quantity|`number`||||
+|CurrentContractQuantity|Current Contract Quantity|`number`||||
+|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
+|ContractApproved|Is Contract Approved|`boolean`||||
 
 
 
@@ -3084,7 +3084,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + BuyerAccountCode: HOUSEUS.P (string)
 + SellerAccountCode: FEEDSWIT.S (string)
 + CounterpartyCode: FEEDSWIT.S (string)
-+ CommodityFullCode: `CHE||CASO||47||QWE||RTY` (string)
++ CommodityCode: `CHE||CASO||47||QWE||RTY` (string)
 + PaymentTermCode: INV30 (string)
 + ContractTermCode: DEL (string)
 + ContractTermPortCode: LIV (string)
