@@ -1363,8 +1363,8 @@ Provides access to full accounting ledger by Document Reference.
 |AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
 |AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
 |AmountInLocalCurrency|Transaction Amount in Local Currency|`number`||||
-|RateOfExchangeApplied|Transaction Exchange Rate Applied|`number`|18,8|||
-|RateOfExchangeType|Transaction Exchange Rate Type|`string`|1|||
+|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`|18,8|||
+|RateOfExchangeType|Transaction Rate of Exchange Type Code|`string`|1||`M` or `D`|
 |WeightInQtyCode|Weight in Quantity Code|`number`||||
 |ContractReference|Contract Reference Code|`string`|10|||
 |Expense|see <b><a href="/#reference/nominal-reference-data/expense-list/list-expenses">Expense</a></b> endpoint|`object`||||
@@ -1375,7 +1375,7 @@ Provides access to full accounting ledger by Document Reference.
 |Narrative|Narrative|`string`|30|||
 |MarketReference|Market Reference|`string`|8|||
 |PromptMonth|Transaction Prompt Month|`number`||||
-|OptionType|Transaction Option Type Code|`string`|1|||
+|OptionType|Transaction Option Type Code|`string`|1||`C`, `P` or ``|
 |CommodityReference|Transaction Commodity Reference|`string`|15|||
 |TransactionIsMatched|Is Transaction Matched|`boolean`||||
 |PreMatchDocumentReference|Pre Matched Document Reference Code|`string`|9|||
@@ -1407,15 +1407,15 @@ Provides access to financial transaction details yet to be posted to the ledgers
 ### Read Unposted Transaction [GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|dhl21_docref|`string`|9|||
-|AccountLedgerType|dhlxx_ledger|`string`|1|`C`, `N` or `K`||
-|DocumentDate|dhl21_ddate|`datetime`||||
-|ValueDate|dhl21_vdate|`datetime`||||
-|Account||`object`||see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|DocumentCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
-|AmountInDocumentCurrency|dhlxx_amount|`number`||||
+|DocumentReference|Transaction Document Reference|`string`|9|||
+|AccountLedgerType|Account Ledger Type Code|`string`|1||`C`, `N` or `K`|
+|DocumentDate|Transaction Document Date|`datetime`||||
+|ValueDate|Transaction Value Date|`datetime`||||
+|Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
+|AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
 |FunctionalCurrency||`object`||see <a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a> endpoint||
 |AmountInFunctionalCurrency|dhlxx_namt|`number`||||
 |AmountInLocalCurrency|dhlxx_namt2|`number`||||
@@ -3137,7 +3137,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentReference: PI1500000 (string)
 + AccountLedgerType: C (string)
 + TransactionKey: `00040444.P||GBP||20150832||20151003||14576460` (string)
-+ AccountCode (AccountHeader)
++ Account (AccountHeader)
 + DocumentCurrency (Currency)
 + AccountingPeriod: 20150832 (number)
 + PostingDate: 20151003 (number)
@@ -3145,12 +3145,12 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentDate: `2015-07-01T00:00:00` (string)
 + ValueDate: `2015-07-31T00:00:00` (string)
 + FunctionalCurrency (Currency)
-+ AmountInDocumentCurrency: 136.50 (number)
-+ AmountInFunctionalCurrency: 130.00 (number)
-+ AmountInLocalCurrency: 120.00 (number)
-+ RateOfExchangeApplied: 13.45 (number)
++ AmountInDocumentCurrency: 123.45 (number)
++ AmountInFunctionalCurrency: 123.45 (number)
++ AmountInLocalCurrency: 123.45 (number)
++ RateOfExchangeApplied: 12.34 (number)
 + RateOfExchangeType: D (string)
-+ WeightInQtyCode: 0.00 (number)
++ WeightInQtyCode: 1.23 (number)
 + ContractReference: SC00091 (string)
 + Expense (Expense List)
 + Department (Department)
@@ -3312,8 +3312,8 @@ The Transaction key is a five part key made up of the following values seperate 
 ## UnPostedTransaction (object)
 + DocumentReference: CN1600001 (string)
 + AccountLedgerType: C (string)
-+ DocumentDate: 20150731 (string)
-+ ValueDate: 20150828 (string)
++ DocumentDate: `2015-07-01T00:00:00` (string)
++ ValueDate: `2015-07-31T00:00:00` (string)
 + Account  (AccountHeader)
 + DocumentCurrency  (Currency)
 + AmountInDocumentCurrency: 28607.34 (number)
