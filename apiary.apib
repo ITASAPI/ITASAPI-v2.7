@@ -1575,24 +1575,24 @@ Principle Physical Contract (agreement) details
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|phys01_contract|`string`|10||`KEY`|
-|ContractType|phys01_contype|`string`|1|||
-|ContractDate|phys01_condate|`number`||||
-|Department||`object`||see <a href="/#reference/nominal-reference-data/department">Department</a> endpoint||
-|Trader||`object`||see <a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a> endpoint||
-|ClientReference|phys01_clref|`string`|40|||
-|Buyer||`object`||see <a href="/#reference/data-object-definitions">Account Header</a> object||
-|Seller||`object`||see <a href="/#reference/data-object-definitions">Account Header</a> object||
-|Counterparty||`object`||see <a href="/#reference/data-object-definitions">Account Header</a> object||
-|Commodity||`object`||see <a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a> endpoint||
-|PaymentTerm||`object`||see <a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms">PaymentTerm List</a> endpoint||
-|ContractTerm||`object`||see <a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms">ContractTerm List</a> endpoint||
-|ContractTermPort||`object`||see <a href="/#reference/physicals-reference-data/port-list/list-ports">Port List</a> endpoint||
-|UnitOfMeasurement||`object`||see <a href="/#reference/physicals-reference-data/weight-list/list-weights">Weight List</a> endpoint||
-|OriginalContractQuantity|phys01_origquan|`number`||||
-|CurrentContractQuantity|phys01_conquan|`number`||||
-|ContractStatus|phys01_status|`string`|1|||
-|ContractApproved|phys01_approved|`string`|1|||
+|ContractId|Contract Code|`string`|10||Required|
+|ContractType|Contract Type Code|`string`|1||`P` or `S`|
+|ContractDate|Contract Date|`datetime`||||
+|Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
+|Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
+|ClientReference|Client Reference|`string`|40|||
+|Buyer|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|Seller|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|Counterparty|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
+|PaymentTerm|see <b><a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms">PaymentTerm List</a></b> endpoint|`object`||||
+|ContractTerm|see <b><a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms">ContractTerm List</a></b> endpoint|`object`||||
+|ContractTermPort|see <b><a href="/#reference/physicals-reference-data/port-list/list-ports">Port List</a></b> endpoint|`object`||||
+|UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list/list-weights">Weight List</a></b> endpoint|`object`||||
+|OriginalContractQuantity|Original Contract Quantity|`number`||||
+|CurrentContractQuantity|Current Contract Quantity|`number`||||
+|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
+|ContractApproved|Is Contract Approved|`boolean`||||
 
 
 + Request
@@ -2835,8 +2835,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + CommodityCodePart1: ORG (string)
 + CommodityCodePart2: `S1-45` (string)
 + CommodityCodePart3: FAIRT (string)
-+ CommodityCodePart4: qwe (string)
-+ CommodityCodePart5: ty (string)
++ CommodityCodePart4: QWE (string)
++ CommodityCodePart5: TY (string)
 + CommodityDescription: Organic Golden Fairtrade Sugar (string)
 + DocumentText: Org Golden S1 45 ICUMSA (string)
 + CommodityGroup: SPL (string)
@@ -3057,7 +3057,7 @@ The Transaction key is a five part key made up of the following values seperate 
 ## PhysicalTrade (object)
 + ContractId: P00004.000 (string)
 + ContractType: P (string)
-+ ContractDate: 20161010 (number)
++ ContractDate: `2015-07-01T00:00:00` (string)
 + Department (Department)
 + Trader (UserAccount)
 + ClientReference: FEEDCO BIR=>NAD (string)
@@ -3071,13 +3071,13 @@ The Transaction key is a five part key made up of the following values seperate 
 + UnitOfMeasurement (Weight)
 + OriginalContractQuantity: 423.118 (number)
 + CurrentContractQuantity: 26.92 (number)
-+ ContractStatus: D (string)
-+ ContractApproved: N (string)
++ ContractStatus: C (string)
++ ContractApproved: true (boolean)
 
 ## PhysicalTrade List(object)
 + ContractId: P00004.000 (string)
 + ContractType: P (string)
-+ ContractDate: 20161010 (number)
++ ContractDate: `2015-07-01T00:00:00` (string)
 + DepartmentCode: NAD (string)
 + TraderCode: JS (string)
 + ClientReference: FEEDCO BIR=>NAD (string)
@@ -3091,8 +3091,8 @@ The Transaction key is a five part key made up of the following values seperate 
 + UnitOfMeasurementCode: MT (string)
 + OriginalContractQuantity: 423.118 (number)
 + CurrentContractQuantity: 26.92 (number)
-+ ContractStatus: D (string)
-+ ContractApproved: N (string)
++ ContractStatus: C (string)
++ ContractApproved: true (boolean)
 
 ## PhysicalTradeCommission (object)
 + ContractId: P00004.000 (string)
