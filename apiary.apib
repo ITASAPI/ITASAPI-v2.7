@@ -1467,8 +1467,6 @@ Document summary information including properties specific to integration requir
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
-|PostedDate|Transaction Posted Date|`datetime`||||
-|DocumentDate|Transaction Document Date|`datetime`||||
 
 + Request (application/json)
     + Header
@@ -1501,8 +1499,6 @@ Document summary information including properties specific to integration requir
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
-|PostedDate|Transaction Posted Date|`datetime`||||
-|DocumentDate|Transaction Document Date|`datetime`||||
 
 + Request (application/json)
     + Header
@@ -3289,15 +3285,11 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: Y (string)
-+ PostedDate: `2015-07-01T00:00:00` (string)
-+ DocumentDate: `2015-07-01T00:00:00` (string)
 
 ## TransactionHeaderDelta (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: Y (string)
-+ PostedDate: `2015-07-01T00:00:00` (string)
-+ DocumentDate: `2015-07-01T00:00:00` (string)
 
 ## TransactionHeader List (object)
 + PostedDate: `2015-07-01T00:00:00` (string)
