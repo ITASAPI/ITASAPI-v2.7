@@ -1432,7 +1432,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |MarketReference|Market Referece|`string`|8|||
 |PromptMonth|Transaction Prompt Month|`number`||||
 |OptionType|Transaction Option Type|`string`|1||`C`, `P` or `''`|
-|CommodityReference|Transaction Commodity Reference|`string`|15|1||
+|CommodityReference|Transaction Commodity Reference|`string`|15|||
 
 
 + Request
@@ -1458,7 +1458,6 @@ Provides access to financial transaction details yet to be posted to the ledgers
 
 ## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
 Document summary information including properties specific to integration requirements.          
-<div>Note: If the fields PostedDate or DocumentDate are included, they will not be updated as they are not supported for update.</div>
 ### Update Transaction Header [PUT]
 
 
