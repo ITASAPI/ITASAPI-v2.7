@@ -1992,7 +1992,7 @@ Orders (CallOffs) specifically representing outgoing goods.
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`||||
-|SourceStockUnitCode|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
+|SourceStockUnitDetails|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
 
 + Request
     [AccessToken][]
@@ -2242,9 +2242,9 @@ Trigger call to complete an order (e.g. create stock journals etc)
 
 <strong>URI Parameters</strong>
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys09_releasenr|`number`|||Unique Key|
+|ReleaseId|Release Number|`number`||||
 
 <strong>Body Parameters</strong>
 <br />
@@ -2281,11 +2281,11 @@ None.
 Information specific to the source of the goods generated during any movement (Delivery Out or Stock to Stock).
 ### Read StockLoading [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys10_releasenr|`number`|||Unique Key|
-|SourceStockUnitCode||`object`|||see <a href="/#reference/wip-reference-data/stockunit">StockUnit</a> endpoint||
-|Weight|phys10_qty|`number`||||
+|ReleaseId|Release Number|`number`|||Required|
+|SourceStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`|||||
+|Weight|Stock Unit Weight|`number`||||
 
 + Request
     [AccessToken][]
@@ -2309,11 +2309,11 @@ Information specific to the source of the goods generated during any movement (D
 Remove current suggestions for Tanks and Create Stock Loadings
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys10_releasenr|`number`||required|Unique Key|
-|SourceStockUnitCode|phys10_tank|`string`|11|required|must exist in xx_cna50|
-|Weight|phys10_qty|`number`||required||
+|ReleaseId|Release Number|`number`||required|Required. Unique Key|
+|SourceStockUnitCode|Source Stock Unit Code|`string`|11||Required|
+|Weight|Stock Unit Weight|`number`|||Required|
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
