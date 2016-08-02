@@ -2200,12 +2200,12 @@ Batch record information by Stock Unit.
 Batch record information by Stock Unit.
 ### List StockBatches [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockBatchId|cna70_batchid|`string`|20|||
-|StockUnitCode|cna70_acc|`string`|11|||
-|BatchCreateDate|cna70_batchcreated|`datetime`|0|||
-|BatchText|cna70_text|`string`|1000|||
+|StockBatchId|Stock Batch Code|`string`|20|||
+|StockUnitCode|Stock Unit Code|`string`|11|||
+|BatchCreateDate|Date Batch Created|`datetime`||||
+|BatchText|Batch Text|`string`|1000|||
 
 
 + Request
@@ -3182,7 +3182,7 @@ The Transaction key is a five part key made up of the following values seperate 
 ## StockBatch List (object)
 + StockBatchId: abc123 (string)
 + StockUnitCode: W123.XYZ (string)
-+ BatchCreateDate: `2015-08-01T00:00:00` (number)
++ BatchCreateDate: `2015-08-01T00:00:00` (string)
 + BatchText: abc (string)
 
 ## StockLoading (object)
