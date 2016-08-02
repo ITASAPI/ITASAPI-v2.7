@@ -1351,7 +1351,7 @@ Provides access to full accounting ledger by Document Reference.
 |--------|-----------|----|----------|-----|----------|
 |DocumentReference|Document Reference Code|`string`|9||Required|
 |AccountLedgerType|Account Ledger Type Code|`string`|1||`C`, `N` or `K`|
-|TransactionKey|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|filter||
+|TransactionKey|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AccountingPeriod|Transaction Accounting Period|`number`||||
@@ -2489,13 +2489,13 @@ The account header object is derived from multiple locations of the database dep
 ### AccountPostingDetails[GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|AccountCode|dhlxx_account|`string`|11|required|must exist in `xx_chr20`|
-|AccountLedgerType|dhlxx_ledger|`string`|1|required|`C`, `N`, `K`|
-|ExpenseCode|dhlxx_expcode|`string`|7|required|must exist in `xx_cmy101`|
-|DepartmentCode|dhlxx_dept|`string`|4|required|must exist in `xx_cmy102`|
-|AmountInDocumentCurrency|dhlxx_amount|`decimal`||required|can contain negative values|
+|AccountCode|Account Code|`string`|11||Required|
+|AccountLedgerType|Account Ledger Type|`string`|1||Required. `C`, `N` or `K`|
+|ExpenseCode|Expense Code|`string`|7||Required|
+|DepartmentCode|Department Code|`string`|4||Required|
+|AmountInDocumentCurrency|Amount in Document Currency|`decimal`||Can Contain Negative Values|Required|
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -2506,17 +2506,17 @@ A multipurpose object used by several endpoints.
 
 ### Address[GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|AddressLine1|chr20_addr1|`string`|60|||
-|AddressLine2|chr20_addr2|`string`|60|||
-|AddressLine3|chr20_addr3|`string`|60|||
-|AddressLine4|chr20_addr4|`string`|60|||
-|ZipCode|chr20_zipcode|`string`|40|||
-|CountryCode|see <a href="/#reference/data-object-definitions/addresscountry">AddressCountry</a> object|`object`||||
-|EmailAddress|chr20_emailaddr|`string`|100|||
-|PhoneNumber|chr20_phoneno|`string`|40|||
-|FaxNumber|chr20_faxno|`string`|40|||
+|AddressLine1|Address Line 1|`string`|60|||
+|AddressLine2|Address Line 2|`string`|60|||
+|AddressLine3|Address Line 3|`string`|60|||
+|AddressLine4|Address Line 4|`string`|60|||
+|ZipCode|ZIP Code|`string`|40|||
+|CountryCode|see <b><a href="/#reference/data-object-definitions/addresscountry">AddressCountry</a></b> object|`object`||||
+|EmailAddress|Email Address|`string`|100|||
+|PhoneNumber|Phone Number|`string`|40|||
+|FaxNumber|Fax Number|`string`|40|||
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (ContactDetails)
@@ -2526,10 +2526,10 @@ A multipurpose object used by several endpoints.
 
 ### AddressCountry[GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CountryId|boec_code|`string`|3|||
-|CountryDescription|boec_descr|`string`|50|||
+|CountryId|Country Code|`string`|3|||
+|CountryDescription|Country Code Description|`string`|50|||
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (Country)
@@ -2539,14 +2539,14 @@ A multipurpose object used by several endpoints.
 ### DocumentDetails[GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentDate|dhl21_ddate|`datetime`||required||
-|ValueDate|dhl21_vdate|`datetime`||required||
-|DocumentCurrencyCode|dhl21_ccy|`string`|3|required|must exist in `gf_fxr20`|
-|PayeeName|dhl21_payer|`string`|60|||
-|Narrative|dhl21_narr|`string`|30|||
-|EDICode|xtx01_axdocref|`string`|25|||
+|DocumentDate|Document Date|`datetime`|||Required|
+|ValueDate|Value Date|`datetime`|||Required|
+|DocumentCurrencyCode|Document Currency|`string`|3||Required|
+|PayeeName|Payee Name|`string`|60|||
+|Narrative|Narrative|`string`|30|||
+|EDICode|Document EDI Code|`string`|25|||
 
 
 + Response 200 (application/json; charset=utf-8)
@@ -2557,11 +2557,11 @@ A multipurpose object used by several endpoints.
 ### OnAccountDetails[GET]
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TransactionKey||`object`||see below|required|
-|DocumentReference||`string`|9||required|
-|TransactionAmountInDocumentCurrency|txx_amt|`decimal`||can containegative values|required|
+|TransactionKey|<b>See Below</b>|`object`|||Required|
+|DocumentReference|Document Reference|`string`|9||Required|
+|TransactionAmountInDocumentCurrency|Transaction Amount in Document Currency|`decimal`||Can Contain Negative Values|Required|
 
 
 <strong>TransactionKey</strong><br />
@@ -2570,13 +2570,13 @@ The Transaction key is a five part key made up of the following values seperate 
 <br />The  maximum length of any Trnasaciotn key is 80 characters
 
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-||txx_account|`string`|11||required|
-||txx_ccy|`string`|3||required|
-||txx_period|`number`|0||required|
-||txx_postdate|`number`|0||required|
-||txx_posttime|`number`|0||required|
+||Account Code|`string`|11||Required|
+||Currency Code|`string`|3||Required|
+||Period|`number`|||Required|
+||Post Date|`number`|||Required|
+||Post Time|`number`|||Required|
 
 
 + Response 200 (application/json; charset=utf-8)
