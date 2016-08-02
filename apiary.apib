@@ -2170,12 +2170,12 @@ Management activities of Stock Units (where represented by WIP Accounts).
 Batch record information by Stock Unit.
 ### Read StockBatch [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockBatchId|cna70_batchid|`string`|20|||
-|StockUnitCode||`object`||see <a href="/#reference/wip-reference-data/stockunit">StockUnit</a> endpoint||
-|BatchCreateDate|cna70_batchcreated|`datetime`|0|||
-|BatchText|cna70_text|`string`|1000|||
+|StockBatchId|Stock Batch Code|`string`|20||Required|
+|StockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
+|BatchCreateDate|Date Batch Created|`datetime`||||
+|BatchText|Batch Text|`string`|1000|||
 
 
 + Request
@@ -3176,13 +3176,13 @@ The Transaction key is a five part key made up of the following values seperate 
 ## StockBatch (object)
 + StockBatchId: abc123 (string)
 + StockUnit (StockUnit)
-+ BatchCreateDate: 100 (string)
++ BatchCreateDate: `2015-08-01T00:00:00` (string)
 + BatchText: abc (string)
 
 ## StockBatch List (object)
 + StockBatchId: abc123 (string)
 + StockUnitCode: W123.XYZ (string)
-+ BatchCreateDate: 20160505 (number)
++ BatchCreateDate: `2015-08-01T00:00:00` (number)
 + BatchText: abc (string)
 
 ## StockLoading (object)
