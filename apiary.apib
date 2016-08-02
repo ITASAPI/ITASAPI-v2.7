@@ -2025,7 +2025,7 @@ Orders (CallOffs) generated through EXPED
 |<strong>References</strong>|
 |ContractReference|Contract Reference|`string`|10|||
 |ClientReference|Client Reference|`string`|40|||
-|BuyerOrderNumber|Buyer Order Number|`string`|40|||
+|BuyerOrderNumber|Buyers Order Number|`string`|40|||
 |BuyerSecondaryReference|Buyers Secondary Reference|`string`|40|||
 |DeliveryClientOrderNumber|Delivery Client Order Number|`string`|40|||
 |DeliveryClientSecondaryReference|Delivery Client Secondary Reference|`string`|40|||
@@ -2065,37 +2065,37 @@ Orders (CallOffs) generated through EXPED
 Orders (CallOffs) generated through EXPED
 ### List ExpedCallOff [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys01_releasenr|`number`||||
-|ContractType|phys01_contype|`string`|1|||
-|ContractDate|phys01_condate|`number`||DateTime||
-|DeliveryDate|phys01_startper|`number`||DateTime||
-|DepartmentCode|phys01_dept|`string`|4|||
-|CounterpartyCode|phys01_counterparty|`string`|10|||  
-|Memorandum|phys01_memo|`string`|4000|||
-|InternalMemo|phys01_memo2|`string`|4000|||
-|OrderStatusCode|phys01_afi|`string`|2|||
-|ContractReference|phys01_contract|`string`|10|||
-|ClientReference|phys01_clref|`string`|40|||
-|BuyerOrderNumber|phys01_buyerorderno|`string`|40|||
-|BuyerSecondaryReference|phys01_buyersecref|`string`|40|||
-|DeliveryClientOrderNumber|phys01_delorderno|`string`|40|||
-|DeliveryClientSecondaryReference|phys01_delsecref|`string`|40|||
-|TerminalCode|phys01_terminal|`string`|4|||
-|CommodityFullCode|phys01_commod|`string`|3|||
-|SampleCode|phys01_samplecode|`string`|4|||
-|UnitOfMeasurementCode|phys01_wtcode|`string`|4|||
-|Quantity|phys01_conquan|`number`||||
-|PackingTypeCode|phys01_packcode|`string`|4|||
-|DeliveryClientCode|phys01_delclient|`string`|10|||
-|HaulierCode|phys01_haulageacc|`string`|10|||
-|ExpeditorCode|phys01_expeditor|`string`|10|||
-|VehicleReference|phys01_vehicle|`string`|4|||
-|VehicleRegistration|phys01_vehiclereg|`string`|50|||
-|TrailerRegistration|phys01_trailerplate|`string`|50|||
-|EarlyLoadAllowed|phys01_earlyload|`boolean`|1|||
-|MaxLoadWeight|phys01_maxloadwt|`number`||||
+|ReleaseId|Release Code|`number`||||
+|ContractType|Contract Type|`string`|1|||
+|ContractDate|Contract Date|`datetime`||||
+|DeliveryDate|Delivery Date|`datetime`||||
+|DepartmentCode|Department Code|`string`|4|||
+|CounterpartyCode|Counterparty Code|`string`|10|||  
+|Memorandum|Memorandum|`string`|4000|||
+|InternalMemo|Internal Memorandum|`string`|4000|||
+|OrderStatusCode|Order Status Code|`string`|2|||
+|ContractReference|Contract Reference|`string`|10|||
+|ClientReference|Client Reference|`string`|40|||
+|BuyerOrderNumber|Buyers Order Number|`string`|40|||
+|BuyerSecondaryReference|Buyers Secondary Reference|`string`|40|||
+|DeliveryClientOrderNumber|Delivery Client Order Number|`string`|40|||
+|DeliveryClientSecondaryReference|Delivery Client Secondary Reference|`string`|40|||
+|TerminalCode|Terminal Code|`string`|4|||
+|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|SampleCode|Sample Code|`string`|4|||
+|UnitOfMeasurementCode|Unit of Measurement Code|`string`|4|||
+|Quantity|Quantity|`number`||||
+|PackingTypeCode|Packing Type Code|`string`|4|||
+|DeliveryClientCode|Delivery Client Code|`string`|10|||
+|HaulierCode|Haulier Code|`string`|10|||
+|ExpeditorCode|Expeditor Code|`string`|10|||
+|VehicleReference|Vehicle Reference|`string`|4|||
+|VehicleRegistration|Vehicle Registration|`string`|50|||
+|TrailerRegistration|Trailer Registration|`string`|50|||
+|EarlyLoadAllowed|Is Early Load Allowed|`boolean`||||
+|MaxLoadWeight|Maximum Load Weight|`number`||||
 
 + Request
     [AccessToken][]
@@ -2972,7 +2972,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + DeliveryClientOrderNumber: abc123 (string)
 + DeliveryClientSecondaryReference: abc123 (string)
 + TerminalCode: ADEL (string)
-+ CommodityCode: `ORG||S1-45||FAIRT||QWE||RTY` (string)
++ CommodityFullCode: `ORG||S1-45||FAIRT||QWE||RTY` (string)
 + SampleCode: 123abc (string)
 + UnitOfMeasurementCode: GA (string)
 + Quantity: 100 (number)
