@@ -1990,7 +1990,7 @@ Orders (CallOffs) specifically representing outgoing goods.
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`||||
-|SourceStockUnitCode|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint||`[object]`|array of StockLoading objects||
+|SourceStockUnitCode|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
 
 + Request
     [AccessToken][]
@@ -2011,40 +2011,40 @@ Orders (CallOffs) specifically representing outgoing goods.
 Orders (CallOffs) generated through EXPED
 ### Read ExpedCallOffs [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys01_releasenr|`number`||||
-|ContractType|phys01_contype|`string`|1|||
-|ContractDate|phys01_condate|`number`||DateTime||
-|DeliveryDate|phys01_startper|`number`||DateTime||
-|Department||`object`||see <a href="/#reference/nominal-reference-data/departments">Departments List</a> endpoint||
-|Counterparty||`object`||see <a href="/#reference/data-object-definitions/read-expedcalloffss">Account Header</a> object||
-|Memorandum|phys01_memo|`string`|4000|||
-|InternalMemo|phys01_memo2|`string`|4000|||
-|OrderStatus||`object`||see <a href="/#reference/physicals-reference-data/shippingstatus-list">Shipping Status</a> endpoint||
+|ReleaseId|Release Code|`number`||||
+|ContractType|Contract Type|`string`|1|||
+|ContractDate|Contract Date|`datetime`||||
+|DeliveryDate|Delivery Date|`datetime`||||
+|Department|see <b><a href="/#reference/nominal-reference-data/departments">Departments List</a></b> endpoint|`object`||||
+|Counterparty|see <b><a href="/#reference/data-object-definitions/read-expedcalloffss">Account Header</a></b> object|`object`||||
+|Memorandum|Memorandum|`string`|4000|||
+|InternalMemo|Internal Memorandum|`string`|4000|||
+|OrderStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">Shipping Status</a></b> endpoint|`object`||||
 |<strong>References</strong>|
-|ContractReference|phys01_contract|`string`|10|||
-|ClientReference|phys01_clref|`string`|40|||
-|BuyerOrderNumber|phys01_buyerorderno|`string`|40|||
-|BuyerSecondaryReference|phys01_buyersecref|`string`|40|||
-|DeliveryClientOrderNumber|phys01_delorderno|`string`|40|||
-|DeliveryClientSecondaryReference|phys01_delsecref|`string`|40|||
+|ContractReference|Contract Reference|`string`|10|||
+|ClientReference|Client Reference|`string`|40|||
+|BuyerOrderNumber|Buyer Order Number|`string`|40|||
+|BuyerSecondaryReference|Buyers Secondary Reference|`string`|40|||
+|DeliveryClientOrderNumber|Delivery Client Order Number|`string`|40|||
+|DeliveryClientSecondaryReference|Delivery Client Secondary Reference|`string`|40|||
 |<strong>GoodsDetails</strong>|
-|Terminal||`object`||see <a href="/#reference/physicals-reference-data/terminal-list">Terminals List</a> endpoint||
-|Commodity||`object`||see <a href="/#reference/physicals-reference-data/commodity-list">Commodies List</a> endpoint||
-|Sample||`object`||see <a href="/#reference/physicals-reference-data/sample-list">Samples List</a> endpoint||
-|UnitOfMeasurement||`object`||see <a href="/#reference/physicals-reference-data/weight-list">Weights List</a> endpoint||
-|Quantity|phys01_conquan|`number`||||
-|PackingType||`object`||see <a href="/#reference/physicals-reference-data/packingtype-list">PackingType List</a> endpoint||
+|Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list">Terminals List</a></b> endpoint|`object`||||
+|Commodity|`object`||see <b><a href="/#reference/physicals-reference-data/commodity-list">Commodies List</a></b> endpoint|||
+|Sample||`object`|see <b><a href="/#reference/physicals-reference-data/sample-list">Samples List</a></b> endpoint|||
+|UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list">Weights List</a></b> endpoint|`object`||||
+|Quantity|Quantity|`number`||||
+|PackingType|see <b><a href="/#reference/physicals-reference-data/packingtype-list">PackingType List</a></b> endpoint|`object`||||
 |<strong>TransportDetails</strong>|
-|DeliveryClient||`object`||see <a href="/#reference/data-object-definitions/accountheader">Account Header</a> object||
-|Haulier||`object`||see <a href="/#reference/data-object-definitions/accountheader">Account Header</a> object||
-|Expeditor||`object`||see <a href="/#reference/data-object-definitions/accountheader">Account Header</a> object||
-|VehicleReference|phys01_vehicle|`string`|4|||
-|VehicleRegistration|phys01_vehiclereg|`string`|50|||
-|TrailerRegistration|phys01_trailerplate|`string`|50|||
-|EarlyLoadAllowed|phys01_earlyload|`boolean`|1|||
-|MaxLoadWeight|phys01_maxloadwt|`number`||||
+|DeliveryClient|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
+|Haulier|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
+|Expeditor|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
+|VehicleReference|Vehicle Reference|`string`|4|||
+|VehicleRegistration|Vehicle Registration|`string`|50|||
+|TrailerRegistration|Trailer Registration|`string`|50|||
+|EarlyLoadAllowed|Is Early Load Allowed|`boolean`|1|||
+|MaxLoadWeight|Maximum Load Weight|`number`||||
 
 + Request
     [AccessToken][]
