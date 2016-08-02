@@ -2285,7 +2285,7 @@ Information specific to the source of the goods generated during any movement (D
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Number|`number`|||Required|
 |SourceStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`|||||
-|Weight|Stock Unit Weight|`number`|||1|
+|Weight|Stock Unit Weight|`number`||||
 
 + Request
     [AccessToken][]
@@ -2311,7 +2311,7 @@ Remove current suggestions for Tanks and Create Stock Loadings
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Number|`number`||required|Required. Unique Key|
+|ReleaseId|Release Number|`number`|||Required. Unique Key|
 |SourceStockUnitCode|Source Stock Unit Code|`string`|11||Required|
 |Weight|Stock Unit Weight|`number`|||Required|
 
@@ -2344,29 +2344,29 @@ Remove current suggestions for Tanks and Create Stock Loadings
 Information relating to the processing of the Order. 
 ### Read StockMovement [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys09_releasenr|`number`||`Required`||
-|OrderAcknowledged|phys09_sent|`string`|1|||
-|NetLoadedWeight|phys09_loaded|`number`||||
-|NetPumpedWeight|phys09_pumped|`number`||||
-|NetDeliveredWeight|phys09_delivered|`number`||||
-|LoadedDate|phys09_loadeddate|`datetime`||||
-|PumpedDate|phys09_pumpeddate|`datetime`||||
-|TargetStockUnit||`object`||see <a href="/#reference/wip-reference-data/stockunit">StockUnit</a> endpoint||
-|ArrivalDate|phys09_arrivaldate|`datetime`||||
-|ArrivalMemo|phys09_arrivalmemo|`string`|250|||
-|ArrivalWeight|phys09_arrivalweight|`number`||||
-|LoadingStartDate|phys09_loadstartdate|`datetime`||||
-|LoadingStartMemo|phys09_loadstartmemo|`string`|250|||
-|LoadingEndDate|phys09_loadenddate|`datetime`||||
-|LoadingPoint|phys09_loadendmemo|`string`|250|||
-|FirstWeight|phys09_firstweight|`number`||||
-|FirstWeightWeighbridgeId|phys09_firstweightwbid|`string`|10|||
-|FirstWeightId|phys09_firstweightid|`string`|10|||
-|SecondWeight|phys09_secondweight|`number`||||
-|SecondWeightWeighbridgeId|phys09_secondweightwbid|`string`|10|||
-|SecondWeightId|phys09_secondweightid|`string`|10|||
+|TargetStockUnit|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
+|ReleaseId|Release Number|`number`|||Required|
+|OrderAcknowledged|Has Order Been Acknowledged|`boolean`||||
+|NetLoadedWeight|Net Loaded Weight|`number`||||
+|NetPumpedWeight|Net Pumped Weight|`number`||||
+|NetDeliveredWeight|Net Delivered Weight|`number`||||
+|LoadedDate|Date Loaded|`datetime`||||
+|PumpedDate|Date Pumped|`datetime`||||
+|ArrivalDate|Arrival Date|`datetime`||||
+|ArrivalMemo|Arrival Memorandum|`string`|250|||
+|ArrivalWeight|Arrival Weight|`number`||||
+|LoadingStartDate|Loading Start Date|`datetime`||||
+|LoadingStartMemo|Loading Start Memorandum|`string`|250|||
+|LoadingEndDate|Loading End Date|`datetime`||||
+|LoadingPoint|Loading Point|`string`|250|||
+|FirstWeight|First Weight|`number`||||
+|FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
+|FirstWeightId|First Weight ID|`string`|10|||
+|SecondWeight|Second Weight|`number`||||
+|SecondWeightWeighbridgeId|Second Weight Weighbridge ID|`string`|10|||
+|SecondWeightId|Second Weight ID|`string`|10|||
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
@@ -3196,20 +3196,20 @@ The Transaction key is a five part key made up of the following values seperate 
 + Weight: 100 (required, number)
 
 ## StockMovement (object)
++ TargetStockUnit (StockUnit)
 + ReleaseId: 100 (required, number)
-+ OrderAcknowledged: N (string)
++ OrderAcknowledged: false (boolean)
 + NetLoadedWeight: 10.00 (number)
 + NetPumpedWeight: 10.00 (number)
 + NetDeliveredWeight: 10.00 (number)
-+ LoadedDate: 20160101 (string)
-+ PumpedDate: 20160101 (string)
-+ TargetStockUnit (StockUnit)
-+ ArrivalDate: 20160101 (string)
++ LoadedDate: `2015-08-01T00:00:00` (string)
++ PumpedDate: `2015-08-01T00:00:00` (string)
++ ArrivalDate: `2015-08-02T00:00:00` (string)
 + ArrivalMemo: notes field (string)
 + ArrivalWeight: 10.00 (number)
-+ LoadingStartDate: 20160101 (string)
++ LoadingStartDate: `2015-08-01T00:00:00` (string)
 + LoadingStartMemo: notes field (string)
-+ LoadingEndDate: 20160101 (string)
++ LoadingEndDate: `2015-08-01T00:00:00` (string)
 + LoadingPoint: tring (string)
 + FirstWeight: 10.00 (number)
 + FirstWeightWeighbridgeId: abc123 (string)
@@ -3220,19 +3220,19 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## StockMovement Flat (object)
 + ReleaseId: 100 (number)
-+ OrderAcknowledged: N (string)
++ OrderAcknowledged: false (boolean)
 + NetLoadedWeight: 10.00 (number)
 + NetPumpedWeight: 10.00 (number)
 + NetDeliveredWeight: 10.00 (number)
-+ LoadedDate: 20160101 (string)
-+ PumpedDate: 20160101 (string)
++ LoadedDate: `2015-08-01T00:00:00` (string)
++ PumpedDate: `2015-08-01T00:00:00` (string)
 + TargetStockUnitCode: 5100.MEP (string)
-+ ArrivalDate: 20160101 (string)
++ ArrivalDate: `2015-08-01T00:00:00` (string)
 + ArrivalMemo: notes field (string)
 + ArrivalWeight: 10.00 (number)
-+ LoadingStartDate: 20160101 (string)
++ LoadingStartDate: `2015-08-01T00:00:00` (string)
 + LoadingStartMemo: notes field (string)
-+ LoadingEndDate: 20160101 (string)
++ LoadingEndDate: `2015-08-01T00:00:00` (string)
 + LoadingPoint: tring (string)
 + FirstWeight: 10.00 (number)
 + FirstWeightWeighbridgeId: abc123 (string)
