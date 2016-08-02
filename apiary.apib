@@ -87,7 +87,7 @@ Client Ledger Account profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10||Required|
-|Title|Client Title|`string`|200|||
+|Title|Client Account Title|`string`|200|||
 |ClientType|see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint|`object`||||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
@@ -139,7 +139,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10||Required. Unique Key|
-|Title|Client Title|`string`|200||Required|
+|Title|Client Account Title|`string`|200||Required|
 |ClientTypeCode|Client Account Type Code|`string`|1||Required|
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
@@ -212,7 +212,7 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10||Required|
-|Title|Client Title|`string`|200|||
+|Title|Client Account Title|`string`|200|||
 |ClientTypeCode|Client Account Type Code|`string`|1|||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
@@ -2451,35 +2451,35 @@ The account header object is derived from multiple locations of the database dep
 <br /><br />
 <strong>AccountType: C</strong>
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|AccountType|A single letter denoting type|`string`|1|`C`||
-|AccountId|chr20_acc|`string`|11|||
-|AccountDescription|chr20_title|`string`|200|||
-|EDICode|chr20_ediaddr|`string`|50|||
-|Status|chr20_status|`string`|1|||
+|AccountType|A Single Letter Denoting Accounr Type|`string`|1||`C`|
+|AccountId|Account Code|`string`|11|||
+|AccountDescription|Account Description|`string`|200|||
+|EDICode|Account EDI Code|`string`|50|||
+|Status|Account Status|`string`|1||`O` or `F`|
 
 <br />
 <strong>AccountType: N</strong>
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|AccountType|A single letter denoting type|`string`|1|`N`||
-|AccountId|nhr20_acc|`string`|11|||
-|AccountDescription|nhr20_titdescr &#124; nhr20_detdescr|`string`|200|||
-|EDICode|nhr20_altcode|`string`|50|||
-|Status|nhr20_status|`string`|1|||
+|AccountType|A Single Letter Denoting Account Type|`string`|1||`N`|
+|AccountId|Account Code|`string`|11|||
+|AccountDescription|Account Description|`string`|200|||
+|EDICode|Account EDI Code|`string`|50|||
+|Status|Account Status|`string`|1||`O` or `F`|
 
 <br />
 <strong>AccountType: K</strong>
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|AccountType|A single letter denoting type|`string`|1|`K`||
-|AccountId|cna50_acc|`string`|11|||
-|AccountDescription|cna50_descr|`string`|200|||
-|EDICode|cna50_c2cacc|`string`|50|||
-|Status|cna50_status|`string`|1|||
+|AccountType|A Single Letter Denoting Account Type|`string`|1||`K`|
+|AccountId|Account Code|`string`|11|||
+|AccountDescription|Account Description|`string`|200|||
+|EDICode|Account EDI Code|`string`|50|||
+|Status|Account Status|`string`|1||`O or `F`|
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (AccountHeader)
