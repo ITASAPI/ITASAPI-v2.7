@@ -2131,13 +2131,13 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys09_releasenr|`number`|||Required|
-|TargetStockUnitCode||`object`||see <a href="/#reference/wip-reference-data/stockunit">StockUnit</a> endpoint||
-|Quantity|phys09_loaded|`number`||||
-|TargetDate|phys09_targetdate|`string`||||
-|PumpingMemo|phys09_pumpmemo|`string`|250|||
-|ProcessComplete|phys09_processed|`boolean`|1|||
-|SourceStockUnitCode||`[object]`|array of StockLoading objects|see <a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a> endpoint||
+|ReleaseId|Release Code|`number`|||Required|
+|TargetStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
+|Quantity|Quantity|`number`||||
+|TargetDate|Target Date|`string`||||
+|PumpingMemo|Pumping Memorandum|`string`|250|||
+|ProcessComplete|Is Process Complete|`boolean`||||
+|SourceStockUnitDetails|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`|array of StockLoading objects|||
 
 
 + Parameters
