@@ -2134,7 +2134,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 |ReleaseId|Release Code|`number`|||Required|
 |TargetStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 |Quantity|Quantity|`number`||||
-|TargetDate|Target Date|`string`||||
+|TargetDate|Target Date|`datetime`||||
 |PumpingMemo|Pumping Memorandum|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`||||
 |SourceStockUnitDetails|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`|array of StockLoading objects|||
@@ -3245,7 +3245,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + ReleaseId: 12345 (number)
 + TargetStockUnitCode (StockUnit)
 + Quantity: 123 (number)
-+ TargetDate: 20165050 (string)
++ TargetDate: `2015-07-01T00:00:00` (string)
 + PumpingMemo: pumpingmemo text goes here. (string)
 + ProcessComplete: true (boolean)
 + SourceStockUnitDetails  (array[StockLoading])
