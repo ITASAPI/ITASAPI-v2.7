@@ -2390,29 +2390,29 @@ Information relating to the processing of the Order.
 
 ### Update StockMovement [PUT]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys09_releasenr|`number`||`Required`||
-|OrderAcknowledged|phys09_sent|`string`|1|||
-|NetLoadedWeight|phys09_loaded|`number`||||
-|NetPumpedWeight|phys09_pumped|`number`||||
-|NetDeliveredWeight|phys09_delivered|`number`||||
-|LoadedDate|phys09_loadeddate|`datetime`||||
-|PumpedDate|phys09_pumpeddate|`datetime`||||
-|TargetStockUnitCode|phys09_stock|`string`|11||must exist in xx_cna50|
-|ArrivalDate|phys09_arrivaldate|`datetime`||||
-|ArrivalMemo|phys09_arrivalmemo|`string`|250|||
-|ArrivalWeight|phys09_arrivalweight|`number`||||
-|LoadingStartDate|phys09_loadstartdate|`datetime`||||
-|LoadingStartMemo|phys09_loadstartmemo|`string`|250|||
-|LoadingEndDate|phys09_loadenddate|`datetime`||||
-|LoadingPoint|phys09_loadendmemo|`string`|250|||
-|FirstWeight|phys09_firstweight|`number`||||
-|FirstWeightWeighbridgeId|phys09_firstweightwbid|`string`|10|||
-|FirstWeightId|phys09_firstweightid|`string`|10|||
-|SecondWeight|phys09_secondweight|`number`||||
-|SecondWeightWeighbridgeId|phys09_secondweightwbid|`string`|10|||
-|SecondWeightId|phys09_secondweightid|`string`|10|||
+|ReleaseId|Release Number|`number`|||Required|
+|OrderAcknowledged|Has Order Been Aknowledged|`boolean`||||
+|NetLoadedWeight|Net Loaded Weight|`number`||||
+|NetPumpedWeight|Net Pumped Weight|`number`||||
+|NetDeliveredWeight|Net Delivered Weight|`number`||||
+|LoadedDate|Date Loaded|`datetime`||||
+|PumpedDate|Date Pumped|`datetime`||||
+|TargetStockUnitCode|Target Stock Unit Code|`string`|11|||
+|ArrivalDate|Arrival Date|`datetime`||||
+|ArrivalMemo|Arrival Memorandum|`string`|250|||
+|ArrivalWeight|Arrival Weight|`number`||||
+|LoadingStartDate|Loading Start Date|`datetime`||||
+|LoadingStartMemo|Loading Start Memorandum|`string`|250|||
+|LoadingEndDate|Loading End Date|`datetime`||||
+|LoadingPoint|Loading Point|`string`|250|||
+|FirstWeight|First Weight|`number`||||
+|FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
+|FirstWeightId|First Weight ID|`string`|10|||
+|SecondWeight|Second Weight|`number`||||
+|SecondWeightWeighbridgeId|Second Weight Weighbridge ID|`string`|10|||
+|SecondWeightId|Second Weight ID|`string`|10|||
 
 
 + Parameters
