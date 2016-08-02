@@ -1984,13 +1984,13 @@ Orders (CallOffs) specifically representing incoming goods.
 Orders (CallOffs) specifically representing outgoing goods.
 ### Read DeliveryOutOrder [GET]
 
-|property|description|type|max length|notes|constraint|
+|Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys09_releasenr|`number`|0|||
-|ExpedOrderDetails||`object`||see <a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a> endpoint||
-|PumpingMemo|phys09_pumpmemo|`string`|250|||
-|ProcessComplete|phys09_processed|`boolean`|1|||
-|SourceStockUnitCode||`[object]`|array of StockLoading objects|see <a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a> endpoint||
+|ReleaseId|Release Code|`number`|||Required|
+|ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
+|PumpingMemo|Pumping Memo|`string`|250|||
+|ProcessComplete|Is Process Complete|`boolean`||||
+|SourceStockUnitCode|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint||`[object]`|array of StockLoading objects||
 
 + Request
     [AccessToken][]
@@ -2924,8 +2924,8 @@ The Transaction key is a five part key made up of the following values seperate 
 ## ExpedCallOff (object)
 + ReleaseId: 123 (number)
 + ContractType: S (string)
-+ ContractDate: 20150930 (string)
-+ DeliveryDate: 20150930 (string)
++ ContractDate: `2015-07-01T00:00:00` (string)
++ DeliveryDate: `2015-08-01T00:00:00` (string)
 + Department (Department)
 + Counterparty (AccountHeaderC)
 + Memorandum: notes field (string)
@@ -2958,8 +2958,8 @@ The Transaction key is a five part key made up of the following values seperate 
 ## ExpedCallOff List (object)
 + ReleaseId: 123 (number)
 + ContractType: S (string)
-+ ContractDate: 20150930 (string)
-+ DeliveryDate: 20150930 (string)
++ ContractDate: `2015-07-01T00:00:00` (string)
++ DeliveryDate: `2015-08-01T00:00:00` (string)
 + DepartmentCode: 5100 (string)
 + CounterpartyCode: 05990171.P (string)
 + Memorandum: notes field (string)
