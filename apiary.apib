@@ -1414,7 +1414,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |DocumentDate|Transaction Document Date|`datetime`||||
 |ValueDate|Transaction Value Date|`datetime`||||
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|Currency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
+|DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
 |FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
@@ -1467,8 +1467,8 @@ Document summary information including properties specific to integration requir
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
-|DocumentReversed|Document Reversed Reference|`string`|9|||
-|AssociateDocument|Associate Document Reference|`string`|9|||
+|PostedDate|Transaction Posted Date|`datetime`||||
+|DocumentDate|Transaction Document Date|`datetime`||||
 
 + Request (application/json)
     + Header
@@ -1501,8 +1501,8 @@ Document summary information including properties specific to integration requir
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
-|DocumentReversed|Document Reversed Reference|`string`|9|||
-|AssociateDocument|Associate Document Reference|`string`|9|||
+|PostedDate|Transaction Posted Date|`datetime`||||
+|DocumentDate|Transaction Document Date|`datetime`||||
 
 + Request (application/json)
     + Header
@@ -1628,7 +1628,7 @@ List of Principle Physical Contracts (agreements)
 |ClientReference|Client Reference|`string`|40|||
 |BuyerAccountCode|Buyer Account Code|`string`|10|||
 |SellerAccountCode|Seller Account Code|`string`|10|||
-|CounterpartyCode|Counterparty Code|`string`|10|filter||
+|CounterpartyCode|Counterparty Code|`string`|10|||
 |CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
 |PaymentTermCode|Payment Term Code|`string`|8|||
 |ContractTermCode|Contract Term Code|`string`|8|||
@@ -3289,15 +3289,15 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: Y (string)
-+ DocumentReversed: PI1600011 (string)
-+ AssociateDocument: PI1600012 (string)
++ PostedDate: `2015-07-01T00:00:00` (string)
++ DocumentDate: `2015-07-01T00:00:00` (string)
 
 ## TransactionHeaderDelta (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: Y (string)
-+ DocumentReversed: PI1600011 (string)
-+ AssociateDocument: PI1600012 (string)
++ PostedDate: `2015-07-01T00:00:00` (string)
++ DocumentDate: `2015-07-01T00:00:00` (string)
 
 ## TransactionHeader List (object)
 + PostedDate: `2015-07-01T00:00:00` (string)
@@ -3315,7 +3315,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + DocumentDate: `2015-07-01T00:00:00` (string)
 + ValueDate: `2015-07-31T00:00:00` (string)
 + Account  (AccountHeader)
-+ Currency  (Currency)
++ DocumentCurrency  (Currency)
 + AmountInDocumentCurrency: 28607.34 (number)
 + FunctionalCurrency  (Currency)
 + AmountInFunctionalCurrency: 8607.34 (number)
