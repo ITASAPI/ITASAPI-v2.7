@@ -1992,7 +1992,7 @@ Orders (CallOffs) specifically representing outgoing goods.
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`||||
-|SourceStockUnitDetails|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
+|SourceStockUnit|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
 
 + Request
     [AccessToken][]
@@ -2137,7 +2137,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 |TargetDate|Target Date|`datetime`||||
 |PumpingMemo|Pumping Memorandum|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`||||
-|SourceStockUnitDetails|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
+|SourceStockUnitCodes|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
 
 
 + Parameters
@@ -2890,7 +2890,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + ExpedOrderDetails (ExpedCallOff)
 + PumpingMemo: memp text ges here (string)
 + ProcessComplete: 1 (boolean)
-+ SourceStockUnitDetails (array [StockLoading])
++ SourceStockUnit (array [StockLoading])
 
 ## Department (object)
 + DepartmentId: 5100 (string)
@@ -3248,7 +3248,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + TargetDate: `2015-07-01T00:00:00` (string)
 + PumpingMemo: pumpingmemo text goes here. (string)
 + ProcessComplete: true (boolean)
-+ SourceStockUnitDetails  (array[StockLoading])
++ SourceStockUnitCodes  (array[StockLoading])
 
 ## StockUnit (object)
 + StockUnitId: 1111.MEP (string)
