@@ -1056,7 +1056,7 @@ Codes used to describe the units of measurement applied in physical contracts.
 |WeightDescription|Weight Code Description|`string`|50|||
 |DocumentText|Weight Document Text|`string`|4000|||
 |DecimalPlacesPresentation|Number of Decimal Places|`number`|1|||
-|ConversionFactorToKilos|Conversion Factor into Kilos|`number`|24,17|||
+|ConversionFactorToKilos|Conversion Factor into Kilos|`number`||||
 |EDICode|Weight EDI Code|`string`|50|||
 |Status|Weight Status|`string`|1||`O` or `F`|
 
@@ -1188,8 +1188,8 @@ Stock Account profile - restricted by WIPAccountType of `S`.
 |Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
 |NominalAccount|Nominal Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |StockOwner|Stock Owner delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|ReleaseState|Release State|`number`||||
-|CurrentStatus|Stock Unit Current Status|`number`||||
+|ReleaseState|Release State|`number`|2|||
+|CurrentStatus|Stock Unit Current Status|`number`|2|||
 |PrivilegeLevel|Stock Unit Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Stock Unit Account EDI Code|`string`|9|||
 |Status|Stock Unit Account Status|`string`|1||`O` or `F`|
@@ -1226,8 +1226,8 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 |NominalAccountCode|Nominal Account Code|`string`|9|||
 |CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
 |StockOwnerCode|Stock Owner Account Code|`string`|50|||
-|ReleaseState|Release State|`number`||||
-|CurrentStatus|Stock Unit Current Status|`number`||||
+|ReleaseState|Release State|`number`|2|||
+|CurrentStatus|Stock Unit Current Status|`number`|2|||
 |PrivilegeLevel|Stock Unit Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Stock Unit Account EDI Code|`string`|9|||
 |Status|Stock Unit Account Status|`string`|1||`O` or `F`|
@@ -1357,13 +1357,13 @@ Provides access to full accounting ledger by Document Reference.
 |AccountingPeriod|Transaction Accounting Period|`number`||||
 |PostingDate|Transaction Posting Date|`number`||||
 |PostingTime|Transaction Posting Time|`number`||||
-|DocumentDate|Transaction Document Date|`datetime`||||
-|ValueDate|Transaction Value Date|`datetime`||||
+|DocumentDate|Transaction Document Date|`datetime`|20|||
+|ValueDate|Transaction Value Date|`datetime`|20|||
 |FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
 |AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
 |AmountInLocalCurrency|Transaction Amount in Local Currency|`number`||||
-|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`|18,8|||
+|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`||||
 |RateOfExchangeType|Transaction Rate of Exchange Type Code|`string`|1||`M` or `D`|
 |WeightInQtyCode|Weight in Quantity Code|`number`||||
 |ContractReference|Contract Reference Code|`string`|10|||
@@ -1374,10 +1374,10 @@ Provides access to full accounting ledger by Document Reference.
 |ClientReference|Client Reference|`string`|25|||
 |Narrative|Narrative|`string`|30|||
 |MarketReference|Market Reference|`string`|8|||
-|PromptMonth|Transaction Prompt Month|`datetime`||||
+|PromptMonth|Transaction Prompt Month|`datetime`|20|||
 |OptionType|Transaction Option Type Code|`string`|1||`C`, `P` or `''`|
 |CommodityReference|Transaction Commodity Reference|`string`|15|||
-|TransactionIsMatched|Is Transaction Matched|`boolean`||||
+|TransactionIsMatched|Is Transaction Matched|`boolean`|5|||
 |PreMatchDocumentReference|Pre Matched Document Reference Code|`string`|9|||
 
 
@@ -1411,15 +1411,15 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |--------|-----------|----|----------|-----|----------|
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |AccountLedgerType|Account Ledger Type Code|`string`|1||`C`, `N` or `K`|
-|DocumentDate|Transaction Document Date|`datetime`||||
-|ValueDate|Transaction Value Date|`datetime`||||
+|DocumentDate|Transaction Document Date|`datetime`|20|||
+|ValueDate|Transaction Value Date|`datetime`|20|||
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
 |FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
 |AmountInLocalCurrency|Transaction Account in Local Currency|`number`||||
-|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`|18,8|||
+|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`||||
 |RateOfExchangeType|Transaction Rate of Exchange Type Code|`string`|1||`M` or `D`|
 |WeightInQtyCode|Weight in Quantity Code|`number`||||
 |ContractReference|Contract Reference Code|`string`|10|||
@@ -1430,7 +1430,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |ClientReference|Client Reference|`string`|25|||
 |Narrative|Narrative|`string`|30|||
 |MarketReference|Market Referece|`string`|8|||
-|PromptMonth|Transaction Prompt Month|`datetime`||||
+|PromptMonth|Transaction Prompt Month|`datetime`|20|||
 |OptionType|Transaction Option Type|`string`|1||`C`, `P` or `''`|
 |CommodityReference|Transaction Commodity Reference|`string`|15|||
 
@@ -1528,8 +1528,8 @@ Document summary information including properties specific to integration requir
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PostedDate|Transaction Posted Date|`datetime`||||
-|DocumentDate|Transaction Docuement Date|`datetime`||||
+|PostedDate|Transaction Posted Date|`datetime`|20|||
+|DocumentDate|Transaction Docuement Date|`datetime`|20|||
 |DocumentReference|Transaction Document Reference|`string`|9|||
 |EDICode|Document EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
