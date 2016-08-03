@@ -1571,7 +1571,7 @@ Principle Physical Contract (agreement) details
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract Code|`string`|10||Required|
 |ContractType|Contract Type Code|`string`|1||`P` or `S`|
-|ContractDate|Contract Date|`datetime`||||
+|ContractDate|Contract Date|`datetime`|20|||
 |Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
 |Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
 |ClientReference|Client Reference|`string`|40|||
@@ -1586,7 +1586,7 @@ Principle Physical Contract (agreement) details
 |OriginalContractQuantity|Original Contract Quantity|`number`||||
 |CurrentContractQuantity|Current Contract Quantity|`number`||||
 |ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Is Contract Approved|`boolean`||||
+|ContractApproved|Is Contract Approved|`boolean`|5|||
 |AllocationReference|Allocation Reference|`string`|11|||
 
 
@@ -1617,7 +1617,7 @@ List of Principle Physical Contracts (agreements)
 |-------|-----------|----|----------|-----|----------|
 |ContractId|Contract Code|`string`|10|||
 |ContractType|Contract Type Code|`string`|1||`P` or `S`|
-|ContractDate|Contract Date|`datetime`||||
+|ContractDate|Contract Date|`datetime`|20|||
 |DepartmentCode|Department Code|`string`|4|||
 |TraderCode|Trader Code|`string`|3|||
 |ClientReference|Client Reference|`string`|40|||
@@ -1632,7 +1632,7 @@ List of Principle Physical Contracts (agreements)
 |OriginalContractQuantity|Original Contract Quantity|`number`||||
 |CurrentContractQuantity|Current Contract Quantity|`number`||||
 |ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Is Contract Approved|`boolean`||||
+|ContractApproved|Is Contract Approved|`boolean`|5|||
 |AllocationReference|Allocation Reference|`string`|11|||
 
 
@@ -1672,7 +1672,7 @@ Broker commissions held against Physical Contracts.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract Code|`string`|10||Required|
-|UniqueId|Unique ID Number|`number`||||
+|UniqueId|Unique ID Number|`number`|2|||
 |AgentAccount|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
 |AgentReference|Agent Reference|`string`|40|||
 
@@ -1702,7 +1702,7 @@ List of Broker commissions held against Physical Contracts.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract Code|`string`|10|||
-|UniqueId|Unique ID Number|`number`||||
+|UniqueId|Unique ID Number|`number`|2|||
 |AgentAccountCode|Agent Account Code|`string`|10|||
 |AgentReference|Agent Reference|`string`|40|||
 
@@ -1737,10 +1737,10 @@ List of Logistics information for Physical Contracts.
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract Code|`string`|10|||
 |VesselReference|Vessel Reference|`string`|30|||
-|BillOfLadingDate|Bill of Lading Date|`datetime`||||
+|BillOfLadingDate|Bill of Lading Date|`datetime`|20|||
 |BillOfLadingReference|Bill of Lading Reference|`string`|255|||
-|DocumentsAcknowledged|Are Documents Aknowledged|`boolean`||||
-|DocumentsAcknowledgedDate|Date Documents Aknowledged|`datetime`||||
+|DocumentsAcknowledged|Are Documents Aknowledged|`boolean`|5|||
+|DocumentsAcknowledgedDate|Date Documents Aknowledged|`datetime`|20|||
 
 
 + Request
@@ -1960,7 +1960,7 @@ Orders (CallOffs) specifically representing incoming goods.
 |ReleaseId|Release Code|`number`|||Required|
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
-|ProcessComplete|Is Process Complete|`boolean`||||
+|ProcessComplete|Is Process Complete|`boolean`|5|||
 |TargetStockUnit|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 
 
@@ -1991,7 +1991,7 @@ Orders (CallOffs) specifically representing outgoing goods.
 |ReleaseId|Release Code|`number`|||Required|
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
-|ProcessComplete|Is Process Complete|`boolean`||||
+|ProcessComplete|Is Process Complete|`boolean`|5|||
 |SourceStockUnit|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
 
 + Request
@@ -2017,8 +2017,8 @@ Orders (CallOffs) generated through EXPED
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Code|`number`|||Required|
 |ContractType|Contract Type|`string`|1|||
-|ContractDate|Contract Date|`datetime`||||
-|DeliveryDate|Delivery Date|`datetime`||||
+|ContractDate|Contract Date|`datetime`|20|||
+|DeliveryDate|Delivery Date|`datetime`|20|||
 |Department|see <b><a href="/#reference/nominal-reference-data/departments">Departments List</a></b> endpoint|`object`||||
 |Counterparty|see <b><a href="/#reference/data-object-definitions/read-expedcalloffss">Account Header</a></b> object|`object`||||
 |Memorandum|Memorandum|`string`|4000|||
@@ -2045,7 +2045,7 @@ Orders (CallOffs) generated through EXPED
 |VehicleReference|Vehicle Reference|`string`|4|||
 |VehicleRegistration|Vehicle Registration|`string`|50|||
 |TrailerRegistration|Trailer Registration|`string`|50|||
-|EarlyLoadAllowed|Is Early Load Allowed|`boolean`||||
+|EarlyLoadAllowed|Is Early Load Allowed|`boolean`|5|||
 |MaxLoadWeight|Maximum Load Weight|`number`||||
 
 + Request
@@ -2071,8 +2071,8 @@ Orders (CallOffs) generated through EXPED
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Code|`number`||||
 |ContractType|Contract Type|`string`|1|||
-|ContractDate|Contract Date|`datetime`||||
-|DeliveryDate|Delivery Date|`datetime`||||
+|ContractDate|Contract Date|`datetime`|20|||
+|DeliveryDate|Delivery Date|`datetime`|20|||
 |DepartmentCode|Department Code|`string`|4|||
 |CounterpartyCode|Counterparty Code|`string`|10|||  
 |Memorandum|Memorandum|`string`|4000|||
@@ -2096,7 +2096,7 @@ Orders (CallOffs) generated through EXPED
 |VehicleReference|Vehicle Reference|`string`|4|||
 |VehicleRegistration|Vehicle Registration|`string`|50|||
 |TrailerRegistration|Trailer Registration|`string`|50|||
-|EarlyLoadAllowed|Is Early Load Allowed|`boolean`||||
+|EarlyLoadAllowed|Is Early Load Allowed|`boolean`|5|||
 |MaxLoadWeight|Maximum Load Weight|`number`||||
 
 + Request
@@ -2134,9 +2134,9 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 |ReleaseId|Release Code|`number`|||Required|
 |TargetStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 |Quantity|Quantity|`number`||||
-|TargetDate|Target Date|`datetime`||||
+|TargetDate|Target Date|`datetime`|20|||
 |PumpingMemo|Pumping Memorandum|`string`|250|||
-|ProcessComplete|Is Process Complete|`boolean`||||
+|ProcessComplete|Is Process Complete|`boolean`|5|||
 |SourceStockUnitCodes|see <b><a href="/#reference/inventory-physicals-stock-processing/stockloading">StockLoading</a></b> endpoint|`[object]`||array of StockLoading objects||
 
 
@@ -2174,7 +2174,7 @@ Batch record information by Stock Unit.
 |--------|-----------|----|----------|-----|----------|
 |StockBatchId|Stock Batch Code|`string`|20||Required|
 |StockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
-|BatchCreateDate|Date Batch Created|`datetime`||||
+|BatchCreateDate|Date Batch Created|`datetime`|20|||
 |BatchText|Batch Text|`string`|1000|||
 
 
@@ -2204,7 +2204,7 @@ Batch record information by Stock Unit.
 |--------|-----------|----|----------|-----|----------|
 |StockBatchId|Stock Batch Code|`string`|20|||
 |StockUnitCode|Stock Unit Code|`string`|11|||
-|BatchCreateDate|Date Batch Created|`datetime`||||
+|BatchCreateDate|Date Batch Created|`datetime`|20|||
 |BatchText|Batch Text|`string`|1000|||
 
 
@@ -2348,18 +2348,18 @@ Information relating to the processing of the Order.
 |--------|-----------|----|----------|-----|----------|
 |TargetStockUnit|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 |ReleaseId|Release Number|`number`|||Required|
-|OrderAcknowledged|Has Order Been Acknowledged|`boolean`||||
+|OrderAcknowledged|Has Order Been Acknowledged|`boolean`|5|||
 |NetLoadedWeight|Net Loaded Weight|`number`||||
 |NetPumpedWeight|Net Pumped Weight|`number`||||
 |NetDeliveredWeight|Net Delivered Weight|`number`||||
-|LoadedDate|Date Loaded|`datetime`||||
-|PumpedDate|Date Pumped|`datetime`||||
-|ArrivalDate|Arrival Date|`datetime`||||
+|LoadedDate|Date Loaded|`datetime`|20|||
+|PumpedDate|Date Pumped|`datetime`|20|||
+|ArrivalDate|Arrival Date|`datetime`|20|||
 |ArrivalMemo|Arrival Memorandum|`string`|250|||
 |ArrivalWeight|Arrival Weight|`number`||||
-|LoadingStartDate|Loading Start Date|`datetime`||||
+|LoadingStartDate|Loading Start Date|`datetime`|20|||
 |LoadingStartMemo|Loading Start Memorandum|`string`|250|||
-|LoadingEndDate|Loading End Date|`datetime`||||
+|LoadingEndDate|Loading End Date|`datetime`|20|||
 |LoadingPoint|Loading Point|`string`|250|||
 |FirstWeight|First Weight|`number`||||
 |FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
@@ -2393,19 +2393,19 @@ Information relating to the processing of the Order.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Number|`number`|||Required|
-|OrderAcknowledged|Has Order Been Aknowledged|`boolean`||||
+|OrderAcknowledged|Has Order Been Aknowledged|`boolean`|5|||
 |NetLoadedWeight|Net Loaded Weight|`number`||||
 |NetPumpedWeight|Net Pumped Weight|`number`||||
 |NetDeliveredWeight|Net Delivered Weight|`number`||||
-|LoadedDate|Date Loaded|`datetime`||||
-|PumpedDate|Date Pumped|`datetime`||||
+|LoadedDate|Date Loaded|`datetime`|20|||
+|PumpedDate|Date Pumped|`datetime`|20|||
 |TargetStockUnitCode|Target Stock Unit Code|`string`|11|||
-|ArrivalDate|Arrival Date|`datetime`||||
+|ArrivalDate|Arrival Date|`datetime`|20|||
 |ArrivalMemo|Arrival Memorandum|`string`|250|||
 |ArrivalWeight|Arrival Weight|`number`||||
-|LoadingStartDate|Loading Start Date|`datetime`||||
+|LoadingStartDate|Loading Start Date|`datetime`|20|||
 |LoadingStartMemo|Loading Start Memorandum|`string`|250|||
-|LoadingEndDate|Loading End Date|`datetime`||||
+|LoadingEndDate|Loading End Date|`datetime`|20|||
 |LoadingPoint|Loading Point|`string`|250|||
 |FirstWeight|First Weight|`number`||||
 |FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
@@ -2541,8 +2541,8 @@ A multipurpose object used by several endpoints.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentDate|Document Date|`datetime`|||Required|
-|ValueDate|Value Date|`datetime`|||Required|
+|DocumentDate|Document Date|`datetime`|20||Required|
+|ValueDate|Value Date|`datetime`|20||Required|
 |DocumentCurrencyCode|Document Currency|`string`|3||Required|
 |PayeeName|Payee Name|`string`|60|||
 |Narrative|Narrative|`string`|30|||
