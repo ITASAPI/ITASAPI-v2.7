@@ -105,15 +105,15 @@ Client Ledger Account profile.
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
-|ClientPaymentLimit|Client Payment Limit|`number`|18,8|||
-|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
-|ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
+|ClientPaymentLimit|Client Payment Limit|`number`||||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`||||
+|ClientCommitmentLimit|Client Commitment Limit|`number`||||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limit Approved|`datetime`|20|||
 |FamilyLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
-|FamilyPaymentLimit|Family Payment Limit|`number`|8|||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`|8|||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`|8|||
+|FamilyPaymentLimit|Family Payment Limit|`number`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
 
 
 + Request
@@ -166,15 +166,15 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
-|ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
-|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
-|ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
+|ClientPaymentLimit|Client Payment Limits|`number`||||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`||||
+|ClientCommitmentLimit|Client Commitment Limit|`number`||||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`|20|||
 |FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
-|FamilyPaymentLimit|Family Payment Limit|`number`|8|||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`|8|||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`|8|||
+|FamilyPaymentLimit|Family Payment Limit|`number`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
 
 
 + Request (application/json)
@@ -239,15 +239,15 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
-|ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
-|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
-|ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
+|ClientPaymentLimit|Client Payment Limits|`number`||||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`||||
+|ClientCommitmentLimit|Client Commitment Limit|`number`||||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`|20|||
 |FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
-|FamilyPaymentLimit|Family Payment Limit|`number`|8|||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`|8|||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`|8|||
+|FamilyPaymentLimit|Family Payment Limit|`number`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
 
 + Request (application/json)
     + Header
@@ -521,7 +521,7 @@ Nominal (General) Ledger Account profile.
 |NominalAccountId|Nominal Account Code|`string`|9|||
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
-|BankAccount|Is a Bank Account|`boolean`||||
+|BankAccount|Is a Bank Account|`boolean`|5|||
 |PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
@@ -560,7 +560,7 @@ Nominal (General) Ledger Account profile.
 |NominalAccountId|Nominal Account Code|`string`|9||Required|
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
-|BankAccount|Is a Bank Account|`boolean`||||
+|BankAccount|Is a Bank Account|`boolean`|5|||
 |PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
@@ -586,7 +586,7 @@ Nominal (General) Ledger Account profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account Code|`string`|9||Required|
-|BankAccount|Is a Bank Account|`boolean`||||
+|BankAccount|Is a Bank Account|`boolean`|5|||
 |PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
@@ -618,7 +618,7 @@ Nominal (General) Ledger Account profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account Code|`string`|9||Required|
-|BankAccount|Is a Bank Account|`boolean`||||
+|BankAccount|Is a Bank Account|`boolean`|5|||
 |PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
 |Status|Nominal Account Status|`string`|1||`O` or `F`|
@@ -923,7 +923,7 @@ Codes used to identify specific product qualities.
 |SampleId|Sample Code|`string`|4|||
 |SampleDescription|Sample Code Description|`string`|50|||
 |DocumentText|Sample Document Text|`string`|4000|||
-|NoOfCopiesRequired|Number of Copies Required|`number`||||
+|NoOfCopiesRequired|Number of Copies Required|`number`|2|||
 
 
 + Request
@@ -1055,7 +1055,7 @@ Codes used to describe the units of measurement applied in physical contracts.
 |WeightId|Weight Code|`string`|4|||
 |WeightDescription|Weight Code Description|`string`|50|||
 |DocumentText|Weight Document Text|`string`|4000|||
-|DecimalPlacesPresentation|Number of Decimal Places|`number`||||
+|DecimalPlacesPresentation|Number of Decimal Places|`number`|1|||
 |ConversionFactorToKilos|Conversion Factor into Kilos|`number`|24,17|||
 |EDICode|Weight EDI Code|`string`|50|||
 |Status|Weight Status|`string`|1||`O` or `F`|
