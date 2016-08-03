@@ -36,16 +36,16 @@ Client Ledger Account profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ClientAccountId|Client Account Code|`string`|10|||
-|Title|Client Title|`string`|200|||
+|Title|Client Account Title|`string`|200|||
 |ClientTypeCode|Client Account Type Code|`string`|1|||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
-|CanBeBuyer|Is Client a Buyer|`boolean`||||
-|CanBeSeller|Is Client a Seller|`boolean`||||
-|CanBeAgent|Is Client an Agent|`boolean`||||
-|CanBeShipper|Is Client a Shipper|`boolean`||||
-|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
-|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
+|CanBeBuyer|Is Client a Buyer|`boolean`|5|||
+|CanBeSeller|Is Client a Seller|`boolean`|5|||
+|CanBeAgent|Is Client an Agent|`boolean`|5|||
+|CanBeShipper|Is Client a Shipper|`boolean`|5|||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`|5|||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`|5|||
 |EDICode|Account EDI Code|`string`|50|||
 
 
@@ -91,29 +91,29 @@ Client Ledger Account profile.
 |ClientType|see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint|`object`||||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
-|CanBeBuyer|Is Client a Buyer|`boolean`||||
-|CanBeSeller|Is Client a Seller|`boolean`||||
-|CanBeAgent|Is Client an Agent|`boolean`||||
-|CanBeShipper|Is Client a Shipper|`boolean`||||
-|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
-|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
-|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
-|GroupAccountMember|Is Client a Group Account Member|`boolean`||||
+|CanBeBuyer|Is Client a Buyer|`boolean`|5|||
+|CanBeSeller|Is Client a Seller|`boolean`|5|||
+|CanBeAgent|Is Client an Agent|`boolean`|5|||
+|CanBeShipper|Is Client a Shipper|`boolean`|5|||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`|5|||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`|5|||
+|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`|5|||
+|GroupAccountMember|Is Client a Group Account Member|`boolean`|5|||
 |HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
 |EDICode|Account EDI Code|`string`|50|||
 |ContactDetails|see <b><a href="/#reference/data-object-definitions/address">Address</a></b> object|`object`||||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
+|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
 |ClientPaymentLimit|Client Payment Limit|`number`|18,8|||
 |ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
 |ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|Date Family Limit Approved|`datetime`||||
+|FamilyDateLimitsApproved|Date Family Limit Approved|`datetime`|20|||
 |FamilyLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
-|FamilyPaymentLimit|Family Payment Limit|`number`||||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
+|FamilyPaymentLimit|Family Payment Limit|`number`|8|||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`|8|||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`|8|||
 
 
 + Request
@@ -143,14 +143,14 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |ClientTypeCode|Client Account Type Code|`string`|1||Required|
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
-|CanBeBuyer|Is Client a Buyer|`boolean`||||
-|CanBeSeller|Is Client a Seller|`boolean`||||
-|CanBeAgent|Is Client an Agent|`boolean`||||
-|CanBeShipper|Is Client a Shipper|`boolean`||||
-|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
-|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
-|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
-|GroupAccountMember|Is Client a Group Account Memeber|`boolean`||||
+|CanBeBuyer|Is Client a Buyer|`boolean`|5|||
+|CanBeSeller|Is Client a Seller|`boolean`|5|||
+|CanBeAgent|Is Client an Agent|`boolean`|5|||
+|CanBeShipper|Is Client a Shipper|`boolean`|5|||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`|5|||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`|5|||
+|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`|5|||
+|GroupAccountMember|Is Client a Group Account Memeber|`boolean`|5|||
 |HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
 |EDICode|Account EDI Code|`string`|50|||
 |<strong>Contact Details</strong>|
@@ -164,17 +164,17 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |PhoneNumber|Phone Number|`string`|40|||
 |FaxNumber|Fax Number|`string`|40|||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
+|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
 |ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
 |ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
 |ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`||||
+|FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`|20|||
 |FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
-|FamilyPaymentLimit|Family Payment Limit|`number`||||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
+|FamilyPaymentLimit|Family Payment Limit|`number`|8|||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`|8|||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`|8|||
 
 
 + Request (application/json)
@@ -216,14 +216,14 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 |ClientTypeCode|Client Account Type Code|`string`|1|||
 |Status|Account Status|`string`|1||`O` or `F`|
 |PrivilegeLevel|Account Privilege Level|`number`|1||`0` to `9`|
-|CanBeBuyer|Is Client a Buyer|`boolean`||||
-|CanBeSeller|Is Client a Seller|`boolean`||||
-|CanBeAgent|Is Client an Agent|`boolean`||||
-|CanBeShipper|Is Client a Shipper|`boolean`||||
-|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`||||
-|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`||||
-|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`||||
-|GroupAccountMember|Is Client a Group Account Memeber|`boolean`||||
+|CanBeBuyer|Is Client a Buyer|`boolean`|5|||
+|CanBeSeller|Is Client a Seller|`boolean`|5|||
+|CanBeAgent|Is Client an Agent|`boolean`|5|||
+|CanBeShipper|Is Client a Shipper|`boolean`|5|||
+|CanBeDerivativeClient|Is Client a Derivitive Client|`boolean`|5|||
+|CanBeDerivativeBroker|Is Client a Derivitive Broker|`boolean`|5|||
+|GlobalTraderProgramMember|Is Client a Global Trader Program Member|`boolean`|5|||
+|GroupAccountMember|Is Client a Group Account Memeber|`boolean`|5|||
 |HeadOfFamilyAccountCode|Head of Family Account Code|`string`|10|||
 |EDICode|Account EDI Code|`string`|50|||
 |<strong>Contact Details</strong>|
@@ -237,17 +237,17 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 |PhoneNumber|Phone Number|`string`|40|||
 |FaxNumber|Fax Number|`string`|40|||
 |<strong>Client Limits</strong>|
-|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`||||
+|ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
 |ClientPaymentLimit|Client Payment Limits|`number`|18,8|||
 |ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`|18,8|||
 |ClientCommitmentLimit|Client Commitment Limit|`number`|18,8|||
 |<strong>Family Limits</strong>|
-|FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`||||
+|FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`|20|||
 |FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
-|FamilyPaymentLimit|Family Payment Limit|`number`||||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
+|FamilyPaymentLimit|Family Payment Limit|`number`|8|||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`|8|||
+|FamilyCommitmentLimit|Family Commitment Limit|`number`|8|||
 
 + Request (application/json)
     + Header
