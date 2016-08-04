@@ -16,7 +16,7 @@ VERSION: 2.6
 <br />
 <div>~ Updated endpoints changed in this release :</div>
 <ul>
-<li>All Reference titles which included a backslash have now been amended to include a hyphen instead, eg: Contract/Physical now Contract-Physical, for URL purposes.</li>
+<li>All Apiary documentation reference titles which included a backslash have now been amended to include a hyphen instead, eg: Contract/Physical now Contract-Physical, this is purely for documentation URL purposes and does not effect API endpoints.</li>
 <li>Nominal Reference Data <strong>Update NominalAccount</strong>: Removed MainGroupingDescription and DetailDescription properties as they are not supported for update</li>
 <li>Accounting-Transaction <strong>Read UnPosted Transaction</strong>: API response now displays DocumentCurrency for Currency object.</li>
 <li>Accounting-Transaction <strong>Update Transaction Header</strong>: Removed PostedDate and DocumentDate properties as they are not supported for update.</li>
@@ -562,7 +562,7 @@ Nominal (General) Ledger Account profile.
 
 ## NominalAccount [/ReferenceData/{TradingEntityId}/NominalLedger/NominalAccount/{NominalAccountId}]
 Nominal (General) Ledger Account profile.
-<div>Note: If the fields MainGroupingDescription or DetailDescription are included, they will not be updated as they are not supported for update.</div> 
+
 ### Read NominalAccount [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
