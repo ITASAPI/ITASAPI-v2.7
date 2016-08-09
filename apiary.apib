@@ -2045,7 +2045,7 @@ Orders (CallOffs) generated through EXPED
 |Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list">Commodies List</a></b> endpoint|`object`||||
 |Sample|see <b><a href="/#reference/physicals-reference-data/sample-list">Samples List</a></b> endpoint|`object`||||
 |UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list">Weights List</a></b> endpoint|`object`||||
-|Quantity|Quantity|`number`||||
+|Quantity|Quantity|`decimal`||||
 |PackingType|see <b><a href="/#reference/physicals-reference-data/packingtype-list">PackingType List</a></b> endpoint|`object`||||
 |<strong>TransportDetails</strong>|
 |DeliveryClient|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
@@ -2097,7 +2097,7 @@ Orders (CallOffs) generated through EXPED
 |CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
 |SampleCode|Sample Code|`string`|4|||
 |UnitOfMeasurementCode|Unit of Measurement Code|`string`|4|||
-|Quantity|Quantity|`number`||||
+|Quantity|Quantity|`decimal`||||
 |PackingTypeCode|Packing Type Code|`string`|4|||
 |DeliveryClientCode|Delivery Client Code|`string`|10|||
 |HaulierCode|Haulier Code|`string`|10|||
@@ -2954,7 +2954,7 @@ The Transaction key is a five part key made up of the following values seperate 
     + Commodity (Commodity)
     + Sample (Sample)
     + UnitOfMeasurement (Weight)
-    + Quantity: 100 (number)
+    + Quantity: 100.00 (number)
     + PackingType (PackingType)
 + TansportDetails
     + DeliveryClient (AccountHeaderC)
@@ -2986,7 +2986,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + CommodityFullCode: `ORG||S1-45||FAIRT||QWE||RTY` (string)
 + SampleCode: 123abc (string)
 + UnitOfMeasurementCode: GA (string)
-+ Quantity: 100 (number)
++ Quantity: 100.00 (number)
 + PackingTypeCode: ABCD (string)
 + DeliveryClientCode: abc123 (string)
 + HaulierCode: abc123 (string)
