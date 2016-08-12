@@ -114,15 +114,15 @@ Client Ledger Account profile.
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
-|ClientPaymentLimit|Client Payment Limit|`number`||||
-|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`||||
-|ClientCommitmentLimit|Client Commitment Limit|`number`||||
+|ClientPaymentLimit|Client Payment Limit|`decimal`||||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`decimal`||||
+|ClientCommitmentLimit|Client Commitment Limit|`decimal`||||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limit Approved|`datetime`|20|||
 |FamilyLimitsCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
-|FamilyPaymentLimit|Family Payment Limit|`number`||||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
+|FamilyPaymentLimit|Family Payment Limit|`decimal`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`decimal`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`decimal`||||
 
 
 + Request
@@ -175,15 +175,15 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
-|ClientPaymentLimit|Client Payment Limits|`number`||||
-|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`||||
-|ClientCommitmentLimit|Client Commitment Limit|`number`||||
+|ClientPaymentLimit|Client Payment Limits|`decimal`||||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`decimal`||||
+|ClientCommitmentLimit|Client Commitment Limit|`decimal`||||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`|20|||
 |FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
-|FamilyPaymentLimit|Family Payment Limit|`number`||||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
+|FamilyPaymentLimit|Family Payment Limit|`decimal`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`decimal`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`decimal`||||
 
 
 + Request (application/json)
@@ -248,15 +248,15 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 |<strong>Client Limits</strong>|
 |ClientDateLimitsApproved|Date Client Limits Approved|`datetime`|20|||
 |ClientLimitsCurrencyCode|Client Limits Currency Code|`string`|3|||
-|ClientPaymentLimit|Client Payment Limits|`number`||||
-|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`number`||||
-|ClientCommitmentLimit|Client Commitment Limit|`number`||||
+|ClientPaymentLimit|Client Payment Limits|`decimal`||||
+|ClientMarketDefaultRiskLimit|Client Market Default Risk Limit|`decimal`||||
+|ClientCommitmentLimit|Client Commitment Limit|`decimal`||||
 |<strong>Family Limits</strong>|
 |FamilyDateLimitsApproved|Date Family Limits Approved|`datetime`|20|||
 |FamilyLimitsCurrencyCode|Family Limit Currency Code|`string`|3|||
-|FamilyPaymentLimit|Family Payment Limit|`number`||||
-|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`number`||||
-|FamilyCommitmentLimit|Family Commitment Limit|`number`||||
+|FamilyPaymentLimit|Family Payment Limit|`decimal`||||
+|FamilyMarketDefaultRiskLimit|Family Market Default Risk Limit|`decimal`||||
+|FamilyCommitmentLimit|Family Commitment Limit|`decimal`||||
 
 + Request (application/json)
     + Header
@@ -698,7 +698,7 @@ Codes and rates applied as part of any VAT/GST accounting practise.
 |--------|-----------|----|----------|-----|----------|
 |VatRateId|VAT Rate Code|`string`|2|||
 |VatRateDescription|VAT Rate Code Description|`string`|40|||
-|VatRate|VAT Rate|`float`||||
+|VatRate|VAT Rate|`decimal`||||
 |Status|VAT Rate Status|`string`|1||`O` or `F`|
 
 + Request
@@ -1065,7 +1065,7 @@ Codes used to describe the units of measurement applied in physical contracts.
 |WeightDescription|Weight Code Description|`string`|50|||
 |DocumentText|Weight Document Text|`string`|4000|||
 |DecimalPlacesPresentation|Number of Decimal Places|`number`|1|||
-|ConversionFactorToKilos|Conversion Factor into Kilos|`number`||||
+|ConversionFactorToKilos|Conversion Factor into Kilos|`decimal`||||
 |EDICode|Weight EDI Code|`string`|50|||
 |Status|Weight Status|`string`|1||`O` or `F`|
 
@@ -1369,12 +1369,12 @@ Provides access to full accounting ledger by Document Reference.
 |DocumentDate|Transaction Document Date|`datetime`|20|||
 |ValueDate|Transaction Value Date|`datetime`|20|||
 |FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
-|AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
-|AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
-|AmountInLocalCurrency|Transaction Amount in Local Currency|`number`||||
-|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`||||
+|AmountInDocumentCurrency|Transaction Amount in Document Currency|`decimal`||||
+|AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`decimal`||||
+|AmountInLocalCurrency|Transaction Amount in Local Currency|`decimal`||||
+|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`decimal`||||
 |RateOfExchangeType|Transaction Rate of Exchange Type Code|`string`|1||`M` or `D`|
-|WeightInQtyCode|Weight in Quantity Code|`number`||||
+|WeightInQtyCode|Weight in Quantity Code|`decimal`||||
 |ContractReference|Contract Reference Code|`string`|10|||
 |Expense|see <b><a href="/#reference/nominal-reference-data/expense-list/list-expenses">Expense</a></b> endpoint|`object`||||
 |Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
@@ -1424,13 +1424,13 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |ValueDate|Transaction Value Date|`datetime`|20|||
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
-|AmountInDocumentCurrency|Transaction Amount in Document Currency|`number`||||
+|AmountInDocumentCurrency|Transaction Amount in Document Currency|`decimal`||||
 |FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
-|AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`number`||||
-|AmountInLocalCurrency|Transaction Account in Local Currency|`number`||||
-|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`number`||||
+|AmountInFunctionalCurrency|Transaction Amount in Functional Currency|`decimal`||||
+|AmountInLocalCurrency|Transaction Account in Local Currency|`decimal`||||
+|RateOfExchangeApplied|Transaction Rate of Exchange Applied|`decimal`||||
 |RateOfExchangeType|Transaction Rate of Exchange Type Code|`string`|1||`M` or `D`|
-|WeightInQtyCode|Weight in Quantity Code|`number`||||
+|WeightInQtyCode|Weight in Quantity Code|`decimal`||||
 |ContractReference|Contract Reference Code|`string`|10|||
 |Expense|see <b><a href="/#reference/nominal-reference-data/expense-list/list-expenses">Expense</a></b> endpoint|`object`||||
 |Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
@@ -1592,8 +1592,8 @@ Principle Physical Contract (agreement) details
 |ContractTerm|see <b><a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms">ContractTerm List</a></b> endpoint|`object`||||
 |ContractTermPort|see <b><a href="/#reference/physicals-reference-data/port-list/list-ports">Port List</a></b> endpoint|`object`||||
 |UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list/list-weights">Weight List</a></b> endpoint|`object`||||
-|OriginalContractQuantity|Original Contract Quantity|`number`||||
-|CurrentContractQuantity|Current Contract Quantity|`number`||||
+|OriginalContractQuantity|Original Contract Quantity|`decimal`||||
+|CurrentContractQuantity|Current Contract Quantity|`decimal`||||
 |ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
 |ContractApproved|Is Contract Approved|`boolean`|5|||
 |AllocationReference|Allocation Reference|`string`|11|||
@@ -1638,8 +1638,8 @@ List of Principle Physical Contracts (agreements)
 |ContractTermCode|Contract Term Code|`string`|8|||
 |ContractTermPortCode|Contract Term Port Code|`string`|8|||
 |UnitOfMeasurementCode|Unit of Measurement Code|`string`|4|||
-|OriginalContractQuantity|Original Contract Quantity|`number`||||
-|CurrentContractQuantity|Current Contract Quantity|`number`||||
+|OriginalContractQuantity|Original Contract Quantity|`decimal`||||
+|CurrentContractQuantity|Current Contract Quantity|`decimal`||||
 |ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
 |ContractApproved|Is Contract Approved|`boolean`|5|||
 |AllocationReference|Allocation Reference|`string`|11|||
@@ -2055,7 +2055,7 @@ Orders (CallOffs) generated through EXPED
 |VehicleRegistration|Vehicle Registration|`string`|50|||
 |TrailerRegistration|Trailer Registration|`string`|50|||
 |EarlyLoadAllowed|Is Early Load Allowed|`boolean`|5|||
-|MaxLoadWeight|Maximum Load Weight|`float`||||
+|MaxLoadWeight|Maximum Load Weight|`decimal`||||
 
 + Request
     [AccessToken][]
@@ -2106,7 +2106,7 @@ Orders (CallOffs) generated through EXPED
 |VehicleRegistration|Vehicle Registration|`string`|50|||
 |TrailerRegistration|Trailer Registration|`string`|50|||
 |EarlyLoadAllowed|Is Early Load Allowed|`boolean`|5|||
-|MaxLoadWeight|Maximum Load Weight|`float`||||
+|MaxLoadWeight|Maximum Load Weight|`decimal`||||
 
 + Request
     [AccessToken][]
@@ -2142,7 +2142,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Code|`number`|||Required|
 |TargetStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
-|Quantity|Quantity|`number`||||
+|Quantity|Quantity|`decimal`||||
 |TargetDate|Target Date|`datetime`|20|||
 |PumpingMemo|Pumping Memorandum|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`|5|||
@@ -2294,7 +2294,7 @@ Information specific to the source of the goods generated during any movement (D
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Number|`number`|||Required|
 |SourceStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`|||||
-|Weight|Stock Unit Weight|`number`||||
+|Weight|Stock Unit Weight|`decimal`||||
 
 + Request
     [AccessToken][]
@@ -2322,7 +2322,7 @@ Remove current suggestions for Tanks and Create Stock Loadings
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Number|`number`|||Required. Unique Key|
 |SourceStockUnitCode|Source Stock Unit Code|`string`|11||Required|
-|Weight|Stock Unit Weight|`number`|||Required|
+|Weight|Stock Unit Weight|`decimal`|||Required|
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
@@ -2358,22 +2358,22 @@ Information relating to the processing of the Order.
 |TargetStockUnit|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 |ReleaseId|Release Number|`number`|||Required|
 |OrderAcknowledged|Has Order Been Acknowledged|`boolean`|5|||
-|NetLoadedWeight|Net Loaded Weight|`number`||||
-|NetPumpedWeight|Net Pumped Weight|`number`||||
-|NetDeliveredWeight|Net Delivered Weight|`number`||||
+|NetLoadedWeight|Net Loaded Weight|`decimal`||||
+|NetPumpedWeight|Net Pumped Weight|`decimal`||||
+|NetDeliveredWeight|Net Delivered Weight|`decimal`||||
 |LoadedDate|Date Loaded|`datetime`|20|||
 |PumpedDate|Date Pumped|`datetime`|20|||
 |ArrivalDate|Arrival Date|`datetime`|20|||
 |ArrivalMemo|Arrival Memorandum|`string`|250|||
-|ArrivalWeight|Arrival Weight|`number`||||
+|ArrivalWeight|Arrival Weight|`decimal`||||
 |LoadingStartDate|Loading Start Date|`datetime`|20|||
 |LoadingStartMemo|Loading Start Memorandum|`string`|250|||
 |LoadingEndDate|Loading End Date|`datetime`|20|||
 |LoadingPoint|Loading Point|`string`|250|||
-|FirstWeight|First Weight|`number`||||
+|FirstWeight|First Weight|`decimal`||||
 |FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
 |FirstWeightId|First Weight ID|`string`|10|||
-|SecondWeight|Second Weight|`number`||||
+|SecondWeight|Second Weight|`decimal`||||
 |SecondWeightWeighbridgeId|Second Weight Weighbridge ID|`string`|10|||
 |SecondWeightId|Second Weight ID|`string`|10|||
 
@@ -2403,23 +2403,23 @@ Information relating to the processing of the Order.
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|Release Number|`number`|||Required|
 |OrderAcknowledged|Has Order Been Aknowledged|`boolean`|5|||
-|NetLoadedWeight|Net Loaded Weight|`number`||||
-|NetPumpedWeight|Net Pumped Weight|`number`||||
-|NetDeliveredWeight|Net Delivered Weight|`number`||||
+|NetLoadedWeight|Net Loaded Weight|`decimal`||||
+|NetPumpedWeight|Net Pumped Weight|`decimal`||||
+|NetDeliveredWeight|Net Delivered Weight|`decimal`||||
 |LoadedDate|Date Loaded|`datetime`|20|||
 |PumpedDate|Date Pumped|`datetime`|20|||
 |TargetStockUnitCode|Target Stock Unit Code|`string`|11|||
 |ArrivalDate|Arrival Date|`datetime`|20|||
 |ArrivalMemo|Arrival Memorandum|`string`|250|||
-|ArrivalWeight|Arrival Weight|`number`||||
+|ArrivalWeight|Arrival Weight|`decimal`||||
 |LoadingStartDate|Loading Start Date|`datetime`|20|||
 |LoadingStartMemo|Loading Start Memorandum|`string`|250|||
 |LoadingEndDate|Loading End Date|`datetime`|20|||
 |LoadingPoint|Loading Point|`string`|250|||
-|FirstWeight|First Weight|`number`||||
+|FirstWeight|First Weight|`decimal`||||
 |FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
 |FirstWeightId|First Weight ID|`string`|10|||
-|SecondWeight|Second Weight|`number`||||
+|SecondWeight|Second Weight|`decimal`||||
 |SecondWeightWeighbridgeId|Second Weight Weighbridge ID|`string`|10|||
 |SecondWeightId|Second Weight ID|`string`|10|||
 
