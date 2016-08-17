@@ -44,7 +44,7 @@ Client Ledger Account profile.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account Code|`string`|10|||
+|ClientAccountId|Client Account ID|`string`|10|||
 |Title|Client Account Title|`string`|200|||
 |ClientTypeCode|Client Account Type Code|`string`|1|||
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -95,7 +95,7 @@ Client Ledger Account profile.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account Code|`string`|10||Required|
+|ClientAccountId|Client Account ID|`string`|10||Required|
 |Title|Client Account Title|`string`|200|||
 |ClientType|see <b><a href="/#reference/client-reference-data/clienttype-list">Client Type List</a></b> endpoint|`object`||||
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -147,7 +147,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account Code|`string`|10||Required. Unique Key|
+|ClientAccountId|Client Account ID|`string`|10||Required. Unique Key|
 |Title|Client Account Title|`string`|200||Required|
 |ClientTypeCode|Client Account Type Code|`string`|1||Required|
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -220,7 +220,7 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientAccountId|Client Account Code|`string`|10||Required|
+|ClientAccountId|Client Account ID|`string`|10||Required|
 |Title|Client Account Title|`string`|200|||
 |ClientTypeCode|Client Account Type Code|`string`|1|||
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -286,7 +286,7 @@ User-defined list of codes used for classification purposes on Client Account pr
 ### List ClientTypes [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ClientTypeId|Client Type Code|`string`|1|||
+|ClientTypeId|Client Type ID|`string`|1|||
 |ClientTypeDescription|Client Type Description|`string`|50|||
 
 
@@ -323,8 +323,8 @@ Country codes.
 ### List Countries [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CountryId|Country Code|`string`|3|||
-|CountryDescription|Country Code Description|`string`|50|||
+|CountryId|Country ID|`string`|3|||
+|CountryDescription|Country ID Description|`string`|50|||
 
 + Request
     [AccessToken][]
@@ -353,8 +353,8 @@ Currency codes.
 ### List Currencies [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CurrencyId|Currency Code|`string`|3|||
-|CurrencyDescription|Currency Code Description|`string`|20|||
+|CurrencyId|Currency ID|`string`|3|||
+|CurrencyDescription|Currency ID Description|`string`|20|||
 
 + Request
     [AccessToken][]
@@ -422,10 +422,10 @@ Codes used to segregate business sectors within a trading company, and can be ap
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DepartmentId|Department Code|`string`|4|||
+|DepartmentId|Department ID|`string`|4|||
 |DepartmentDescription|Department Code Description|`string`|30|||
-|NominalCategoryId|Nominal Category Code|`string`|2|||
-|CountryId|Department Country Code|`string`|3|||
+|NominalCategoryId|Nominal Category ID|`string`|2|||
+|CountryId|Department Country ID|`string`|3|||
 |EDICode|Department EDI Code|`string`|15|||
 |Status|Department Status|`string`|1||`O` or `F`|
 
@@ -459,7 +459,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
 ### Read Department [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DepartmentId|Department Code|`string`|4||Required|
+|DepartmentId|Department ID|`string`|4||Required|
 |DepartmentDescription|Department Description|`string`|30|||
 |NominalCategory|see <b><a href="/#reference/nominal-reference-data/nominalcategory-list/list-nominalcategories">Nominal Category List</a></b> endpoint|`object`||||
 |Country|see <b><a href="/#reference/global-reference-data/country-list/list-countries">Countries List</a></b> endpoint|`object`||||
@@ -492,8 +492,8 @@ Codes that are primarily used for accounting transaction analysis purposes.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ExpenseId|Expense Code|`string`|7|||
-|ExpenseDescription|Expense Code Description|`string`|40|||
+|ExpenseId|Expense ID|`string`|7|||
+|ExpenseDescription|Expense ID Description|`string`|40|||
 |EDICode|Expense EDI Code|`string`|15|||
 |Status|Expense Status|`string`|1||`O` or `F`|
 
@@ -527,7 +527,7 @@ Nominal (General) Ledger Account profile.
 ### List NominalAccounts [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalAccountId|Nominal Account Code|`string`|9|||
+|NominalAccountId|Nominal Account ID|`string`|9|||
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
 |BankAccount|Is a Bank Account|`boolean`|5|||
@@ -566,7 +566,7 @@ Nominal (General) Ledger Account profile.
 ### Read NominalAccount [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalAccountId|Nominal Account Code|`string`|9||Required|
+|NominalAccountId|Nominal Account ID|`string`|9||Required|
 |MainGroupingDescription|Main Grouping Description|`string`|40|||
 |DetailDescription|Detail Description|`string`|40|||
 |BankAccount|Is a Bank Account|`boolean`|5|||
@@ -594,7 +594,7 @@ Nominal (General) Ledger Account profile.
 ### Update NominalAccount [PUT]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalAccountId|Nominal Account Code|`string`|9||Required|
+|NominalAccountId|Nominal Account ID|`string`|9||Required|
 |BankAccount|Is a Bank Account|`boolean`|5|||
 |PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
@@ -626,7 +626,7 @@ Nominal (General) Ledger Account profile.
 ### Delta Update NominalAccount [PATCH]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalAccountId|Nominal Account Code|`string`|9||Required|
+|NominalAccountId|Nominal Account ID|`string`|9||Required|
 |BankAccount|Is a Bank Account|`boolean`|5|||
 |PrivilegeLevel|Nominal Account Privilege Level|`number`|1||`0` to `9`|
 |EDICode|Nominal Account EDI Code|`string`|30|||
@@ -661,8 +661,8 @@ User-defined categorisation codes that can be applied to departments and bank ac
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|NominalCategoryId|Nominal Category Code|`string`|2|||
-|NominalCategoryDescription|Nominal Category Code Description|`string`|50|||
+|NominalCategoryId|Nominal Category ID|`string`|2|||
+|NominalCategoryDescription|Nominal Category ID Description|`string`|50|||
 |NominalGroup|Nominal Group|`string`|15|||
 
 
@@ -696,8 +696,8 @@ Codes and rates applied as part of any VAT/GST accounting practise.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|VatRateId|VAT Rate Code|`string`|2|||
-|VatRateDescription|VAT Rate Code Description|`string`|40|||
+|VatRateId|VAT Rate ID|`string`|2|||
+|VatRateDescription|VAT Rate ID Description|`string`|40|||
 |VatRate|VAT Rate|`decimal`||||
 |Status|VAT Rate Status|`string`|1||`O` or `F`|
 
@@ -783,8 +783,8 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractTermId|Contract Term Code|`string`|8|||
-|ContractTermDescription|Contract Term Code Description|`string`|50|||
+|ContractTermId|Contract Term ID|`string`|8|||
+|ContractTermDescription|Contract Term ID Description|`string`|50|||
 |DocumentText|Contract Document Text|`string`|4000|||
 |Status|Contract Status|`string`|1||`O` or `F`|
 |EDICode|Contract EDI Code|`string`|50|||
@@ -819,8 +819,8 @@ Codes used to describe the units of packing applied in physical contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PackingTypeId|Packing Type Code|`string`|4|||
-|PackingTypeDescription|Packing Type Code Description|`string`|70|||
+|PackingTypeId|Packing Type ID|`string`|4|||
+|PackingTypeDescription|Packing Type ID Description|`string`|70|||
 |EDICode|Packing Type EDI Code|`string`|50|||
 |Status|Packing Status|`string`|1||`O` or `F`|
 
@@ -855,8 +855,8 @@ Codes used to describe terms of payment applied to physical contracts through to
 ### List PaymentTerms [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PaymentTermId|Payment Term Code|`string`|8|||
-|PaymentTermDescription|Payment Term Code Description|`string`|99|||
+|PaymentTermId|Payment Term ID|`string`|8|||
+|PaymentTermDescription|Payment Term ID Description|`string`|99|||
 |DocumentText|Payment Term Document Text|`string`|8000|||
 |EDICode|Payment Term EDI Code|`string`|20|||
 |Status|Payment Term Status|`string`|1||`O` or `F`|
@@ -892,8 +892,8 @@ Codes used to identify physical port locations.
 ### List Ports [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PortId|Port Code|`string`|8|||
-|PortDescription|Port Code Description|`string`|60|||
+|PortId|Port ID|`string`|8|||
+|PortDescription|Port ID Description|`string`|60|||
 |DocumentText|Port Document Text|`string`|4000|||
 |CountryCode|Port Country Code|`string`|3|||
 |EDICode|Port EDI Code|`string`|10|||
@@ -929,8 +929,8 @@ Codes used to identify specific product qualities.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|SampleId|Sample Code|`string`|4|||
-|SampleDescription|Sample Code Description|`string`|50|||
+|SampleId|Sample ID|`string`|4|||
+|SampleDescription|Sample ID Description|`string`|50|||
 |DocumentText|Sample Document Text|`string`|4000|||
 |NoOfCopiesRequired|Number of Copies Required|`number`|2|||
 
@@ -963,8 +963,8 @@ Codes used to classify the status in terms of movement, useful for reporting pur
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ShippingStatusId|Shipping Status Code|`string`|2|||
-|ShippingStatusDescription|Shipping Status Code Description|`string`|50|||
+|ShippingStatusId|Shipping Status ID|`string`|2|||
+|ShippingStatusDescription|Shipping Status ID Description|`string`|50|||
 
 + Request
     [AccessToken][]
@@ -994,9 +994,9 @@ Codes used to identify specific terminal location, useful for reporting purposes
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TerminalId|Terminal Code|`string`|4|||
-|TerminalDescription|Terminal Code Description|`string`|50|||
-|CountryId|Terminal Country Code|`string`|3|||
+|TerminalId|Terminal ID|`string`|4|||
+|TerminalDescription|Terminal ID Description|`string`|50|||
+|CountryId|Terminal Country ID|`string`|3|||
 
 
 + Request
@@ -1026,7 +1026,7 @@ List of Vessel names that can be applied as part of any physical logistics strat
 ### List Vessels [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|VesselId|Vessel Name|`string`|30|||
+|VesselId|Vessel ID|`string`|30|||
 |VesselDescription|Vessel Description|`string`|50|||
 |CountryCode|Vessel Country Code|`string`|3|||
 |Status|Vessel Status|`string`|1||`O` or `F`|
@@ -1061,8 +1061,8 @@ Codes used to describe the units of measurement applied in physical contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|WeightId|Weight Code|`string`|4|||
-|WeightDescription|Weight Code Description|`string`|50|||
+|WeightId|Weight ID|`string`|4|||
+|WeightDescription|Weight ID Description|`string`|50|||
 |DocumentText|Weight Document Text|`string`|4000|||
 |DecimalPlacesPresentation|Number of Decimal Places|`number`|1|||
 |ConversionFactorToKilos|Conversion Factor into Kilos|`decimal`||||
@@ -1105,7 +1105,7 @@ Charter profile – restricted by WIPAccountType of `C`.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CharterId|Charter Account Code|`string`|11||Required|
+|CharterId|Charter Account ID|`string`|11||Required|
 |CharterDescription|Charter Description|`string`|60|||
 |Department|see <b><a href="/#reference/nominal-reference-data/department/department-list">Department</a></b> endpoint|`object`||||
 |Commodity|see <b><a href="/#reference/physicals-reference-data/list-commodities">Commodies List</a></b> endpoint|`object`||||
@@ -1143,7 +1143,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CharterId|Charter Account Code|`string`|11|||
+|CharterId|Charter Account ID|`string`|11|||
 |CharterDescription|Charter Description|`string`|60|||
 |DepartmentCode|Department Code|`string`|4|||
 |CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
@@ -1190,7 +1190,7 @@ Stock Account profile - restricted by WIPAccountType of `S`.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|Stock Unit Account Code|`string`|11||Required|
+|StockUnitId|Stock Unit Account ID|`string`|11||Required|
 |StockUnitDescription|Stock Unit Account Description|`string`|60|||
 |Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list/list-terminals">Terminals List</a></b> endpoint|`object`||||
 |Department|see <b><a href="/#reference/nominal-reference-data/department/department-list">Department</a></b> endpoint|`object`||||
@@ -1228,7 +1228,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|Stock Unit Account Code|`string`|11|||
+|StockUnitId|Stock Unit Account ID|`string`|11|||
 |StockUnitDescription|Stock Unit Account Description|`string`|60|||
 |TerminalCode|Terminal Code|`string`|4|||
 |DepartmentCode|Department Code|`string`|4|||
@@ -1275,7 +1275,7 @@ Charter profile
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|WIP Account Code|`string`|11||Required|
+|WIPAccountId|WIP Account ID|`string`|11||Required|
 |WIPAccountDescription|WIP Account Description|`string`|60|||
 |WIPAccountType|WIP Account Type|`string`|1|||
 |Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> object|`object`||||
@@ -1311,7 +1311,7 @@ List of charter profiles.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|WIP Account Code|`string`|11|||
+|WIPAccountId|WIP Account ID|`string`|11|||
 |WIPAccountDescription|WIP Account Description|`string`|60|||
 |WIPAccountType|WIP Account Type|`string`|1|||
 |DepartmentCode|Department Code|`string`|4|||
@@ -1358,7 +1358,7 @@ Provides access to full accounting ledger by Document Reference.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|Document Reference Code|`string`|9||Required|
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
 |AccountLedgerType|Account Ledger Type Code|`string`|1||`C`, `N` or `K`|
 |TransactionKey|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
@@ -1578,7 +1578,7 @@ Principle Physical Contract (agreement) details
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|Contract Code|`string`|10||Required|
+|ContractId|Contract ID|`string`|10||Required|
 |ContractType|Contract Type Code|`string`|1||`P` or `S`|
 |ContractDate|Contract Date|`datetime`|20|||
 |Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
@@ -1624,7 +1624,7 @@ List of Principle Physical Contracts (agreements)
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |-------|-----------|----|----------|-----|----------|
-|ContractId|Contract Code|`string`|10|||
+|ContractId|Contract ID|`string`|10|||
 |ContractType|Contract Type Code|`string`|1||`P` or `S`|
 |ContractDate|Contract Date|`datetime`|20|||
 |DepartmentCode|Department Code|`string`|4|||
@@ -1710,7 +1710,7 @@ List of Broker commissions held against Physical Contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|Contract Code|`string`|10|||
+|ContractId|Contract ID|`string`|10|||
 |UniqueId|Unique ID Number|`number`|2|||
 |AgentAccountCode|Agent Account Code|`string`|10|||
 |AgentReference|Agent Reference|`string`|40|||
@@ -1744,7 +1744,7 @@ List of Logistics information for Physical Contracts.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|Contract Code|`string`|10|||
+|ContractId|Contract ID|`string`|10|||
 |VesselReference|Vessel Reference|`string`|30|||
 |BillOfLadingDate|Bill of Lading Date|`datetime`|20|||
 |BillOfLadingReference|Bill of Lading Reference|`string`|255|||
@@ -1966,7 +1966,7 @@ Orders (CallOffs) specifically representing incoming goods.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Code|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`|5|||
@@ -1997,7 +1997,7 @@ Orders (CallOffs) specifically representing outgoing goods.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Code|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |ExpedOrderDetails|see <b><a href="/#reference/inventory-physicals-order-scheduling/expedcalloff">ExpedCallOff</a></b> endpoint|`object`||||
 |PumpingMemo|Pumping Memo|`string`|250|||
 |ProcessComplete|Is Process Complete|`boolean`|5|||
@@ -2024,7 +2024,7 @@ Orders (CallOffs) generated through EXPED
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Code|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |ContractType|Contract Type|`string`|1|||
 |ContractDate|Contract Date|`datetime`|20|||
 |DeliveryDate|Delivery Date|`datetime`|20|||
@@ -2078,7 +2078,7 @@ Orders (CallOffs) generated through EXPED
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Code|`number`||||
+|ReleaseId|Release ID|`number`||||
 |ContractType|Contract Type|`string`|1|||
 |ContractDate|Contract Date|`datetime`|20|||
 |DeliveryDate|Delivery Date|`datetime`|20|||
@@ -2140,7 +2140,7 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Code|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |TargetStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 |Quantity|Quantity|`decimal`||||
 |TargetDate|Target Date|`datetime`|20|||
@@ -2181,7 +2181,7 @@ Batch record information by Stock Unit.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockBatchId|Stock Batch Code|`string`|20||Required|
+|StockBatchId|Stock Batch ID|`string`|20||Required|
 |StockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
 |BatchCreateDate|Date Batch Created|`datetime`|20|||
 |BatchText|Batch Text|`string`|1000|||
@@ -2211,7 +2211,7 @@ Batch record information by Stock Unit.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockBatchId|Stock Batch Code|`string`|20|||
+|StockBatchId|Stock Batch ID|`string`|20|||
 |StockUnitCode|Stock Unit Code|`string`|11|||
 |BatchCreateDate|Date Batch Created|`datetime`|20|||
 |BatchText|Batch Text|`string`|1000|||
@@ -2253,7 +2253,7 @@ Trigger call to complete an order (e.g. create stock journals etc)
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Number|`number`||||
+|ReleaseId|Release ID|`number`||||
 
 <strong>Body Parameters</strong>
 <br />
@@ -2292,7 +2292,7 @@ Information specific to the source of the goods generated during any movement (D
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Number|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |SourceStockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`|||||
 |Weight|Stock Unit Weight|`decimal`||||
 
@@ -2320,7 +2320,7 @@ Remove current suggestions for Tanks and Create Stock Loadings
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Number|`number`|||Required. Unique Key|
+|ReleaseId|Release ID|`number`|||Required. Unique Key|
 |SourceStockUnitCode|Source Stock Unit Code|`string`|11||Required|
 |Weight|Stock Unit Weight|`decimal`|||Required|
 
@@ -2356,7 +2356,7 @@ Information relating to the processing of the Order.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |TargetStockUnit|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
-|ReleaseId|Release Number|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |OrderAcknowledged|Has Order Been Acknowledged|`boolean`|5|||
 |NetLoadedWeight|Net Loaded Weight|`decimal`||||
 |NetPumpedWeight|Net Pumped Weight|`decimal`||||
@@ -2401,7 +2401,7 @@ Information relating to the processing of the Order.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release Number|`number`|||Required|
+|ReleaseId|Release ID|`number`|||Required|
 |OrderAcknowledged|Has Order Been Aknowledged|`boolean`|5|||
 |NetLoadedWeight|Net Loaded Weight|`decimal`||||
 |NetPumpedWeight|Net Pumped Weight|`decimal`||||
@@ -2462,8 +2462,8 @@ The account header object is derived from multiple locations of the database dep
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|AccountType|A Single Letter Denoting Accounr Type|`string`|1||`C`|
-|AccountId|Account Code|`string`|11|||
+|AccountType|A Single Letter Denoting Account Type|`string`|1||`C`|
+|AccountId|Account ID|`string`|11|||
 |AccountDescription|Account Description|`string`|200|||
 |EDICode|Account EDI Code|`string`|50|||
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -2474,7 +2474,7 @@ The account header object is derived from multiple locations of the database dep
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |AccountType|A Single Letter Denoting Account Type|`string`|1||`N`|
-|AccountId|Account Code|`string`|11|||
+|AccountId|Account ID|`string`|11|||
 |AccountDescription|Account Description|`string`|200|||
 |EDICode|Account EDI Code|`string`|50|||
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -2485,7 +2485,7 @@ The account header object is derived from multiple locations of the database dep
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |AccountType|A Single Letter Denoting Account Type|`string`|1||`K`|
-|AccountId|Account Code|`string`|11|||
+|AccountId|Account ID|`string`|11|||
 |AccountDescription|Account Description|`string`|200|||
 |EDICode|Account EDI Code|`string`|50|||
 |Status|Account Status|`string`|1||`O` or `F`|
@@ -2537,8 +2537,8 @@ A multipurpose object used by several endpoints.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CountryId|Country Code|`string`|3|||
-|CountryDescription|Country Code Description|`string`|50|||
+|CountryId|Country ID|`string`|3|||
+|CountryDescription|Country ID Description|`string`|50|||
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (Country)
