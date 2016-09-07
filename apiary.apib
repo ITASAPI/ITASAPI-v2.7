@@ -14,7 +14,8 @@ VERSION: 2.7
 <br />
 <div>~ Updated endpoints :</div>
 <ul>
-<li>All e</li>
+<li>Accounting-Transactions <b>Posted Transaction</b>: Addtional property VatTurnover now included when read</li>
+<li>Accounting-Transactions <b>UnPosted Transaction</b>: Addtional property VatTurnover now included when read</li>
 </ul>
 <br />
 <div>** ends ** </div>
@@ -1373,6 +1374,7 @@ Provides access to full accounting ledger by Document Reference.
 |Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
 |PaymentTerm|see <b><a href="/#reference/physicals-reference-data/paymentterm-list">PaymentTerm</a></b> endpoint|`object`||||
 |VatRate|see <b><a href="/#reference/nominal-reference-data/vat-rate-list">VATRate</a></b> endpoint|`object`||||
+|VatTurnover|VAT Turnover|`decimal`||||
 |ClientReference|Client Reference|`string`|25|||
 |Narrative|Narrative|`string`|30|||
 |MarketReference|Market Reference|`string`|8|||
@@ -1429,6 +1431,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
 |Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
 |PaymentTerm|see <b><a href="/#reference/physicals-reference-data/paymentterm-list">PaymentTerm</a></b> endpoint|`object`||||
 |VatRate|see <b><a href="/#reference/nominal-reference-data/vat-rate-list">VATRate</a></b> endpoint|`object`||||
+|VatTurnover|VAT Turnover|`decimal`||||
 |ClientReference|Client Reference|`string`|25|||
 |Narrative|Narrative|`string`|30|||
 |MarketReference|Market Referece|`string`|8|||
@@ -3162,6 +3165,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + Department (Department)
 + PaymentTerm (PaymentTerm)
 + VatRate (VATRate)
++ VatTurnover: 11.1 (number)
 + ClientReference: fmbnj (string)
 + Narrative: `WEEKEND/MIDNIGHT - VESSEL, 153` (string)
 + MarketReference: abcdefg (string)
@@ -3330,6 +3334,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + Department (Department)
 + PaymentTerm (PaymentTerm)
 + VatRate (VATRate)
++ VatTurnover: 11.1 (number)
 + ClientReference: abc123 (string)
 + Narrative: Reversal of SI1501924 (string)
 + MarketReference: 123abc (string)
