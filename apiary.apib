@@ -1459,6 +1459,47 @@ Provides access to financial transaction details yet to be posted to the ledgers
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+## Transaction Bank Accounts List [/Accounting/{TradingEntityId}/Transaction/TransactionBankAccount/{Property}/{PropertyValue}]
+'GET'
+Bank account details for transactions representing invoices
+### List Transaction Bank Accounts [GET]
+
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+|OurAccount|Our Account|`string`|10|||
+|OurBankName|Our Bank Name|`string`|40|||
+|OurBankAccNum|Our Bank Account Number|`string`|34|||
+|CPAccount|Counterparty Account|`string`|10|||
+|CPBankName|Counterparty Bank Name|`string`|40|||
+|CPBankAccNum|Counterparty Bank Account Number|`string`|34|||
+
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + Property (optional, enum[string])  
+       + Members
+            + DocumentReference (optional, string) 
+    + PropertyValue (optional, string, `CN1600001`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (array [TransactionBankAccount List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
+
 
 ## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
 Document summary information including properties specific to integration requirements.          
@@ -3294,6 +3335,15 @@ The Transaction key is a five part key made up of the following values seperate 
 + TerminalId: ADEL (string)
 + TerminalDescription: `Santos-Santa Adelia` (string)
 + CountryId: BRA (string)
+
+## TransactionBankAccount List (object)
++ DocumentReference: CN1600001 (required, string)
++ OurAccount: ABCDEF.P (string)
++ OurBankName: Y (string)
++ OurBankAccNum: 0001 (number)
++ CPAccount: ABCDEF.P (string)
++ CPBankName: Y (string)
++ CPBankAccNum: 0001 (number)
 
 ## TransactionHeader (object)
 + DocumentReference: CN1600001 (required, string)
