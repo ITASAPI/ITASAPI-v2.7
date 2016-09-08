@@ -587,7 +587,7 @@ Codes relating to Nominal Ledger and related endpoints.
     + Attributes (404 Response)
     
 ### Update NominalAccount [PUT]
-`PUT`
+`PUT` Update Nominal (General) Ledger Acccount profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account ID|`string`|9||Required|
@@ -620,7 +620,7 @@ Codes relating to Nominal Ledger and related endpoints.
     + Attributes (404 Response)
 
 ### Delta Update NominalAccount [PATCH]
-`PATCH`
+`PATCH` Update Nominal (General) Ledger Account profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account ID|`string`|9||Required|
@@ -1571,7 +1571,7 @@ Data Objects and endpoints providing access to accounting transactions generated
     + Attributes (404 Response)
 
 ### Delta Update Transaction Header [PATCH]
-`PATCH`
+`PATCH` Document summary information including properties specific to integration requirements.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2446,7 +2446,7 @@ None.
     + Attributes (404 Response)
 
 ### Update StockMovement [PUT]
-`PUT` 
+`PUT` Information relating to the processing of the Order.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2543,7 +2543,7 @@ The account header object is derived from multiple locations of the database dep
 + Attributes (AccountHeader)
 
 ## AccountPostingDetails [/AccountPostingDetails]
-`GET`
+`GET` A multipurpose object used by several endpoints
 ### AccountPostingDetails[GET]
 
 
@@ -2593,7 +2593,7 @@ The account header object is derived from multiple locations of the database dep
 + Attributes (Country)
 
 ## DocumentDetails [/DocumentDetails]
-`GET` 
+`GET` A multipurpose object used by several endpoints
 ### DocumentDetails[GET]
 
 
@@ -2611,7 +2611,7 @@ The account header object is derived from multiple locations of the database dep
 + Attributes (DocumentDetails)
 
 ## OnAccountDetails [/OnAccountDetails]
-`GET` 
+`GET` A multipurpose object used by several endpoints
 ### OnAccountDetails[GET]
 
 
