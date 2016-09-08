@@ -8,7 +8,7 @@ VERSION: 2.7
 <div>~ New endpoints added in this release :</div>
 <div>
 <ul>
-<li>Accounting-Transactions <strong>Transaction Bank Accounts</strong>: `GET` Bank account details for transactions representing invoices. <a href="/#reference/accounting-transactions/transaction-bank-accounts/read-transaction-bank-accounts"> Link</a></li>
+<li>Accounting-Transactions <strong>Transaction Bank Accounts</strong>: GET Bank account details for transactions representing invoices. <a href="/#reference/accounting-transactions/transaction-bank-accounts/read-transaction-bank-accounts"> Link</a></li>
 </ul>
 </div>
 <br />
@@ -84,7 +84,7 @@ Codes relating to the Client Ledger and related endpoints.
 
 
 ## ClientAccount [/ReferenceData/{TradingEntityId}/ClientLedger/ClientAccount/{ClientAccountId}]
-Client Ledger Account profile.
+`GET` Client Ledger Account profile.
 ### Read ClientAccount [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -137,7 +137,7 @@ Client Ledger Account profile.
 
 
 ### Create Update ClientAccount [PUT]
-For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI
+`PUT` For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -210,7 +210,7 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
     + Attributes (404 Response)
 
 ### Delta Update ClientAccount [PATCH]
-Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI
+`PATCH` Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -276,7 +276,8 @@ Delta Update is to be used to update ClientAcount, where the field `ClientAccoun
     + Attributes (404 Response)
 
 ## ClientType List [/ReferenceData/{TradingEntityId}/ClientLedger/ClientType/{Property}/{PropertyValue}]
-User-defined list of codes used for classification purposes on Client Account profile.
+`GET` User-defined list of codes used for classification purposes on Client Account profile.
+
 ### List ClientTypes [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -313,7 +314,7 @@ User-defined list of codes used for classification purposes on Client Account pr
 Global (system-wide) codes 
 
 ## Country List [/ReferenceData/Global/Country/{Property}/{PropertyValue}]
-Country codes.
+`GET` Country codes.
 ### List Countries [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -343,7 +344,7 @@ Country codes.
     + Attributes (404 Response)
 
 ## Currency List [/ReferenceData/Global/Currency/{Property}/{PropertyValue}]
-Currency codes.
+`GET` Currency codes.
 ### List Currencies [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -372,7 +373,7 @@ Currency codes.
     + Attributes (404 Response)
 
 ## UserAccount List  [/ReferenceData/Global/UserAccount/{Property}/{PropertyValue}]
-ITAS User Account profiles.
+`GET` ITAS User Account profiles.
 ### List User Accounts [GET]
 
 
@@ -411,7 +412,7 @@ ITAS User Account profiles.
 Codes relating to Nominal Ledger and related endpoints.
 
 ## Department List [/ReferenceData/{TradingEntityId}/NominalLedger/Department/{Property}/{PropertyValue}]
-Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
+`GET` Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
 ### List Departments [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -449,7 +450,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
     + Attributes (404 Response)
 
 ## Department [/ReferenceData/{TradingEntityId}/NominalLedger/Department/{DepartmentId}]
-Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
+`GET` Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
 ### Read Department [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -480,7 +481,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
     + Attributes (404 Response)
 
 ## Expense List [/ReferenceData/{TradingEntityId}/NominalLedger/Expense/{Property}/{PropertyValue}]
-Codes that are primarily used for accounting transaction analysis purposes.
+`GET` Codes that are primarily used for accounting transaction analysis purposes.
 ### List Expenses [GET]
 
 
@@ -517,7 +518,7 @@ Codes that are primarily used for accounting transaction analysis purposes.
     + Attributes (404 Response)
 
 ## NominalAccount List [/ReferenceData/{TradingEntityId}/NominalLedger/NominalAccount/{Property}/{PropertyValue}]
-Nominal (General) Ledger Account profile.
+`GET` Nominal (General) Ledger Account profile.
 ### List NominalAccounts [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -555,7 +556,7 @@ Nominal (General) Ledger Account profile.
     + Attributes (404 Response)
 
 ## NominalAccount [/ReferenceData/{TradingEntityId}/NominalLedger/NominalAccount/{NominalAccountId}]
-Nominal (General) Ledger Account profile.
+`GET` Nominal (General) Ledger Account profile.
 
 ### Read NominalAccount [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -586,6 +587,7 @@ Nominal (General) Ledger Account profile.
     + Attributes (404 Response)
     
 ### Update NominalAccount [PUT]
+`PUT`
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account ID|`string`|9||Required|
@@ -618,6 +620,7 @@ Nominal (General) Ledger Account profile.
     + Attributes (404 Response)
 
 ### Delta Update NominalAccount [PATCH]
+`PATCH`
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|Nominal Account ID|`string`|9||Required|
@@ -650,7 +653,7 @@ Nominal (General) Ledger Account profile.
     + Attributes (404 Response)
 
 ## NominalCategory List [/ReferenceData/{TradingEntityId}/NominalLedger/NominalCategory/{Property}/{PropertyValue}]
-User-defined categorisation codes that can be applied to departments and bank accounts.
+`GET` User-defined categorisation codes that can be applied to departments and bank accounts.
 ### List NominalCategories [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -684,7 +687,7 @@ User-defined categorisation codes that can be applied to departments and bank ac
     + Attributes (404 Response)
 
 ## Vat Rate List [/ReferenceData/{TradingEntityId}/NominalLedger/VATRate/{Property}/{PropertyValue}]
-Codes and rates applied as part of any VAT/GST accounting practise.
+`GET` Codes and rates applied as part of any VAT/GST accounting practise.
 ### List VATRates [GET]
 
 
@@ -724,7 +727,7 @@ Codes and rates applied as part of any VAT/GST accounting practise.
 Codes relating to Physicals Trading and related endpoints.
 
 ## Commodity List [/ReferenceData/{TradingEntityId}/Physicals/Commodity/{Property}/{PropertyValue}]
-Commodity/Product codes, used to identify goods
+`GET` Commodity/Product codes, used to identify goods
 ### List Commodities [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -771,7 +774,7 @@ Commodity/Product codes, used to identify goods
     + Attributes (404 Response)
 
 ## Contract Term List [/ReferenceData/{TradingEntityId}/Physicals/ContractTerm/{Property}/{PropertyValue}]
-Contract Terms (aka Incoterms) usually setup to represent pre-defined, internationally recognised, commercial terms of contract.
+`GET` Contract Terms (aka Incoterms) usually setup to represent pre-defined, internationally recognised, commercial terms of contract.
 ### List ContractTerms [GET]
 
 
@@ -808,7 +811,7 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
     + Attributes (404 Response)
 
 ## PackingType List [/ReferenceData/{TradingEntityId}/Physicals/PackingType/{Property}/{PropertyValue}]
-Codes used to describe the units of packing applied in physical contracts.
+`GET` Codes used to describe the units of packing applied in physical contracts.
 ### List PackingTypes [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -845,7 +848,7 @@ Codes used to describe the units of packing applied in physical contracts.
 ## PaymentTerm List [/ReferenceData/{TradingEntityId}/Physicals/PaymentTerm/{Property}/{PropertyValue}]
 
 
-Codes used to describe terms of payment applied to physical contracts through to accounting
+`GET` Codes used to describe terms of payment applied to physical contracts through to accounting
 ### List PaymentTerms [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -882,7 +885,7 @@ Codes used to describe terms of payment applied to physical contracts through to
     + Attributes (404 Response)
 
 ## Port List [/ReferenceData/{TradingEntityId}/Physicals/Port/{Property}/{PropertyValue}]
-Codes used to identify physical port locations.
+`GET` Codes used to identify physical port locations.
 ### List Ports [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -918,7 +921,7 @@ Codes used to identify physical port locations.
     + Attributes (404 Response)
 
 ## Sample List [/ReferenceData/{TradingEntityId}/Physicals/Sample/{Property}/{PropertyValue}]
-Codes used to identify specific product qualities.
+`GET` Codes used to identify specific product qualities.
 ### List Samples [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -952,7 +955,7 @@ Codes used to identify specific product qualities.
     + Attributes (404 Response)
 
 ## ShippingStatus List [/ReferenceData/{TradingEntityId}/Physicals/ShippingStatus/{Property}/{PropertyValue}]
-Codes used to classify the status in terms of movement, useful for reporting purposes.
+`GET` Codes used to classify the status in terms of movement, useful for reporting purposes.
 ### List ShippingStatuses [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -983,7 +986,7 @@ Codes used to classify the status in terms of movement, useful for reporting pur
     + Attributes (404 Response)
 
 ## Terminal List [/ReferenceData/{TradingEntityId}/Physicals/Terminal/{Property}/{PropertyValue}]
-Codes used to identify specific terminal location, useful for reporting purposes.
+`GET` Codes used to identify specific terminal location, useful for reporting purposes.
 ### List Terminals [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1016,7 +1019,7 @@ Codes used to identify specific terminal location, useful for reporting purposes
     + Attributes (404 Response)
 
 ## Vessel List [/ReferenceData/{TradingEntityId}/Physicals/Vessel/{Property}/{PropertyValue}]
-List of Vessel names that can be applied as part of any physical logistics strategy
+`GET` List of Vessel names that can be applied as part of any physical logistics strategy
 ### List Vessels [GET]
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1050,7 +1053,7 @@ List of Vessel names that can be applied as part of any physical logistics strat
     + Attributes (404 Response)
 
 ## Weight List [/ReferenceData/{TradingEntityId}/Physicals/Weight/{Property}/{PropertyValue}]
-Codes used to describe the units of measurement applied in physical contracts.
+`GET` Codes used to describe the units of measurement applied in physical contracts.
 ### List Weights [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1091,47 +1094,9 @@ Codes used to describe the units of measurement applied in physical contracts.
 # Group WIP Reference Data
 WIP Ledger related reference data.
 
-## Charter [/ReferenceData/{TradingEntityId}/WIPLedger/Charter/{CharterId}]
-Charter profile – restricted by WIPAccountType of `C`.
-### Read Charter [GET]
-
-
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|CharterId|Charter Account ID|`string`|11||Required|
-|CharterDescription|Charter Description|`string`|60|||
-|Department|see <b><a href="/#reference/nominal-reference-data/department/department-list">Department</a></b> endpoint|`object`||||
-|Commodity|see <b><a href="/#reference/physicals-reference-data/list-commodities">Commodies List</a></b> endpoint|`object`||||
-|NominalAccount|Nominal Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|ShipmentStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">ShippingStatus</a></b> endpoint|`object`||||
-|VesselReference|Vessel Reference|`string`|30|||
-|ShippingLine|Shipping Line delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|PrivilegeLevel|Charter Acccount Privilege Level|`number`|1||`0` to `9`|
-|EDICode|Charter Account EDI Code|`string`|9|||
-|Status|Charter Account Status|`string`|1||`O` or `F`|
-
-+ Request
-    [AccessToken][]
-    
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + CharterId (required, string, `CHART01.000`) ... Code for charter to read.
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data (Charter)
-        + Response (200 SuccessResponse)
-
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
 
 ## Charter List [/ReferenceData/{TradingEntityId}/WipLedger/Charter/{Property}/{PropertyValue}]
-List of charter profiles – restricted by WIPAccountType of `C`.
+`GET` List of charter profiles – restricted by WIPAccountType of `C`.
 ### List Charter [GET]
 
 
@@ -1177,36 +1142,34 @@ List of charter profiles – restricted by WIPAccountType of `C`.
     + Attributes (404 Response)
 
 
-
-## StockUnit [/ReferenceData/{TradingEntityId}/WipLedger/StockUnit/{StockUnitId}]
-Stock Account profile - restricted by WIPAccountType of `S`.
-### Read StockUnit [GET]
+## Charter [/ReferenceData/{TradingEntityId}/WIPLedger/Charter/{CharterId}]
+`GET` Charter profile – restricted by WIPAccountType of `C`.
+### Read Charter [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|Stock Unit Account ID|`string`|11||Required|
-|StockUnitDescription|Stock Unit Account Description|`string`|60|||
-|Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list/list-terminals">Terminals List</a></b> endpoint|`object`||||
+|CharterId|Charter Account ID|`string`|11||Required|
+|CharterDescription|Charter Description|`string`|60|||
 |Department|see <b><a href="/#reference/nominal-reference-data/department/department-list">Department</a></b> endpoint|`object`||||
-|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
+|Commodity|see <b><a href="/#reference/physicals-reference-data/list-commodities">Commodies List</a></b> endpoint|`object`||||
 |NominalAccount|Nominal Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|StockOwner|Stock Owner delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|ReleaseState|Release State|`number`|2|||
-|CurrentStatus|Stock Unit Current Status|`number`|2|||
-|PrivilegeLevel|Stock Unit Account Privilege Level|`number`|1||`0` to `9`|
-|EDICode|Stock Unit Account EDI Code|`string`|9|||
-|Status|Stock Unit Account Status|`string`|1||`O` or `F`|
+|ShipmentStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">ShippingStatus</a></b> endpoint|`object`||||
+|VesselReference|Vessel Reference|`string`|30|||
+|ShippingLine|Shipping Line delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|PrivilegeLevel|Charter Acccount Privilege Level|`number`|1||`0` to `9`|
+|EDICode|Charter Account EDI Code|`string`|9|||
+|Status|Charter Account Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
     
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + StockUnitId (required, string, `1111.MEP`) ... Code for stock unit to read.
+    + CharterId (required, string, `CHART01.000`) ... Code for charter to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (StockUnit)
+        + Data (Charter)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
@@ -1217,7 +1180,7 @@ Stock Account profile - restricted by WIPAccountType of `S`.
 
 
 ## StockUnit List [/ReferenceData/{TradingEntityId}/WipLedger/StockUnit/{Property}/{PropertyValue}]
-Stock Account profile – restricted by WIPAccountType of `S`.
+`GET` Stock Account profile – restricted by WIPAccountType of `S`.
 ### List StockUnits [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1261,34 +1224,35 @@ Stock Account profile – restricted by WIPAccountType of `S`.
     + Attributes (404 Response)
 
 
-
-## WIP Account [/ReferenceData/{TradingEntityId}/WipLedger/WipAccount/{WipAccountId}]
-Charter profile
-### Read WIP Account [GET]
-
+## StockUnit [/ReferenceData/{TradingEntityId}/WipLedger/StockUnit/{StockUnitId}]
+`GET` Stock Account profile - restricted by WIPAccountType of `S`.
+### Read StockUnit [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|WIP Account ID|`string`|11||Required|
-|WIPAccountDescription|WIP Account Description|`string`|60|||
-|WIPAccountType|WIP Account Type|`string`|1|||
-|Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> object|`object`||||
-|NominalAccount|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|PrivilegeLevel|WIP Account Privilege Level|`number`|1||`0` to `9`|
-|EDICode|WIP Account EDI Code|`string`|9|||
-|Status|WIP Account Status|`string`|1||`O` or `F`|
-
+|StockUnitId|Stock Unit Account ID|`string`|11||Required|
+|StockUnitDescription|Stock Unit Account Description|`string`|60|||
+|Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list/list-terminals">Terminals List</a></b> endpoint|`object`||||
+|Department|see <b><a href="/#reference/nominal-reference-data/department/department-list">Department</a></b> endpoint|`object`||||
+|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
+|NominalAccount|Nominal Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|StockOwner|Stock Owner delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|ReleaseState|Release State|`number`|2|||
+|CurrentStatus|Stock Unit Current Status|`number`|2|||
+|PrivilegeLevel|Stock Unit Account Privilege Level|`number`|1||`0` to `9`|
+|EDICode|Stock Unit Account EDI Code|`string`|9|||
+|Status|Stock Unit Account Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
     
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + WipAccountId (required, string, `1111.MEP`) ... Code for WIP account to read.
+    + StockUnitId (required, string, `1111.MEP`) ... Code for stock unit to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (WIPAccount)
+        + Data (StockUnit)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
@@ -1299,7 +1263,7 @@ Charter profile
 
 
 ## WIP Account List [/ReferenceData/{TradingEntityId}/WipLedger/WIPAccount/{Property}/{PropertyValue}]
-List of charter profiles.
+`GET` List of charter profiles.
 ### List WIP Accounts [GET]
 
 
@@ -1342,11 +1306,48 @@ List of charter profiles.
     + Attributes (404 Response)
 
 
+
+## WIP Account [/ReferenceData/{TradingEntityId}/WipLedger/WipAccount/{WipAccountId}]
+`GET` Charter profile
+### Read WIP Account [GET]
+
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|WIPAccountId|WIP Account ID|`string`|11||Required|
+|WIPAccountDescription|WIP Account Description|`string`|60|||
+|WIPAccountType|WIP Account Type|`string`|1|||
+|Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> object|`object`||||
+|NominalAccount|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|PrivilegeLevel|WIP Account Privilege Level|`number`|1||`0` to `9`|
+|EDICode|WIP Account EDI Code|`string`|9|||
+|Status|WIP Account Status|`string`|1||`O` or `F`|
+
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + WipAccountId (required, string, `1111.MEP`) ... Code for WIP account to read.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (WIPAccount)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 # Group Accounting-Transactions
 Data Objects and endpoints providing access to accounting transactions generated through ITAS processes.
 
 ## Posted Transaction [/Accounting/{TradingEntityId}/Transaction/PostedTransaction/{DocumentReference}]
-Provides access to full accounting ledger by Document Reference.
+`GET` Provides access to full accounting ledger by Document Reference.
 ### Read Posted Transaction [GET]
 
 
@@ -1407,7 +1408,7 @@ Provides access to full accounting ledger by Document Reference.
 
 
 ## UnPosted Transaction [/Accounting/{TradingEntityId}/Transaction/UnPostedTransaction/{DocumentReference}]
-Provides access to financial transaction details yet to be posted to the ledgers (either held-authorised or not authorised) by Document Reference.
+`GET` Provides access to financial transaction details yet to be posted to the ledgers (either held-authorised or not authorised) by Document Reference.
 ### Read Unposted Transaction [GET]
 
 
@@ -1460,8 +1461,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
     + Attributes (404 Response)
 
 ## Transaction Bank Accounts [/Accounting/{TradingEntityId}/Transaction/BankAccounts/{DocumentReference}]
-`GET`
-Bank account details for transactions representing invoices
+`GET` Bank account details for transactions representing invoices
 ### Read Transaction Bank Accounts [GET]
 
 
@@ -1496,76 +1496,8 @@ Bank account details for transactions representing invoices
     + Attributes (404 Response)
 
 
-
-
-## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
-Document summary information including properties specific to integration requirements.          
-### Update Transaction Header [PUT]
-
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|DocumentReference|Transaction Document Reference|`string`|9||Required|
-|EDICode|Transaction EDI Code|`string`|25|||
-|InterfaceStatus|Transaction Interface Status|`string`|1|||
-
-+ Request (application/json)
-    + Header
-
-            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (TransactionHeader)
-    
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
-    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + DocumentReference: CN1600001 (string)
-        + Response (200 UpdateResponse)
-
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-### Delta Update Transaction Header [PATCH]
-
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|DocumentReference|Transaction Document Reference|`string`|9||Required|
-|EDICode|Transaction EDI Code|`string`|25|||
-|InterfaceStatus|Transaction Interface Status|`string`|1|||
-
-+ Request (application/json)
-    + Header
-
-            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (TransactionHeaderDelta)
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data
-            + DocumentReference: CN1600001 (string)
-        + Response (200 UpdateResponse)
-
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
 ## Transaction Header List [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{Property}/{PropertyValue}]
-Document summary information including properties specific to integration requirements.
+`GET` Document summary information including properties specific to integration requirements.
 ### List Transaction Headers [GET]
 
 
@@ -1603,47 +1535,34 @@ Document summary information including properties specific to integration requir
     + Attributes (404 Response)
 
 
-# Group Contract-Physical
 
-## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
-Principle Physical Contract (agreement) details
-### Read Physical Trade  [GET]
+## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
+`PUT` Document summary information including properties specific to integration requirements.          
+### Update Transaction Header [PUT]
 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|Contract ID|`string`|10||Required|
-|ContractType|Contract Type Code|`string`|1||`P` or `S`|
-|ContractDate|Contract Date|`datetime`|20|||
-|Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
-|Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
-|ClientReference|Client Reference|`string`|40|||
-|Buyer|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
-|Seller|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
-|Counterparty|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
-|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
-|PaymentTerm|see <b><a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms">PaymentTerm List</a></b> endpoint|`object`||||
-|ContractTerm|see <b><a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms">ContractTerm List</a></b> endpoint|`object`||||
-|ContractTermPort|see <b><a href="/#reference/physicals-reference-data/port-list/list-ports">Port List</a></b> endpoint|`object`||||
-|UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list/list-weights">Weight List</a></b> endpoint|`object`||||
-|OriginalContractQuantity|Original Contract Quantity|`decimal`||||
-|CurrentContractQuantity|Current Contract Quantity|`decimal`||||
-|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Is Contract Approved|`boolean`|5|||
-|AllocationReference|Allocation Reference|`string`|11|||
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+|EDICode|Transaction EDI Code|`string`|25|||
+|InterfaceStatus|Transaction Interface Status|`string`|1|||
 
++ Request (application/json)
+    + Header
 
-+ Request
-    [AccessToken][]
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (TransactionHeader)
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + ContractId (required, string, `P00004.000`) ... Code for physical trade to read.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
+    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (PhysicalTrade)
-        + Response (200 SuccessResponse)
+        + Data
+            + DocumentReference: CN1600001 (string)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -1651,8 +1570,44 @@ Principle Physical Contract (agreement) details
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+### Delta Update Transaction Header [PATCH]
+`PATCH`
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+|EDICode|Transaction EDI Code|`string`|25|||
+|InterfaceStatus|Transaction Interface Status|`string`|1|||
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (TransactionHeaderDelta)
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data
+            + DocumentReference: CN1600001 (string)
+        + Response (200 UpdateResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
+
+# Group Contract-Physical
+
 ## Physical Trade List [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{Property}/{PropertyValue}]
-List of Principle Physical Contracts (agreements)
+`GET` List of Principle Physical Contracts (agreements)
 ### List Physical Trades  [GET]
 
 
@@ -1707,28 +1662,45 @@ List of Principle Physical Contracts (agreements)
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-## Physical Trade Commission [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{ContractId}]
-Broker commissions held against Physical Contracts.
-### Read Physical Trade Commission [GET]
+
+## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
+`GET` Principle Physical Contract (agreement) details
+### Read Physical Trade  [GET]
 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|ContractId|Contract Code|`string`|10||Required|
-|UniqueId|Unique ID Number|`number`|2|||
-|AgentAccount|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
-|AgentReference|Agent Reference|`string`|40|||
+|ContractId|Contract ID|`string`|10||Required|
+|ContractType|Contract Type Code|`string`|1||`P` or `S`|
+|ContractDate|Contract Date|`datetime`|20|||
+|Department|see <b><a href="/#reference/nominal-reference-data/department">Department</a></b> endpoint|`object`||||
+|Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
+|ClientReference|Client Reference|`string`|40|||
+|Buyer|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|Seller|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|Counterparty|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities">Commodity List</a></b> endpoint|`object`||||
+|PaymentTerm|see <b><a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms">PaymentTerm List</a></b> endpoint|`object`||||
+|ContractTerm|see <b><a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms">ContractTerm List</a></b> endpoint|`object`||||
+|ContractTermPort|see <b><a href="/#reference/physicals-reference-data/port-list/list-ports">Port List</a></b> endpoint|`object`||||
+|UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list/list-weights">Weight List</a></b> endpoint|`object`||||
+|OriginalContractQuantity|Original Contract Quantity|`decimal`||||
+|CurrentContractQuantity|Current Contract Quantity|`decimal`||||
+|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
+|ContractApproved|Is Contract Approved|`boolean`|5|||
+|AllocationReference|Allocation Reference|`string`|11|||
+
 
 + Request
     [AccessToken][]
     
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + ContractId (required, string, `P00004.000`) ... Code for physical trade commission to read.
+    + ContractId (required, string, `P00004.000`) ... Code for physical trade to read.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (PhysicalTradeCommission)
+        + Data (PhysicalTrade)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
@@ -1737,8 +1709,9 @@ Broker commissions held against Physical Contracts.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+
 ## Physical Trade Commissions List [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{Property}/{PropertyValue}]
-List of Broker commissions held against Physical Contracts.
+`GET` List of Broker commissions held against Physical Contracts.
 ### List Physical Trade Commissions [GET]
 
 
@@ -1772,8 +1745,40 @@ List of Broker commissions held against Physical Contracts.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+
+## Physical Trade Commission [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{ContractId}]
+`GET` Broker commissions held against Physical Contracts.
+### Read Physical Trade Commission [GET]
+
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|ContractId|Contract Code|`string`|10||Required|
+|UniqueId|Unique ID Number|`number`|2|||
+|AgentAccount|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`||||
+|AgentReference|Agent Reference|`string`|40|||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ContractId (required, string, `P00004.000`) ... Code for physical trade commission to read.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (PhysicalTradeCommission)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 ## Physical Trade Shipments List [/Contract/{TradingEntityId}/Physical/PhysicalTradeShipment/{Property}/{PropertyValue}]
-List of Logistics information for Physical Contracts.
+`GET` List of Logistics information for Physical Contracts.
 ### List Physical Trade Shipment [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1813,7 +1818,7 @@ List of Logistics information for Physical Contracts.
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
-Authorise an entity to be added to the Posting process.
+`PUT` Authorise an entity to be added to the Posting process.
 ### AuthoriseForPosting [PUT]
 
 
@@ -1858,7 +1863,7 @@ None.
     + Attributes (404 Response)
 
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
-Allows generic cash payments to be created between multiple accounts  
+`POST` Allows generic cash payments to be created between multiple accounts  
 ### Create PayableManual [POST]
 
 
@@ -1889,7 +1894,7 @@ Allows generic cash payments to be created between multiple accounts
     + Attributes (404 Response)
 
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
-Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
+`POST` Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
 ### Create PayableOnAccount [POST]
 
 
@@ -1924,7 +1929,7 @@ Allows cash payments to be created on account of existing (posted) accounting do
 
 
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
-Allows generic cash receipts to be created between multiple accounts  
+`POST` Allows generic cash receipts to be created between multiple accounts  
 ### Create ReceivableManual [POST]
 
 
@@ -1956,7 +1961,7 @@ Allows generic cash receipts to be created between multiple accounts
 
 
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
-Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
+`POST` Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
 ### Create ReceivableOnAccount [POST]
 
 
@@ -1995,7 +2000,7 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 Production Order scheduling services.
 
 ## DeliveryInOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/DeliveryInOrder/{ReleaseId}]
-Orders (CallOffs) specifically representing incoming goods.
+`GET` Orders (CallOffs) specifically representing incoming goods.
 ### Read DeliveryInOrder [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2026,7 +2031,7 @@ Orders (CallOffs) specifically representing incoming goods.
     + Attributes (404 Response)
 
 ## DeliveryOutOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/DeliveryOutOrder/{ReleaseId}]
-Orders (CallOffs) specifically representing outgoing goods.
+`GET` Orders (CallOffs) specifically representing outgoing goods.
 ### Read DeliveryOutOrder [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2052,62 +2057,8 @@ Orders (CallOffs) specifically representing outgoing goods.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-## ExpedCallOff [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/ExpedCallOff/{ReleaseId}]
-Orders (CallOffs) generated through EXPED
-### Read ExpedCallOffs [GET]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ReleaseId|Release ID|`number`|||Required|
-|ContractType|Contract Type|`string`|1|||
-|ContractDate|Contract Date|`datetime`|20|||
-|DeliveryDate|Delivery Date|`datetime`|20|||
-|Department|see <b><a href="/#reference/nominal-reference-data/departments">Departments List</a></b> endpoint|`object`||||
-|Counterparty|see <b><a href="/#reference/data-object-definitions/read-expedcalloffss">Account Header</a></b> object|`object`||||
-|Memorandum|Memorandum|`string`|4000|||
-|InternalMemo|Internal Memorandum|`string`|4000|||
-|OrderStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">Shipping Status</a></b> endpoint|`object`||||
-|<strong>References</strong>|
-|ContractReference|Contract Reference|`string`|10|||
-|ClientReference|Client Reference|`string`|40|||
-|BuyerOrderNumber|Buyers Order Number|`string`|40|||
-|BuyerSecondaryReference|Buyers Secondary Reference|`string`|40|||
-|DeliveryClientOrderNumber|Delivery Client Order Number|`string`|40|||
-|DeliveryClientSecondaryReference|Delivery Client Secondary Reference|`string`|40|||
-|<strong>GoodsDetails</strong>|
-|Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list">Terminals List</a></b> endpoint|`object`||||
-|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list">Commodies List</a></b> endpoint|`object`||||
-|Sample|see <b><a href="/#reference/physicals-reference-data/sample-list">Samples List</a></b> endpoint|`object`||||
-|UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list">Weights List</a></b> endpoint|`object`||||
-|Quantity|Quantity|`decimal`||||
-|PackingType|see <b><a href="/#reference/physicals-reference-data/packingtype-list">PackingType List</a></b> endpoint|`object`||||
-|<strong>TransportDetails</strong>|
-|DeliveryClient|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
-|Haulier|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
-|Expeditor|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
-|VehicleReference|Vehicle Reference|`string`|4|||
-|VehicleRegistration|Vehicle Registration|`string`|50|||
-|TrailerRegistration|Trailer Registration|`string`|50|||
-|EarlyLoadAllowed|Is Early Load Allowed|`boolean`|5|||
-|MaxLoadWeight|Maximum Load Weight|`decimal`||||
-
-+ Request
-    [AccessToken][]
-    
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + ReleaseId (required, string, `123`)
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data (ExpedCallOff)
-        + Response (200 SuccessResponse)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
 ## ExpedCallOff List [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/ExpedCallOff/{Property}/{PropertyValue}]
-Orders (CallOffs) generated through EXPED
+`GET` Orders (CallOffs) generated through EXPED
 ### List ExpedCallOff [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2168,8 +2119,64 @@ Orders (CallOffs) generated through EXPED
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+
+## ExpedCallOff [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/ExpedCallOff/{ReleaseId}]
+`GET` Orders (CallOffs) generated through EXPED
+### Read ExpedCallOffs [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|ReleaseId|Release ID|`number`|||Required|
+|ContractType|Contract Type|`string`|1|||
+|ContractDate|Contract Date|`datetime`|20|||
+|DeliveryDate|Delivery Date|`datetime`|20|||
+|Department|see <b><a href="/#reference/nominal-reference-data/departments">Departments List</a></b> endpoint|`object`||||
+|Counterparty|see <b><a href="/#reference/data-object-definitions/read-expedcalloffss">Account Header</a></b> object|`object`||||
+|Memorandum|Memorandum|`string`|4000|||
+|InternalMemo|Internal Memorandum|`string`|4000|||
+|OrderStatus|see <b><a href="/#reference/physicals-reference-data/shippingstatus-list">Shipping Status</a></b> endpoint|`object`||||
+|<strong>References</strong>|
+|ContractReference|Contract Reference|`string`|10|||
+|ClientReference|Client Reference|`string`|40|||
+|BuyerOrderNumber|Buyers Order Number|`string`|40|||
+|BuyerSecondaryReference|Buyers Secondary Reference|`string`|40|||
+|DeliveryClientOrderNumber|Delivery Client Order Number|`string`|40|||
+|DeliveryClientSecondaryReference|Delivery Client Secondary Reference|`string`|40|||
+|<strong>GoodsDetails</strong>|
+|Terminal|see <b><a href="/#reference/physicals-reference-data/terminal-list">Terminals List</a></b> endpoint|`object`||||
+|Commodity|see <b><a href="/#reference/physicals-reference-data/commodity-list">Commodies List</a></b> endpoint|`object`||||
+|Sample|see <b><a href="/#reference/physicals-reference-data/sample-list">Samples List</a></b> endpoint|`object`||||
+|UnitOfMeasurement|see <b><a href="/#reference/physicals-reference-data/weight-list">Weights List</a></b> endpoint|`object`||||
+|Quantity|Quantity|`decimal`||||
+|PackingType|see <b><a href="/#reference/physicals-reference-data/packingtype-list">PackingType List</a></b> endpoint|`object`||||
+|<strong>TransportDetails</strong>|
+|DeliveryClient|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
+|Haulier|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
+|Expeditor|see <b><a href="/#reference/data-object-definitions/accountheader">Account Header</a></b> object|`object`||||
+|VehicleReference|Vehicle Reference|`string`|4|||
+|VehicleRegistration|Vehicle Registration|`string`|50|||
+|TrailerRegistration|Trailer Registration|`string`|50|||
+|EarlyLoadAllowed|Is Early Load Allowed|`boolean`|5|||
+|MaxLoadWeight|Maximum Load Weight|`decimal`||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ReleaseId (required, string, `123`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (ExpedCallOff)
+        + Response (200 SuccessResponse)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 ## StockToStockOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/StockToStockOrder/{ReleaseId}]
-Orders specifically representing movements of goods between Stock Units (aka Manufacturing Orders).
+`GET` Orders specifically representing movements of goods between Stock Units (aka Manufacturing Orders).
 ### Read StockToStockOrder [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2209,38 +2216,8 @@ Orders specifically representing movements of goods between Stock Units (aka Man
 # Group Inventory-Physicals-Stock Management
 Management activities of Stock Units (where represented by WIP Accounts).
 
-## StockBatch [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{StockBatchId}]
-Batch record information by Stock Unit.
-### Read StockBatch [GET]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|StockBatchId|Stock Batch ID|`string`|20||Required|
-|StockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
-|BatchCreateDate|Date Batch Created|`datetime`|20|||
-|BatchText|Batch Text|`string`|1000|||
-
-
-+ Request
-    [AccessToken][]
-    
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + StockBatchId (required, string, `abc123`)
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes 
-        + Data (StockBatch)
-        + Response (200 SuccessResponse)
-
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-    
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
 ## StockBatch List [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{Property}/{PropertyValue}]
-Batch record information by Stock Unit.
+`GET` Batch record information by Stock Unit.
 ### List StockBatches [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2275,11 +2252,42 @@ Batch record information by Stock Unit.
     + Attributes (404 Response)
 
 
+## StockBatch [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{StockBatchId}]
+`GET` Batch record information by Stock Unit.
+### Read StockBatch [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|StockBatchId|Stock Batch ID|`string`|20||Required|
+|StockUnitCode|see <b><a href="/#reference/wip-reference-data/stockunit">StockUnit</a></b> endpoint|`object`||||
+|BatchCreateDate|Date Batch Created|`datetime`|20|||
+|BatchText|Batch Text|`string`|1000|||
+
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + StockBatchId (required, string, `abc123`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (StockBatch)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+    
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 # Group Inventory-Physicals-Stock Processing
 Production Order processing services.
 
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
-Trigger call to complete an order (e.g. create stock journals etc)
+`PUT` Trigger call to complete an order (e.g. create stock journals etc)
 ### Update MarkOrderAsProcessed [PUT]
 
 
@@ -2321,7 +2329,7 @@ None.
     + Attributes (404 Response)
 
 ## StockLoading [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/StockLoading/{ReleaseId}]
-Information specific to the source of the goods generated during any movement (Delivery Out or Stock to Stock).
+`GET` Information specific to the source of the goods generated during any movement (Delivery Out or Stock to Stock).
 ### Read StockLoading [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2349,7 +2357,7 @@ Information specific to the source of the goods generated during any movement (D
     + Attributes (404 Response)
 
 ### Create StockLoading [PUT]
-Remove current suggestions for Tanks and Create Stock Loadings
+`PUT` Remove current suggestions for Tanks and Create Stock Loadings
 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2390,7 +2398,7 @@ Remove current suggestions for Tanks and Create Stock Loadings
 
 
 ## StockMovement [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/StockMovement/{ReleaseId}]
-Information relating to the processing of the Order. 
+`GET` Information relating to the processing of the Order. 
 ### Read StockMovement [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2438,6 +2446,7 @@ Information relating to the processing of the Order.
     + Attributes (404 Response)
 
 ### Update StockMovement [PUT]
+`PUT` 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2493,7 +2502,7 @@ Information relating to the processing of the Order.
 List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
 
 ## AccountHeader [/AccountHeader]
-A multipurpose object used by several endpoints and with multiple source tables depending on context. The object described below is generic. 
+`GET` A multipurpose object used by several endpoints and with multiple source tables depending on context. The object described below is generic. 
 
 ### AccountHeader [GET]
 The account header object is derived from multiple locations of the database depending on the the value of AccountType. All are documented below.
@@ -2534,7 +2543,7 @@ The account header object is derived from multiple locations of the database dep
 + Attributes (AccountHeader)
 
 ## AccountPostingDetails [/AccountPostingDetails]
-
+`GET`
 ### AccountPostingDetails[GET]
 
 
@@ -2551,7 +2560,7 @@ The account header object is derived from multiple locations of the database dep
 + Attributes (AccountPostingDetails)
 
 ## Address [/Address]
-A multipurpose object used by several endpoints. 
+`GET` A multipurpose object used by several endpoints. 
 
 ### Address[GET]
 
@@ -2571,7 +2580,7 @@ A multipurpose object used by several endpoints.
 + Attributes (ContactDetails)
 
 ## AddressCountry [/AddressCountry]
-A multipurpose object used by several endpoints. 
+`GET` A multipurpose object used by several endpoints. 
 
 ### AddressCountry[GET]
 
@@ -2584,7 +2593,7 @@ A multipurpose object used by several endpoints.
 + Attributes (Country)
 
 ## DocumentDetails [/DocumentDetails]
-
+`GET` 
 ### DocumentDetails[GET]
 
 
@@ -2602,7 +2611,7 @@ A multipurpose object used by several endpoints.
 + Attributes (DocumentDetails)
 
 ## OnAccountDetails [/OnAccountDetails]
-
+`GET` 
 ### OnAccountDetails[GET]
 
 
