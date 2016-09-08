@@ -1459,10 +1459,10 @@ Provides access to financial transaction details yet to be posted to the ledgers
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-## Transaction Bank Accounts List [/Accounting/{TradingEntityId}/Transaction/BankAccounts/{Property}/{PropertyValue}]
+## Transaction Bank Accounts [/Accounting/{TradingEntityId}/Transaction/BankAccounts/{Property}/{PropertyValue}]
 `GET`
 Bank account details for transactions representing invoices
-### List Transaction Bank Accounts [GET]
+### Read Transaction Bank Accounts [GET]
 
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1480,15 +1480,12 @@ Bank account details for transactions representing invoices
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + Property (optional, enum[string])  
-       + Members
-            + DocumentReference (optional, string) 
-    + PropertyValue (optional, string, `CN1600001`)
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
+    + DocumentReference (required, string, `CN1600001`) ... Code for transaction header to update.
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (array [TransactionBankAccount List])
+        + Data (TransactionBankAccount)
         + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
@@ -3336,7 +3333,7 @@ The Transaction key is a five part key made up of the following values seperate 
 + TerminalDescription: `Santos-Santa Adelia` (string)
 + CountryId: BRA (string)
 
-## TransactionBankAccount List (object)
+## TransactionBankAccount (object)
 + DocumentReference: CN1600001 (required, string)
 + OurAccount: ABCDEF.P (string)
 + OurBankName: The Bank (string)
