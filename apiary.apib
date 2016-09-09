@@ -131,7 +131,11 @@ Codes relating to the Client Ledger and related endpoints.
     + Attributes 
         + Data (ClientAccount)
         + Response (200 SuccessResponse)
-    
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadPropertyResponse)
+
+  
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
@@ -552,6 +556,8 @@ Codes relating to Nominal Ledger and related endpoints.
         + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
@@ -583,6 +589,8 @@ Codes relating to Nominal Ledger and related endpoints.
         + Data (NominalAccount)
         + Response (200 SuccessResponse)
 
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
