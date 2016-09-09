@@ -30,6 +30,7 @@ Model Header containing AccessToken
 
             Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
+
 # Group Client Reference Data
 Codes relating to the Client Ledger and related endpoints.
 
@@ -411,6 +412,81 @@ Global (system-wide) codes
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
+
+# Group Master Reference Data
+Master Data access to various Data objects
+
+## Master Data [/ReferenceData/{MasterTradingEntityId}/MasterData/{Property}/{PropertyValue}]
+`GET` Master Data
+### Read Master Data [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TEIDList||`string`|2|||
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + Property (optional, enum[string]) 
+       + Members
+            + ClientAccountId
+            + NominalAccountId
+    + PropertyValue (optional, string, `ABCDEF.P`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (MasterData)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
+
+### Create Update Master Data [PUT]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TEIDList||`string`|2|||
+
+
++ Request (application/json)
+    + Header
+
+            AccessToken:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (MasterData)
+
++ Parameters
+    + Property (optional, enum[string]) 
+       + Members
+            + ClientAccountId
+            + NominalAccountId
+    + PropertyValue (optional, string, `ABCDEF.P`)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes 
+        + Data
+            + TEIDList: JT (string)
+        + Response (201 CreateResponse)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data
+            + TEIDList: JT (string)
+        + Response (200 UpdateResponse)
+    
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
 
 
 # Group Nominal Reference Data
@@ -3081,6 +3157,9 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + EarlyLoadAllowed: `true` (boolean)
 + MaxLoadWeight: 123 (number)
 
+## MasterData (object)
++ TEIDList (TEIDList)  
+
 ## NominalAccount (object)
 + NominalAccountId: 1234.5678 (required, string)  
 + MainGroupingDescription: Direct Costs (required, string)
@@ -3371,6 +3450,9 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + PrivilegeLevel: 5 (number)
 + EDICode: ext12345 (string) 
 + Status: O (string)
+
+## TEIDList (object)
++ TEIDList: JT (string)
 
 ## Terminal (object)
 + TerminalId: ADEL (string)
