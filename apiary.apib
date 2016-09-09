@@ -449,6 +449,7 @@ Master Data access to various Data objects
 
 
 ### Create Update Master Data [PUT]
+`PUT` Master Data
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -471,13 +472,12 @@ Master Data access to various Data objects
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
-        + Data
-            + TEIDList: JT (string)
+        + Data (array [MasterData])
         + Response (201 CreateResponse)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (array [TEIDList])
+        + Data (array [MasterData])
         + Response (200 UpdateResponse)
     
 + Response 400 (application/json; charset=utf-8)
