@@ -1114,7 +1114,7 @@ WIP Ledger related reference data.
 |CharterId|Charter Account ID|`string`|11|||
 |CharterDescription|Charter Description|`string`|60|||
 |DepartmentCode|Department Code|`string`|4|||
-|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
 |NominalAccountCode|Nominal Account Code|`string`|9|||
 |ShipmentStatusCode|Shipment Status Code|`string`|2|||
 |VesselReference|Vessel Reference|`string`|30|||
@@ -1199,7 +1199,7 @@ WIP Ledger related reference data.
 |TerminalCode|Terminal Code|`string`|4|||
 |DepartmentCode|Department Code|`string`|4|||
 |NominalAccountCode|Nominal Account Code|`string`|9|||
-|CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
 |StockOwnerCode|Stock Owner Account Code|`string`|50|||
 |ReleaseState|Release State|`number`|2|||
 |CurrentStatus|Stock Unit Current Status|`number`|2|||
@@ -1364,7 +1364,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 |--------|-----------|----|----------|-----|----------|
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |AccountLedgerType|Account Ledger Type Code|`string`|1||`C`, `N` or `K`|
-|TransactionKey|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|TransactionKey|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/transactionkey">Composite Key</a></b>||
 |Account|see <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |DocumentCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`||||
 |AccountingPeriod|Transaction Accounting Period|`number`||||
@@ -1631,7 +1631,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 |BuyerAccountCode|Buyer Account Code|`string`|10|||
 |SellerAccountCode|Seller Account Code|`string`|10|||
 |CounterpartyCode|Counterparty Code|`string`|10|||
-|CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|CommodityCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
 |PaymentTermCode|Payment Term Code|`string`|8|||
 |ContractTermCode|Contract Term Code|`string`|8|||
 |ContractTermPortCode|Contract Term Port Code|`string`|8|||
@@ -2088,7 +2088,7 @@ Production Order scheduling services.
 |DeliveryClientOrderNumber|Delivery Client Order Number|`string`|40|||
 |DeliveryClientSecondaryReference|Delivery Client Secondary Reference|`string`|40|||
 |TerminalCode|Terminal Code|`string`|4|||
-|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|||
+|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
 |SampleCode|Sample Code|`string`|4|||
 |UnitOfMeasurementCode|Unit of Measurement Code|`string`|4|||
 |Quantity|Quantity|`decimal`||||
@@ -2626,7 +2626,7 @@ A multipurpose object used by several endpoints
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TransactionKey|<b>See Below</b>|`object`|||Required|
+|TransactionKey|<b><a href="/#reference/composite-key-examples/transactionkey">See Below</a></b>|`object`|||Required|
 |DocumentReference|Document Reference|`string`|9||Required|
 |TransactionAmountInDocumentCurrency|Transaction Amount in Document Currency|`decimal`||Can Contain Negative Values|Required|
 
