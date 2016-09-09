@@ -2630,8 +2630,12 @@ The account header object is derived from multiple locations of the database dep
 |DocumentReference|Document Reference|`string`|9||Required|
 |TransactionAmountInDocumentCurrency|Transaction Amount in Document Currency|`decimal`||Can Contain Negative Values|Required|
 
++ Response 200 (application/json; charset=utf-8)
++ Attributes (OnAccountDetails)
 
-<strong>TransactionKey</strong><br />
+# Group Composite Key Examples
+
+## TransactionKey
 The Transaction key is a five part key made up of the following values seperate by a double pipe &#124;&#124;
 <br />For example `00040444.P`||`GBP`||`20150832`||`20151003`||`14576460`.
 <br />The  maximum length of any Trnasaciotn key is 80 characters
@@ -2645,9 +2649,19 @@ The Transaction key is a five part key made up of the following values seperate 
 ||Post Date|`number`|||Required|
 ||Post Time|`number`|||Required|
 
+## CommodityFullCode
+The CommodityFullCode is a five part key made up of the following values seperate by a double pipe &#124;&#124;
+<br />For example `CHE`||`CASO`||`47`||`QWE`||`RTY`.
+<br />The  maximum length of any CommodityFullCode is 50 characters
 
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (OnAccountDetails)
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|CommodityCode|Commodity Code|`string`|3|||
+|CommodityCodePart2|Commodity Origin|`string`|6|||
+|CommodityCodePart3|Commodity Grade|`string`|6|||
+|CommodityCodePart4|Commodity Code Section 4|`string`|6|||
+|CommodityCodePart5|Commodity Code Section 5|`string`|6|||
 
 
 # Data Structures
