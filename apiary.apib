@@ -430,11 +430,11 @@ Master Data access to various Data objects
     [AccessToken][]
 
 + Parameters
-    + Property (optional, enum[string]) 
+    + Property (required, enum[string]) 
        + Members
             + ClientAccountId
             + PortId
-    + PropertyValue (optional, string, `ABCDEF.P`)
+    + PropertyValue (required, string, `ABCDEF.P`)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
@@ -466,11 +466,11 @@ Master Data access to various Data objects
        + Data (array [MasterData])
 
 + Parameters
-    + Property (optional, enum[string]) 
+    + Property (required, enum[string]) 
        + Members
             + ClientAccountId
             + PortId
-    + PropertyValue (optional, string, `ABCDEF.P`)
+    + PropertyValue (required, string, `ABCDEF.P`)
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
@@ -2709,6 +2709,15 @@ A multipurpose object used by several endpoints
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
+
+## TradingEntity [/TradingEntity]
+
+### TradingEntity[GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TradingEntityId|Trading Entity ID|string|2||Required|
+
 
 # Group Composite Key Examples
 List of examples where a code is delimited by double pipe &#124;&#124; referenced as `Composite Key` description. Not that these endpoints are not accessable and are only here for reference purposes.
