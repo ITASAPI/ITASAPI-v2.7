@@ -1618,6 +1618,8 @@ Data Objects and endpoints providing access to accounting transactions generated
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 Response)
 
 
 ## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
@@ -2811,6 +2813,15 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## 404 ErrorMessageDetailMessage (object)
 + Severity: Warning (string)
 + Message: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
+
+## 405 Response (object)
++ Response
+    + Value: 405 Method Not Allowed (string)
++ Messages (array[405 MethodNotAllowedMessage])
+
+## 405 MethodNotAllowedMessage (object)
++ Severity: Error (string)
++ Message: `API5077 - API : That method is not supported, please check the ITAS API documentation.` (string)
 
 
 ## accessToken (object)
