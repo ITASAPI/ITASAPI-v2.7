@@ -424,7 +424,7 @@ Master Data access to various Data objects
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TEIDList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">TradingEntity</a></b> object|`object`||||
+|TEIDList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">TEID</a></b> `array` of object|`object`||||
 
 + Request
     [AccessToken][]
@@ -438,7 +438,7 @@ Master Data access to various Data objects
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (array [MasterData])
+        + Data (MasterDataTradingEntityList)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
@@ -454,7 +454,7 @@ Master Data access to various Data objects
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TEIDList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">TradingEntity</a></b> object|`object`||||
+|TEIDList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">TEID</a></b> `array` of object|`object`||||
 
 
 + Request (application/json)
@@ -3184,10 +3184,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TradingEntity (MasterDataTradingEntityId)  
 
 ## MasterDataTradingEntityId (object)
-+ TradingEntityId: JT (string)
++ TEID: JT (string)
 
 ## MasterDataTradingEntityList (object)
-+ TradingEntityList (array [MasterDataTradingEntityId])
++ TEIDList (array [MasterDataTradingEntityId])
 
 ## NominalAccount (object)
 + NominalAccountId: 1234.5678 (required, string)  
