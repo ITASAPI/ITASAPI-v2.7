@@ -424,7 +424,7 @@ Master Data access to various Data objects
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TEIDList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">TEID</a></b> object|[array] of `object`||||
+|TradingEntityList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">Trading Entity ID</a></b> object|[array] of `object`||||
 
 + Request
     [AccessToken][]
@@ -454,7 +454,7 @@ Master Data access to various Data objects
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TEIDList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">TEID</a></b> object|[array] of `object`||||
+|TreadingEntityList|see <b><a href="/#reference/data-object-definitions/tradingentity/tradingentity">Trading Entity ID</a></b> object|[array] of `object`||||
 
 
 + Request (application/json)
@@ -473,12 +473,12 @@ Master Data access to various Data objects
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
-        + Data (array [MasterDataTradingEntityId])
+        + Data (MasterDataCreateResponse)
         + Response (201 CreateResponse)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (array [MasterDataTradingEntityId])
+        + Data (MasterDataCreateResponse)
         + Response (200 UpdateResponse)
     
 + Response 400 (application/json; charset=utf-8)
@@ -2713,11 +2713,11 @@ A multipurpose object used by several endpoints
 
 ## TradingEntity [/TradingEntity]
 A multipurpose object used by several endpoints
-### TEID[GET]
+### Trading Entity ID[GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TEID|Trading Entity ID|string|2||Required|
+|TradingEntityId|Trading Entity ID|string|2||Required|
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (MasterDataTradingEntityId)
@@ -3180,14 +3180,14 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + EarlyLoadAllowed: `true` (boolean)
 + MaxLoadWeight: 123 (number) 
 
-## MasterData (object)
-+ TradingEntity (MasterDataTradingEntityId)  
+## MasterDataCreateResponse (object)
++ TradingEntity (array [MasterDataTradingEntityId])  
 
 ## MasterDataTradingEntityId (object)
-+ TEID: JT (string)
++ TradingEntityId: JT (string)
 
 ## MasterDataTradingEntityList (object)
-+ TEIDList (array [MasterDataTradingEntityId])
++ TradingEntityList (array [MasterDataTradingEntityId])
 
 ## NominalAccount (object)
 + NominalAccountId: 1234.5678 (required, string)  
