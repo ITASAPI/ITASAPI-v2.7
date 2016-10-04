@@ -473,12 +473,12 @@ Master Data access to various Data objects
 
 + Response 201 (application/json; charset=utf-8)
     + Attributes 
-        + Data (MasterDataCreateResponse)
+        + Data (MasterDataTradingEntityList)
         + Response (201 CreateResponse)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (MasterDataCreateResponse)
+        + Data (MasterDataTradingEntityList)
         + Response (200 UpdateResponse)
     
 + Response 400 (application/json; charset=utf-8)
@@ -3180,8 +3180,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + EarlyLoadAllowed: `true` (boolean)
 + MaxLoadWeight: 123 (number) 
 
-## MasterDataCreateResponse (object)
-+ TradingEntity (array [MasterDataTradingEntityId])  
 
 ## MasterDataTradingEntityId (object)
 + TradingEntityId: JT (string)
